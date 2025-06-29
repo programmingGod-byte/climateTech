@@ -1,0 +1,151 @@
+'use client';
+
+import { Card, CardContent } from '@/components/ui/card';
+import { Waves, Thermometer, Wind, Gauge, Zap, Wifi } from 'lucide-react';
+import { motion } from 'framer-motion';
+
+export default function SensorsSection() {
+  const sensors = [
+    {
+      icon: <Waves className="h-8 w-8 text-blue-600" />,
+      name: "Water Level Sensor",
+      description: "Ultrasonic sensors measure water depth with millimeter precision, continuously monitoring river levels beneath bridges.",
+      image: "https://images.pexels.com/photos/1108572/pexels-photo-1108572.jpeg?auto=compress&cs=tinysrgb&w=400",
+      specs: "Range: 0-20m, Accuracy: ±1mm"
+    },
+    {
+      icon: <Gauge className="h-8 w-8 text-green-600" />,
+      name: "Flow Rate Sensor",
+      description: "Advanced flow meters detect water velocity and volume changes to predict flood conditions in real-time.",
+      image: "https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg?auto=compress&cs=tinysrgb&w=400",
+      specs: "Range: 0-10 m/s, Response: <1s"
+    },
+    {
+      icon: <Thermometer className="h-8 w-8 text-red-600" />,
+      name: "Temperature Sensor",
+      description: "Multi-point temperature monitoring for water and ambient conditions, crucial for monsoon prediction algorithms.",
+      image: "https://images.pexels.com/photos/1108117/pexels-photo-1108117.jpeg?auto=compress&cs=tinysrgb&w=400",
+      specs: "Range: -40°C to +85°C, Accuracy: ±0.1°C"
+    },
+    {
+      icon: <Wind className="h-8 w-8 text-purple-600" />,
+      name: "Weather Station",
+      description: "Integrated weather monitoring including rainfall, humidity, wind speed, and atmospheric pressure sensors.",
+      image: "https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=400",
+      specs: "Rain: 0-999mm/h, Wind: 0-60m/s"
+    },
+    {
+      icon: <Zap className="h-8 w-8 text-yellow-600" />,
+      name: "Power Management",
+      description: "Solar panels with battery backup ensure 24/7 operation even during power outages and extreme weather.",
+      image: "https://images.pexels.com/photos/1108096/pexels-photo-1108096.jpeg?auto=compress&cs=tinysrgb&w=400",
+      specs: "Solar: 100W, Battery: 30-day backup"
+    },
+    {
+      icon: <Wifi className="h-8 w-8 text-indigo-600" />,
+      name: "Communication Module",
+      description: "Multi-network connectivity via 4G/5G, WiFi, and satellite for reliable data transmission to control centers.",
+      image: "https://images.pexels.com/photos/1108098/pexels-photo-1108098.jpeg?auto=compress&cs=tinysrgb&w=400",
+      specs: "4G/5G, WiFi, LoRaWAN, Satellite"
+    }
+  ];
+
+  return (
+    <section className="py-20 bg-muted/30">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+            Paired with Advanced Accessories for Enhanced Functionality
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Our comprehensive sensor suite provides complete environmental monitoring 
+            for accurate flood prediction and early warning systems.
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {sensors.map((sensor, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
+            >
+              <Card className="h-full hover:shadow-xl transition-all duration-300 group">
+                <CardContent className="p-0">
+                  <div className="relative overflow-hidden rounded-t-lg">
+                    <img
+                      src={sensor.image}
+                      alt={sensor.name}
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute top-4 left-4 bg-background/90 backdrop-blur-sm rounded-full p-2">
+                      {sensor.icon}
+                    </div>
+                  </div>
+                  
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-foreground mb-2">
+                      {sensor.name}
+                    </h3>
+                    <p className="text-muted-foreground mb-4 leading-relaxed">
+                      {sensor.description}
+                    </p>
+                    <div className="bg-muted/50 rounded-lg p-3">
+                      <p className="text-sm font-medium text-foreground">
+                        Specifications:
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        {sensor.specs}
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Technical Excellence */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="mt-16 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl p-8 text-white"
+        >
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold mb-2">Technical Excellence</h3>
+            <p className="opacity-90">Industry-leading specifications for maximum reliability</p>
+          </div>
+          
+          <div className="grid md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-3xl font-bold mb-2">±1mm</div>
+              <p className="opacity-90">Sensor Accuracy</p>
+            </div>
+            <div>
+              <div className="text-3xl font-bold mb-2">0.1s</div>
+              <p className="opacity-90">Response Time</p>
+            </div>
+            <div>
+              <div className="text-3xl font-bold mb-2">99.99%</div>
+              <p className="opacity-90">System Uptime</p>
+            </div>
+            <div>
+              <div className="text-3xl font-bold mb-2">30 Days</div>
+              <p className="opacity-90">Battery Backup</p>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
