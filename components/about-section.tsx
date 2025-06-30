@@ -16,26 +16,13 @@ export default function AboutSection() {
       title: "AI Flood Prediction",
       description: "Machine learning algorithms trained on Indian weather patterns to predict flooding 5+ minutes in advance"
     },
-    {
-      icon: <Smartphone className="h-8 w-8 text-green-600" />,
-      title: "Multi-language Alerts",
-      description: "Instant SMS, app, and voice alerts in Hindi, English, and regional languages to authorities and residents"
-    },
-    {
-      icon: <Cpu className="h-8 w-8 text-orange-600" />,
-      title: "Edge Computing",
-      description: "Local processing ensures rapid response even during network congestion in dense urban areas"
-    },
+    ,
     {
       icon: <Wifi className="h-8 w-8 text-indigo-600" />,
       title: "4G/5G Connectivity",
       description: "Seamless integration with Indian telecom infrastructure via Jio, Airtel, and BSNL networks"
     },
-    {
-      icon: <Battery className="h-8 w-8 text-yellow-600" />,
-      title: "Solar + Grid Power",
-      description: "Hybrid power system optimized for Indian conditions with 30-day backup during power cuts"
-    }
+    
   ];
 
   return (

@@ -17,7 +17,7 @@ export default function RobotIntroSection() {
           >
             <div className="relative bg-gradient-to-br from-blue-50 to-green-50 dark:from-blue-950/20 dark:to-green-950/20 rounded-2xl p-8 shadow-2xl">
               <img
-                src="https://images.pexels.com/photos/8566473/pexels-photo-8566473.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src="/images/all.png"
                 alt="Flood monitoring robot"
                 className="w-full h-96 object-cover rounded-xl"
               />

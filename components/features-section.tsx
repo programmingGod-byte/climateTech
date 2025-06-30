@@ -49,7 +49,6 @@ export default function FeaturesSection() {
   const additionalFeatures = [
     { icon: <Clock className="h-6 w-6" />, text: "5-minute early warning system" },
     { icon: <Shield className="h-6 w-6" />, text: "Military-grade security protocols" },
-    { icon: <Zap className="h-6 w-6" />, text: "Solar-powered with 30-day backup" },
     { icon: <Globe className="h-6 w-6" />, text: "Global deployment capability" }
   ];
 
@@ -132,7 +131,7 @@ export default function FeaturesSection() {
             Additional Capabilities
           </h3>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {additionalFeatures.map((feature, index) => (
               <motion.div
                 key={index}

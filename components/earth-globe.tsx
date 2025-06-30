@@ -428,7 +428,7 @@ export default function EarthGlobe() {
           <div className="w-2 h-2 bg-red-400 rounded-full animate-pulse"></div>
           <span className="font-semibold">Emergency Alerts</span>
         </div>
-        <div className="text-xs text-white/80 mt-1">Multi-language</div>
+        <div className="text-xs text-white/80 mt-1">through site</div>
       </div>
     </div>
   );

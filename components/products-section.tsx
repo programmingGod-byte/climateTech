@@ -10,42 +10,35 @@ export default function ProductsSection() {
       title: "FloodGuard Pro",
       description: "Our flagship flood monitoring system with AI-powered prediction capabilities. Features real-time water level monitoring, weather integration, and instant alert systems designed specifically for Indian monsoon conditions.",
       features: ["AI Flood Prediction", "Real-time Monitoring", "Multi-channel Alerts", "Weather Integration"],
-      image: "https://images.pexels.com/photos/8566473/pexels-photo-8566473.jpeg?auto=compress&cs=tinysrgb&w=600"
+      image: "/images/1.png"
     },
     {
       icon: <Activity className="h-8 w-8 text-green-600" />,
       title: "SensorNet Advanced",
       description: "Comprehensive sensor network solution with ultrasonic water level sensors, flow meters, and environmental monitoring. Built to withstand harsh Indian weather conditions with IP68 rating.",
       features: ["Ultrasonic Sensors", "Flow Monitoring", "Environmental Data", "Weather Resistant"],
-      image: "https://images.pexels.com/photos/1108572/pexels-photo-1108572.jpeg?auto=compress&cs=tinysrgb&w=600"
+      image: "/images/2.png"
     },
     {
       icon: <Brain className="h-8 w-8 text-purple-600" />,
       title: "AI Analytics Engine",
       description: "Machine learning platform trained on Indian weather patterns and flood data. Provides accurate flood predictions up to 48 hours in advance with continuous learning capabilities.",
       features: ["Machine Learning", "Pattern Recognition", "Predictive Analytics", "Continuous Learning"],
-      image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600"
+      image: "/images/3.png"
     },
     {
       icon: <Wifi className="h-8 w-8 text-indigo-600" />,
       title: "ConnectHub 5G",
       description: "Multi-network communication hub supporting 4G/5G, WiFi, and satellite connectivity. Ensures reliable data transmission even during extreme weather conditions and network congestion.",
       features: ["5G Connectivity", "Multi-network Support", "Satellite Backup", "Edge Computing"],
-      image: "https://images.pexels.com/photos/1108098/pexels-photo-1108098.jpeg?auto=compress&cs=tinysrgb&w=600"
+      image: "/images/4.png"
     },
     {
       icon: <Zap className="h-8 w-8 text-yellow-600" />,
       title: "PowerMax Solar",
       description: "Hybrid power management system with solar panels and battery backup. Provides 30-day autonomous operation during power outages, perfect for remote locations and monsoon seasons.",
       features: ["Solar Power", "Battery Backup", "30-day Autonomy", "Smart Power Management"],
-      image: "https://images.pexels.com/photos/1108096/pexels-photo-1108096.jpeg?auto=compress&cs=tinysrgb&w=600"
-    },
-    {
-      icon: <Cloud className="h-8 w-8 text-cyan-600" />,
-      title: "CloudCommand Center",
-      description: "Centralized monitoring and control platform with real-time dashboards, alert management, and integration with NDMA protocols. Accessible via web and mobile applications.",
-      features: ["Real-time Dashboard", "Alert Management", "NDMA Integration", "Mobile Access"],
-      image: "https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=600"
+      image: "/images/5.png"
     }
   ];
 
@@ -126,7 +119,7 @@ export default function ProductsSection() {
                     <img
                       src={product.image}
                       alt={product.title}
-                      className="w-full h-64 object-cover rounded-xl"
+                      className="w-full h-64 object-contain rounded-xl"
                     />
                     
                     {/* Floating Badge */}

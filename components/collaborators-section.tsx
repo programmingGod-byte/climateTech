@@ -5,44 +5,20 @@ import { motion } from 'framer-motion';
 export default function CollaboratorsSection() {
   const collaborators = [
     {
-      name: "Indian Institute of Technology Delhi",
-      logo: "https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=200",
-      description: "Research collaboration on AI and climate technology"
+      name: "Indian Institute of Technology Mandi",
+      logo: "https://iitmandi.ac.in/images/dora/gallery/campus/campus3.jpeg",
     },
     {
-      name: "Indian Space Research Organisation",
-      logo: "https://images.pexels.com/photos/256541/pexels-photo-256541.jpeg?auto=compress&cs=tinysrgb&w=200",
-      description: "Satellite data integration for weather monitoring"
+      name: "Indian Institute of Technology Mandi ihub",
+      logo: "https://syncubator.in/assets/img_ihub_logo_new_2.png",
     },
     {
-      name: "National Disaster Management Authority",
-      logo: "https://images.pexels.com/photos/256559/pexels-photo-256559.jpeg?auto=compress&cs=tinysrgb&w=200",
-      description: "Emergency response protocol development"
+      name: "Indian Institute of Technology Mandi catalyst",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs_A4gcXehBB2OS27WHoFut3cn7kGi51vAJw&s",
     },
     {
-      name: "India Meteorological Department",
-      logo: "https://images.pexels.com/photos/256381/pexels-photo-256381.jpeg?auto=compress&cs=tinysrgb&w=200",
-      description: "Weather data and forecasting partnership"
-    },
-    {
-      name: "Tata Consultancy Services",
-      logo: "https://images.pexels.com/photos/256262/pexels-photo-256262.jpeg?auto=compress&cs=tinysrgb&w=200",
-      description: "Technology development and system integration"
-    },
-    {
-      name: "Reliance Jio",
-      logo: "https://images.pexels.com/photos/256318/pexels-photo-256318.jpeg?auto=compress&cs=tinysrgb&w=200",
-      description: "5G network infrastructure and IoT connectivity"
-    },
-    {
-      name: "Indian Institute of Science",
-      logo: "https://images.pexels.com/photos/256417/pexels-photo-256417.jpeg?auto=compress&cs=tinysrgb&w=200",
-      description: "Environmental engineering research collaboration"
-    },
-    {
-      name: "Ministry of Earth Sciences",
-      logo: "https://images.pexels.com/photos/256453/pexels-photo-256453.jpeg?auto=compress&cs=tinysrgb&w=200",
-      description: "Climate monitoring and data sharing partnership"
+      name: "Indian Institute of Technology Ropar Awadh",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyj8tSQnyisG4BiXRHASPFdCejgMXX8wO6UONePaxoj20xnEbrJEFtUytDQ87LDwok5bw&usqp=CAU",
     }
   ];
 
