@@ -16,7 +16,11 @@ export default function AboutSection() {
       title: "AI Flood Prediction",
       description: "Machine learning algorithms trained on Indian weather patterns to predict flooding 5+ minutes in advance"
     },
-    ,
+    {
+      icon: <Smartphone className="h-8 w-8 text-green-600" />,
+      title: "Multi-language Alerts",
+      description: "Instant SMS, app, and voice alerts in Hindi, English, and regional languages to authorities and residents"
+    },
     {
       icon: <Wifi className="h-8 w-8 text-indigo-600" />,
       title: "4G/5G Connectivity",
