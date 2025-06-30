@@ -25,8 +25,6 @@ export default function Footer() {
             className="text-center"
           >
             <div className="flex items-center justify-center space-x-2 mb-4">
-              <Shield className="h-8 w-8 text-blue-400" />
-              <span className="text-xl font-bold">ClimateTech.life</span>
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed max-w-2xl mx-auto">
               Protecting Indian communities from monsoon floods with AI-powered early warning technology. 
@@ -62,7 +60,7 @@ export default function Footer() {
         >
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm text-gray-400">
-              © 2025 ClimateTech.life. All rights reserved. | Built for Indian monsoon flood prevention.
+              © 2025 climmatech.life. All rights reserved. | Built for Indian monsoon flood prevention.
             </div>
             
             {/* Social Links */}

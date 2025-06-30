@@ -10,6 +10,15 @@ export default function TeamSection() {
 
   const teamMembers = [
     {
+      name: "Dr. Vivek Gupta",
+      role: "Mentor",
+      expertise: "Mentor",
+      description: "Faculty Advisor at Visiflow, Prof. Vivek Gupta provides guidance on technical strategy and research direction. His expertise and mentorship play a vital role in shaping the project's real-world impact and academic rigor.",
+      image: "https://pbs.twimg.com/profile_images/1639867545548382208/hx9KZE5z_400x400.jpg",
+      linkedin: "#",
+      twitter: "#"
+    },
+    {
       name: "Dharkan Anand",
       role: "Chief Technology Officer",
       expertise: "Mentor",
@@ -35,8 +44,7 @@ export default function TeamSection() {
       image: "https://om-bhaiya-veriflow-exvx.vercel.app/kunal.jpg",
       linkedin: "#",
       twitter: "#"
-    },
-    
+    }
   ];
 
   const itemsPerSlide = 3;
