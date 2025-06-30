@@ -44,11 +44,11 @@ export default function Navigation() {
             className="flex items-center space-x-2"
             whileHover={{ scale: 1.05 }}
           >
-            <Shield className="h-8 w-8 text-blue-500" />
+            <img src='/images/logo.jpeg' alt="Logo" className="w-8 h-8" />
             <span className={`text-xl font-bold ${
               isScrolled ? 'text-foreground' : 'text-white'
             }`}>
-              ClimateTech.life
+              climmatech.life
             </span>
           </motion.div>
 

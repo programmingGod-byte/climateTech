@@ -38,15 +38,15 @@ export default function Footer() {
             <div className="flex flex-col md:flex-row justify-center items-center space-y-3 md:space-y-0 md:space-x-8">
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-blue-400" />
-                <span className="text-sm text-gray-400">sales@climatetech.life</span>
+                <span className="text-sm text-gray-400">admin@climmatech.life</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-blue-400" />
-                <span className="text-sm text-gray-400">+91 98765 43210</span>
+                <span className="text-sm text-gray-400">+91 74880 11618</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="h-4 w-4 text-blue-400" />
-                <span className="text-sm text-gray-400">Noida, UP, India</span>
+                <span className="text-sm text-gray-400">Mandi, Himachal Pradesh, India</span>
               </div>
             </div>
           </motion.div>

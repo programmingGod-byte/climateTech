@@ -20,13 +20,7 @@ export default function AboutSection() {
       icon: <Smartphone className="h-8 w-8 text-green-600" />,
       title: "Multi-language Alerts",
       description: "Instant SMS, app, and voice alerts in Hindi, English, and regional languages to authorities and residents"
-    },
-    {
-      icon: <Wifi className="h-8 w-8 text-indigo-600" />,
-      title: "4G/5G Connectivity",
-      description: "Seamless integration with Indian telecom infrastructure via Jio, Airtel, and BSNL networks"
-    },
-    
+    }
   ];
 
   return (

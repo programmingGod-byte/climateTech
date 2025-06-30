@@ -10,59 +10,33 @@ export default function TeamSection() {
 
   const teamMembers = [
     {
-      name: "Dr. Rajesh Sharma",
+      name: "Dharkan Anand",
       role: "Chief Technology Officer",
-      expertise: "AI & Machine Learning",
-      description: "15+ years in climate technology and disaster management systems. PhD in Environmental Engineering from IIT Delhi.",
-      image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400",
+      expertise: "Mentor",
+      description: "Dharkan leads the vision and core development of the system. With a strong foundation in engineering, he focuses on turning complex river data into actionable insights for early flood detection.",
+      image: "https://om-bhaiya-veriflow-exvx.vercel.app/dharkanBhaiya.jpg",
       linkedin: "#",
       twitter: "#"
     },
     {
-      name: "Priya Patel",
+      name: "Om maheshwari",
       role: "Head of Product Development",
       expertise: "IoT & Sensor Technology",
-      description: "Expert in IoT systems and sensor networks. Former lead engineer at Tata Consultancy Services with 12 years experience.",
-      image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=400",
+      description: "Om brings a sharp technical mindset and a practical approach to problem-solving. He plays a key role in developing robust systems and ensuring the reliability of our flood monitoring technology in real-world conditions.",
+      image: "https://om-bhaiya-veriflow-exvx.vercel.app/omBhaiya.jpg",
       linkedin: "#",
       twitter: "#"
     },
     {
-      name: "Arjun Kumar",
-      role: "Lead Data Scientist",
-      expertise: "Predictive Analytics",
-      description: "Specializes in weather prediction models and flood forecasting. MS in Data Science from IISc Bangalore.",
-      image: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400",
+      name: "Kunal Mittal",
+      role: "Core Member",
+      expertise: "IoT & Sensor Technology",
+      description: "A core team member at Visiflow, Kunal focuses on building seamless user experiences and scalable backend systems. His work bridges the gap between field data and intuitive digital platforms, helping deliver real-time insights to users.",
+      image: "https://om-bhaiya-veriflow-exvx.vercel.app/kunal.jpg",
       linkedin: "#",
       twitter: "#"
     },
-    {
-      name: "Sneha Gupta",
-      role: "Director of Operations",
-      expertise: "Project Management",
-      description: "Operations expert with experience in large-scale technology deployments across Indian cities and rural areas.",
-      image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400",
-      linkedin: "#",
-      twitter: "#"
-    },
-    {
-      name: "Vikram Singh",
-      role: "Hardware Engineering Lead",
-      expertise: "Embedded Systems",
-      description: "Hardware design specialist with focus on ruggedized systems for harsh Indian weather conditions.",
-      image: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400",
-      linkedin: "#",
-      twitter: "#"
-    },
-    {
-      name: "Kavya Reddy",
-      role: "AI Research Scientist",
-      expertise: "Deep Learning",
-      description: "AI researcher focused on climate prediction models. Published researcher with 20+ papers in climate technology.",
-      image: "https://images.pexels.com/photos/1181424/pexels-photo-1181424.jpeg?auto=compress&cs=tinysrgb&w=400",
-      linkedin: "#",
-      twitter: "#"
-    }
+    
   ];
 
   const itemsPerSlide = 3;

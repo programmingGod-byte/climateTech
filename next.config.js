@@ -4,11 +4,11 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  typescript: {
-    ignoreBuildErrors: true, // ✅ Skip type checking
-  },
   images: {
     unoptimized: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true, // ✅ Add this to skip type errors
   },
 };
 
