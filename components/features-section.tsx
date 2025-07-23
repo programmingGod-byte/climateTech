@@ -6,6 +6,7 @@ import {
   Activity, 
   CloudRain, 
   Bell, 
+  Move3DIcon,
   Wrench, 
   Clock, 
   Shield,
@@ -28,21 +29,22 @@ export default function FeaturesSection() {
       title: "AI-Powered Rainfall Prediction",
       description: "Machine learning algorithms analyze weather patterns, atmospheric conditions, and historical data to predict rainfall intensity and flooding probability up to 48 hours in advance.",
       benefits: ["48-hour forecasting", "Weather pattern analysis", "ML-driven insights"],
-      color: "bg-purple-50 border-purple-200"
+      color: "bg-blue-50 border-blue-200"
     },
     {
-      icon: <Bell className="h-12 w-12 text-red-600" />,
-      title: "Multi-Channel Emergency Alerts",
-      description: "Instant notifications via SMS, mobile app, email, and emergency broadcast systems. Customizable alert thresholds for different stakeholder groups and escalation protocols.",
-      benefits: ["Multi-channel alerts", "Custom thresholds", "Emergency protocols"],
-      color: "bg-red-50 border-red-200"
-    },
+  icon: <Move3DIcon className="h-12 w-12 text-indigo-600" />,
+  title: "3D Visualization with Digital Twins",
+  description: "Real-time 3D model integration provides a virtual representation of water systems. Digital Twins enable advanced simulation, monitoring, and analysis for better decision-making.",
+  benefits: ["Real-time 3D views", "Predictive simulation", "Enhanced situational awareness"],
+  color: "bg-blue-50 border-blue-200"
+}
+,
     {
       icon: <Wrench className="h-12 w-12 text-green-600" />,
       title: "Easy Installation & Maintenance",
       description: "Plug-and-play installation with minimal infrastructure requirements. Self-diagnostic capabilities and remote monitoring reduce maintenance costs and ensure optimal performance.",
       benefits: ["Quick deployment", "Self-diagnostics", "Remote monitoring"],
-      color: "bg-green-50 border-green-200"
+      color: "bg-blue-50 border-blue-200"
     }
   ];
 
@@ -63,13 +65,10 @@ export default function FeaturesSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Advanced Features for Complete Protection
+          <h2 className="text-3xl sm:text-4xl font-sans text-gray-900 mb-4">
+            Advanced <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Features</span> for Complete Protection
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Our comprehensive flood prevention system offers cutting-edge technology 
-            and intelligent automation to keep your community safe.
-          </p>
+          
         </motion.div>
 
         {/* Main Features Grid */}
@@ -82,7 +81,7 @@ export default function FeaturesSection() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className={`h-full ${feature.color} border-2 hover:shadow-xl transition-all duration-300`}>
+              <Card className={`h-full bg-blue-50 border-blue-200 border-2 hover:shadow-xl transition-all duration-300`}>
                 <CardContent className="p-8">
                   <div className="flex items-start space-x-4">
                     <motion.div
@@ -94,7 +93,7 @@ export default function FeaturesSection() {
                     </motion.div>
                     
                     <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                      <h3 className="text-2xl  font-sans text-gray-900 mb-3">
                         {feature.title}
                       </h3>
                       <p className="text-gray-700 mb-4 leading-relaxed">
@@ -121,7 +120,7 @@ export default function FeaturesSection() {
         </div>
 
         {/* Additional Features */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -147,10 +146,10 @@ export default function FeaturesSection() {
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Technical Specifications */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -176,7 +175,7 @@ export default function FeaturesSection() {
               <p className="opacity-90">System Uptime</p>
             </div>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

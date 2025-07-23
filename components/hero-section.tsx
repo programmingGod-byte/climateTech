@@ -29,22 +29,32 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background with gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800" />
+      {/* Background with gradient and flood prevention image */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800" style={{ zIndex: 1 }} />
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+        style={{
+          backgroundImage: `url('https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')`,
+          zIndex: 1
+        }}
+      />
       
       {/* Raindrop Shader Effect */}
-      <RaindropShader />
+      <div style={{ zIndex: 2 }}>
+        
+      </div>
       
       {/* Atmospheric overlay */}
-      <div className="absolute inset-0 bg-black/30" style={{ zIndex: 2 }} />
+      <div className="absolute inset-0 bg-black/20" style={{ zIndex: 3 }} />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20" style={{ zIndex: 10 }}>
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Text content */}
           <div className="text-center lg:text-left">
             <motion.h1 
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
+              className="text-4xl sm:text-5xl lg:text-6xl  text-white mb-6 leading-tight"
               initial={{ opacity: 0, y: 20 }}
+              style={{fontFamily:"sans-serif"}}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
@@ -54,15 +64,6 @@ export default function HeroSection() {
               </span>
             </motion.h1>
             
-            <motion.p 
-              className="text-xl text-white/90 mb-8 max-w-2xl mx-auto lg:mx-0"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              Our robot helps provide early warning of floods so people can evacuate safely. 
-              Simply installed on bridges, it continuously monitors river water flow and depth beneath.
-            </motion.p>
 
             <motion.div 
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"

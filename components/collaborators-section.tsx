@@ -28,7 +28,7 @@ export default function CollaboratorsSection() {
 
   return (
     <section className="py-24 bg-white dark:bg-gray-900">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6" id="partners">
         {/* Title */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -37,10 +37,11 @@ export default function CollaboratorsSection() {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white">
-            In Collaboration With
+          <h2 className="text-4xl font-sans text-gray-900 dark:text-white">
+            <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+            In Collaboration With</span>
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 mt-4 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 font-sans   dark:text-gray-300 mt-4 max-w-3xl mx-auto">
             We're proud to collaborate with India’s leading institutions in building a more resilient future.
           </p>
         </motion.div>
@@ -64,7 +65,7 @@ export default function CollaboratorsSection() {
                     className="w-24 h-24 object-contain rounded-xl mx-auto transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                <h3 className="text-lg font-medium font-sans text-gray-900 dark:text-white mb-2">
                   {collab.name}
                 </h3>
                 <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
@@ -76,7 +77,7 @@ export default function CollaboratorsSection() {
         </div>
 
         {/* CTA */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
@@ -96,7 +97,7 @@ export default function CollaboratorsSection() {
           >
             Explore Partnership Opportunities
           </motion.button>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

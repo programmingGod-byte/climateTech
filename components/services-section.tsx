@@ -180,7 +180,7 @@ export default function ServicesSection() {
       buttonText: "Learn More",
       buttonAction: () => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' }),
       visual: <WaterWave />,
-      gradient: "from-blue-50 to-cyan-50",
+      gradient: "from-slate-50 to-slate-50",
       iconColor: "text-blue-600"
     },
     {
@@ -195,7 +195,7 @@ export default function ServicesSection() {
       buttonText: "Contact Us for a Quotation",
       buttonAction: () => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }),
       visual: <AnimatedDrone />,
-      gradient: "from-slate-50 to-blue-50",
+      gradient: "from-slate-50 to-slate-50",
       iconColor: "text-slate-600"
     }
   ];
@@ -210,13 +210,10 @@ export default function ServicesSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-5xl sm:text-4xl  text-gray-900 mb-4 font-sans">
             Comprehensive Flood Management Solutions
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            From ground-level monitoring to aerial surveillance, we provide complete 
-            disaster management technology for Indian communities and organizations.
-          </p>
+          
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12">
@@ -228,7 +225,7 @@ export default function ServicesSection() {
               transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
             >
-              <Card className={`h-full bg-gradient-to-br ${service.gradient} border-0 shadow-xl hover:shadow-2xl transition-all duration-300 group`}>
+              <Card className={`h-full bg-gradient-to-br  ${service.gradient} border-0 shadow-xl hover:shadow-2xl transition-all duration-300 group`}>
                 <CardContent className="p-8">
                   {/* Visual Component */}
                   <motion.div
@@ -241,11 +238,11 @@ export default function ServicesSection() {
 
                   {/* Content */}
                   <div className="space-y-6">
-                    <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                    <h3 className="text-2xl font text-gray-900 font-sans transition-colors">
                       {service.title}
                     </h3>
                     
-                    <p className="text-gray-700 leading-relaxed">
+                    <p className="text-gray-700 leading-relaxed font-sans">
                       {service.description}
                     </p>
                     
@@ -260,8 +257,9 @@ export default function ServicesSection() {
                           viewport={{ once: true }}
                           className="flex items-center space-x-3"
                         >
+                          
                           <div className={`w-2 h-2 rounded-full ${service.iconColor.replace('text-', 'bg-')} flex-shrink-0`} />
-                          <span className="text-gray-700 text-sm">{feature}</span>
+                          <span className="text-gray-700 font-sans text-sm">{feature}</span>
                         </motion.div>
                       ))}
                     </div>
@@ -288,7 +286,7 @@ export default function ServicesSection() {
         </div>
 
         {/* Bottom CTA Section */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -321,7 +319,7 @@ export default function ServicesSection() {
               View Technology
             </motion.button>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

@@ -292,7 +292,7 @@ function MediaTabs({ product, index }) {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
-        className="relative bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8 shadow-lg"
+        
       >
         {activeTab === 'image' ? (
           <img
@@ -308,9 +308,16 @@ function MediaTabs({ product, index }) {
         )}
         
         {/* Floating Badge */}
-        <div className="absolute -top-4 -right-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
-          Made in India
-        </div>
+      <div className="absolute -top-1 -right-1 text-white  rounded-xl text-sm font-semibold shadow-lg flex flex-col items-center ">
+  <img
+    src="/images/madeinIndia.png"
+    alt="Made in India"
+    className="w-20 h-20 object-contain"
+  />
+  
+</div>
+
+
       </motion.div>
     </div>
   );
@@ -370,9 +377,10 @@ export default function ProductsSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Presenting Our Products
-          </h2>
+          <h2 className="text-6xl sm:text-6xl font-sans text-gray-900 mb-4">
+  Presenting Our <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Products</span>
+</h2>
+
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Comprehensive flood prevention solutions designed specifically for Indian conditions, 
             from advanced sensors to AI-powered analytics and cloud-based monitoring systems.
@@ -394,13 +402,11 @@ export default function ProductsSection() {
               {/* Content */}
               <div className={`space-y-6 ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
                 <div className="flex items-center space-x-3">
-                  <div className="p-2 bg-gray-100 rounded-lg">
-                    {product.icon}
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900">{product.title}</h3>
+                  
+                  <h3 className="text-2xl font-sans text-gray-900 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">{product.title}</h3>
                 </div>
                 
-                <p className="text-lg text-gray-600 leading-relaxed">
+                <p className="text-lg font-sans text-gray-600 leading-relaxed">
                   {product.description}
                 </p>
                 
@@ -408,7 +414,7 @@ export default function ProductsSection() {
                   {product.features.map((feature, featureIndex) => (
                     <div
                       key={featureIndex}
-                      className="flex items-center space-x-2 text-sm text-gray-700"
+                      className="flex font-sans items-center space-x-2 text-sm text-gray-700"
                     >
                       <div className="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0" />
                       <span>{feature}</span>

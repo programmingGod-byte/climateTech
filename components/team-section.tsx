@@ -20,7 +20,7 @@ export default function TeamSection() {
     },
     {
       name: "Dharkan Anand",
-      role: "Chief Technology Officer",
+      role: "Mentor",
       expertise: "Mentor",
       description: "Dharkan leads the vision and core development of the system. With a strong foundation in engineering, he focuses on turning complex river data into actionable insights for early flood detection.",
       image: "https://om-bhaiya-veriflow-exvx.vercel.app/dharkanBhaiya.jpg",
@@ -37,7 +37,8 @@ export default function TeamSection() {
       twitter: "#"
     },
     {
-      name: "Kunal Mittal",
+      name: 
+      "Kunal Mittal",
       role: "Core Member",
       expertise: "IoT & Sensor Technology",
       description: "A core team member at Visiflow, Kunal focuses on building seamless user experiences and scalable backend systems. His work bridges the gap between field data and intuitive digital platforms, helping deliver real-time insights to users.",
@@ -64,7 +65,7 @@ export default function TeamSection() {
   };
 
   return (
-    <section className="py-20 bg-gray-50 dark:bg-gray-900">
+    <section  className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -73,12 +74,9 @@ export default function TeamSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl font-sans text-gray-900 dark:text-white mb-4">
             Discover the Expertise Behind Our Innovations
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Our team is dedicated to advancing flood prevention with exceptional skills and unwavering commitment.
-          </p>
         </motion.div>
 
         {/* Team Slider */}
@@ -90,46 +88,66 @@ export default function TeamSection() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="group h-80"
               >
-                <Card className="h-full hover:shadow-xl transition-all duration-300 dark:bg-gray-800">
-                  <CardContent className="p-6 text-center">
-                    <div className="relative mb-6">
-                      <img
-                        src={member.image}
-                        alt={member.name}
-                        className="w-24 h-24 rounded-full object-cover mx-auto mb-4 border-4 border-blue-100 dark:border-blue-900"
-                      />
-                      <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-medium">
-                        {member.expertise}
-                      </div>
-                    </div>
+                <div className="relative w-full h-full [perspective:1000px]">
+                  <div className="relative w-full h-full transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
                     
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">
-                      {member.name}
-                    </h3>
-                    <p className="text-blue-600 dark:text-blue-400 font-medium mb-3">
-                      {member.role}
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
-                      {member.description}
-                    </p>
-                    
-                    <div className="flex justify-center space-x-3">
-                      <a
-                        href={member.linkedin}
-                        className="text-gray-400 hover:text-blue-600 transition-colors"
-                      >
-                        <Linkedin className="h-5 w-5" />
-                      </a>
-                      <a
-                        href={member.twitter}
-                        className="text-gray-400 hover:text-blue-400 transition-colors"
-                      >
-                        <Twitter className="h-5 w-5" />
-                      </a>
-                    </div>
-                  </CardContent>
-                </Card>
+                    {/* Front of Card - Only Image and Name */}
+                    <Card className="absolute inset-0 w-full h-full [backface-visibility:hidden] bg-white dark:bg-gray-800 shadow-lg">
+                      <CardContent className="p-0 h-full w-full">
+  <div className="relative w-full h-full">
+    <img
+      src={member.image}
+      alt={member.name}
+      className="object-cover w-full h-full rounded-lg"
+    />
+    <div className="absolute bottom-0 w-full  text-white text-center py-2 backdrop-blur-sm">
+      <h3 className="text-lg font-semibold">{member.name}</h3>
+    </div>
+  </div>
+</CardContent>
+                    </Card>
+
+                    {/* Back of Card - All Other Information */}
+                    <Card className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-900 shadow-lg">
+                      <CardContent className="p-6 text-center h-full flex flex-col justify-between">
+                        <div>
+                          <div className="relative mb-4">
+                            <div className="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-medium inline-block mb-3">
+                              {member.expertise}
+                            </div>
+                          </div>
+                          
+                          <h3 className="text-xl font-sans text-gray-900 dark:text-white mb-1">
+                            {member.name}
+                          </h3>
+                          <p className="text-blue-600 dark:text-blue-400 font-medium mb-3 text-sm">
+                            {member.role}
+                          </p>
+                          <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                            {member.description}
+                          </p>
+                        </div>
+                        
+                        <div className="flex justify-center space-x-4 mt-4">
+                          {/* <a
+                            href={member.linkedin}
+                            className="text-gray-400 hover:text-blue-600 transition-colors p-2 bg-white dark:bg-gray-700 rounded-full shadow-md hover:shadow-lg"
+                          >
+                            <Linkedin className="h-5 w-5" />
+                          </a>
+                          <a
+                            href={member.twitter}
+                            className="text-gray-400 hover:text-blue-400 transition-colors p-2 bg-white dark:bg-gray-700 rounded-full shadow-md hover:shadow-lg"
+                          >
+                            <Twitter className="h-5 w-5" />
+                          </a> */}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -139,13 +157,13 @@ export default function TeamSection() {
             <>
               <button
                 onClick={prevSlide}
-                className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-full p-3 shadow-lg transition-all"
+                className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-full p-3 shadow-lg transition-all hover:scale-110"
               >
                 <ChevronLeft className="h-6 w-6 text-gray-600 dark:text-gray-300" />
               </button>
               <button
                 onClick={nextSlide}
-                className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-full p-3 shadow-lg transition-all"
+                className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-full p-3 shadow-lg transition-all hover:scale-110"
               >
                 <ChevronRight className="h-6 w-6 text-gray-600 dark:text-gray-300" />
               </button>
@@ -161,8 +179,8 @@ export default function TeamSection() {
                   onClick={() => setCurrentSlide(index)}
                   className={`w-3 h-3 rounded-full transition-all ${
                     index === currentSlide 
-                      ? 'bg-blue-600' 
-                      : 'bg-gray-300 dark:bg-gray-600'
+                      ? 'bg-blue-600 scale-125' 
+                      : 'bg-gray-300 dark:bg-gray-600 hover:bg-gray-400'
                   }`}
                 />
               ))}

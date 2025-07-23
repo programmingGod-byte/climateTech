@@ -20,7 +20,7 @@ export default function Navigation() {
   }, []);
 
   const navItems = [
-    { name: 'About', href: '#about' },
+    
     { name: 'Features', href: '#features' },
     { name: 'Impact', href: '#impact' },
     { name: 'Partners', href: '#partners' },
@@ -31,24 +31,18 @@ export default function Navigation() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-background/95 backdrop-blur-md shadow-lg border-b' 
-          : 'bg-black/20 backdrop-blur-sm'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-md shadow-lg border-b`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <motion.div 
             className="flex items-center space-x-2"
-            whileHover={{ scale: 1.05 }}
+            
           >
-            <img src='/images/logo.jpeg' alt="Logo" className="w-8 h-8" />
-            <span className={`text-xl font-bold ${
-              isScrolled ? 'text-foreground' : 'text-white'
-            }`}>
-              climmatech.life
+            <img src='/images/logo-removebg-preview.png' alt="Logo" className="w-16 h-16" />
+            <span className={`text-3xl font-sans text-foreground`}>
+              ClimMaTech
             </span>
           </motion.div>
 
@@ -58,11 +52,7 @@ export default function Navigation() {
               <motion.a
                 key={item.name}
                 href={item.href}
-                className={`transition-colors font-medium ${
-                  isScrolled 
-                    ? 'text-foreground/80 hover:text-foreground' 
-                    : 'text-white/90 hover:text-white'
-                }`}
+                className={`transition-colors font-medium font-sans text-foreground/80 hover:text-foreground`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -85,7 +75,7 @@ export default function Navigation() {
             </Button>
             
             <Button 
-              className="bg-blue-600 hover:bg-blue-700 text-white"
+              className="bg-gradient-to-r from-cyan-400 to-blue-500 text-white"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Request Demo
