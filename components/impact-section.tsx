@@ -11,8 +11,6 @@ export default function ImpactSection() {
       value: "₹1.2L Cr",
       label: "Annual flood damage in India",
       description: "ClimateTech.life can reduce damages by up to 80%",
-      imageHeight: "h-64",
-      imageWidth: "w-full",
       imageUrl: "/images/disaster/1_t9Y-zCbKZ_k7v9yMUkJvpA.png"
     },
     {
@@ -20,8 +18,6 @@ export default function ImpactSection() {
       value: "40 Cr",
       label: "Indians at flood risk",
       description: "Early warning saves lives and property",
-      imageHeight: "h-80",
-      imageWidth: "w-full",
       imageUrl: "/images/disaster/forty2.png"
     },
     
@@ -30,8 +26,6 @@ export default function ImpactSection() {
       value: "300%",
       label: "Increase in urban flooding",
       description: "Climate change demands smart solutions",
-      imageHeight: "h-48",
-      imageWidth: "w-full",
       imageUrl: "/images/disaster/download.png"
     },
     {
@@ -39,8 +33,6 @@ export default function ImpactSection() {
       value: "85%",
       label: "Monsoon flood increase",
       description: "Urban areas face unprecedented flood risks",
-      imageHeight: "h-72",
-      imageWidth: "w-full",
       imageUrl: "/images/disaster/Hindustan.avif"
     },
     
@@ -100,11 +92,12 @@ export default function ImpactSection() {
                 viewport={{ once: true }}
                 className="break-inside-avoid group cursor-pointer"
               >
-                <div className={`${stat.imageHeight} ${stat.imageWidth} relative overflow-hidden rounded-2xl shadow-lg`}>
+                <div className="relative overflow-hidden rounded-2xl shadow-lg">
                   <img
                     src={stat.imageUrl}
                     alt={stat.label}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                    style={{ display: 'block' }}
                   />
                   
                   {/* Gradient Overlay */}

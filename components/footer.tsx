@@ -8,14 +8,12 @@ export default function Footer() {
   const [email, setEmail] = useState('');
 
   const socialLinks = [
-    { icon: <Twitter className="h-4 w-4" />, href: '#', name: 'Twitter', color: 'hover:text-blue-400' },
-    { icon: <Linkedin className="h-4 w-4" />, href: '#', name: 'LinkedIn', color: 'hover:text-blue-500' },
-    { icon: <Github className="h-4 w-4" />, href: '#', name: 'GitHub', color: 'hover:text-purple-400' },
-    { icon: <Youtube className="h-4 w-4" />, href: '#', name: 'YouTube', color: 'hover:text-red-500' }
+    { icon: <Linkedin className="h-4 w-4" />, href: 'https://www.linkedin.com/company/climmatech/?viewAsMember=true', name: 'LinkedIn', color: 'hover:text-blue-500' },
+    
   ];
 
   const quickLinks = [
-    { name: 'Festures', href: '#features' },
+    { name: 'Features', href: '#features' },
     { name: 'Imapct', href: '#impact' },
     { name: 'Partners', href: '#partners' },
     { name: 'Contact us', href: '#contact' },
@@ -24,7 +22,7 @@ export default function Footer() {
   ];
 
   const stats = [
-    { icon: <Users className="h-5 w-5" />, value: '2', label: 'currently device' },
+   
     { icon: <Shield className="h-5 w-5" />, value: '100%', label: 'Durable' },
     { icon: <Zap className="h-5 w-5" />, value: '90%', label: 'Accuracy' },
     { icon: <Award className="h-5 w-5" />, value: '24/7', label: 'Monitoring' }
@@ -40,7 +38,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white relative overflow-hidden">
+    <footer className="bg-gradient-to-br font-sans from-gray-900 via-blue-900 to-gray-900 text-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -57,7 +55,7 @@ export default function Footer() {
           viewport={{ once: true }}
           className="py-8 border-b border-gray-700/30"
         >
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-center">
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -89,12 +87,12 @@ export default function Footer() {
               className="lg:col-span-2"
             >
               <div className="flex items-center space-x-3 mb-4">
-                <div className="p-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl">
-                  <Shield className="h-6 w-6 text-white" />
+                <div className="p-2  rounded-xl">
+                  <img src='/images/logo-removebg-preview.png' alt="Logo" className="w-16 h-16" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                    ClimmaTech
+                  <h3 className="text-xl font-medium bg-gradient-to-r from-blue-400 font-sans to-cyan-400 bg-clip-text text-transparent">
+                    ClimMaTech
                   </h3>
                   <p className="text-xs text-gray-400">Flood Protection AI</p>
                 </div>
@@ -181,7 +179,7 @@ export default function Footer() {
               viewport={{ once: true }}
               className="md:col-span-2 lg:col-span-1"
             >
-              <h4 className="text-lg font-semibold mb-4 text-white">Connect</h4>
+              <h4 className="text-lg font-semibold mb-4 text-white font-sans">Connect</h4>
               <div className="flex flex-wrap gap-3">
                 {socialLinks.map((social) => (
                   <motion.a
@@ -199,16 +197,7 @@ export default function Footer() {
               </div>
               
               {/* Back to Top in this section */}
-              <motion.button
-                onClick={scrollToTop}
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="mt-4 p-2 bg-gray-800/50 text-gray-400 hover:text-white hover:bg-blue-500/20 rounded-lg transition-all flex items-center space-x-2 text-sm"
-                aria-label="Back to top"
-              >
-                <ArrowUp className="h-4 w-4" />
-                <span>Back to Top</span>
-              </motion.button>
+              
             </motion.div>
           </div>
         </div>
@@ -223,7 +212,7 @@ export default function Footer() {
         >
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-3 sm:space-y-0">
             <div className="text-sm text-gray-400 text-center sm:text-left">
-              © 2025 ClimmaTech.life. All rights reserved.
+              © 2025 ClimMaTech.life. All rights reserved.
             </div>
             
             {/* Made with love - Inline */}

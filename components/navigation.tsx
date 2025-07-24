@@ -20,7 +20,6 @@ export default function Navigation() {
   }, []);
 
   const navItems = [
-    
     { name: 'Features', href: '#features' },
     { name: 'Impact', href: '#impact' },
     { name: 'Partners', href: '#partners' },
@@ -33,12 +32,13 @@ export default function Navigation() {
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-md shadow-lg border-b`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Set a max-width for the content and center it */}
+      <div className=" mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Changed justify-evenly to justify-between */}
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <motion.div 
             className="flex items-center space-x-2"
-            
           >
             <img src='/images/logo-removebg-preview.png' alt="Logo" className="w-16 h-16" />
             <span className={`text-3xl font-sans text-foreground`}>
@@ -65,9 +65,7 @@ export default function Navigation() {
               variant="ghost"
               size="sm"
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              className={`p-2 ${
-                isScrolled ? 'text-foreground' : 'text-white hover:text-white'
-              }`}
+              className="p-2 text-foreground"
             >
               <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
               <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
@@ -88,9 +86,7 @@ export default function Navigation() {
               variant="ghost"
               size="sm"
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              className={`p-2 ${
-                isScrolled ? 'text-foreground' : 'text-white'
-              }`}
+              className="p-2 text-foreground"
             >
               <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
               <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
@@ -103,9 +99,9 @@ export default function Navigation() {
               className="p-2"
             >
               {isOpen ? (
-                <X className={`h-6 w-6 ${isScrolled ? 'text-foreground' : 'text-white'}`} />
+                <X className="h-6 w-6 text-foreground" />
               ) : (
-                <Menu className={`h-6 w-6 ${isScrolled ? 'text-foreground' : 'text-white'}`} />
+                <Menu className="h-6 w-6 text-foreground" />
               )}
             </Button>
           </div>
