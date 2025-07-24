@@ -6,7 +6,7 @@ export default function CollaboratorsSection() {
   const collaborators = [
     {
       name: "Indian Institute of Technology Mandi",
-      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQstmxjgFiBRnetk-vzwsVauNR1Rye_ad-y4w&s",
+      logo: "/images/iitmandi.png",
       description: "Driving innovation in environmental sensing and disaster response."
     },
     {
