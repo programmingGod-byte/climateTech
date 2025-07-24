@@ -32,7 +32,7 @@ export default function Home() {
         {/* <SensorsSection /> */}
         {/* <CoverageSection /> */}
         {/* <TestimonialsSection /> */}
-        <ServicesSection />
+        {/* <ServicesSection /> */}
         <TeamSection />
         <CollaboratorsSection />
         <ContactSection />
