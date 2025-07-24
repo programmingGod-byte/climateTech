@@ -29,7 +29,7 @@ export default function TeamSection() {
     },
     {
       name: "Om maheshwari",
-      role: "Head of Product Development",
+      role: "technological head",
       expertise: "IoT & Sensor Technology",
       description: "Om brings a sharp technical mindset and a practical approach to problem-solving. He plays a key role in developing robust systems and ensuring the reliability of our flood monitoring technology in real-world conditions.",
       image: "https://om-bhaiya-veriflow-exvx.vercel.app/omBhaiya.jpg",
@@ -75,7 +75,7 @@ export default function TeamSection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-sans text-gray-900 dark:text-white mb-4">
-            Discover the Expertise Behind Our Innovations
+            Discover the Expertise Behind Our <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Innovations</span>
           </h2>
         </motion.div>
 

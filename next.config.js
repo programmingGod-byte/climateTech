@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -8,7 +8,7 @@ const nextConfig = {
     unoptimized: true,
   },
   typescript: {
-    ignoreBuildErrors: true, // ✅ Add this to skip type errors
+    ignoreBuildErrors: true, 
   },
 };
 

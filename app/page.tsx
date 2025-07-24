@@ -24,20 +24,20 @@ export default function Home() {
       <main>
         <HeroSection />
         <RobotIntroSection />
-        <ProductsSection />
         <ImpactSection />
+        <ProductsSection />
         <DashboardShowcaseSection/>
         <FeaturesSection />
-        {/* <ServicesSection /> */}
         {/* <AboutSection /> */}
         {/* <SensorsSection /> */}
         {/* <CoverageSection /> */}
         {/* <TestimonialsSection /> */}
+        <ServicesSection />
         <TeamSection />
         <CollaboratorsSection />
         <ContactSection />
       </main>
-      <Footer />
+      {/* <Footer /> */}
 
       {/* 🚀 Scroll to Top Button */}
       <ScrollToTopButton />

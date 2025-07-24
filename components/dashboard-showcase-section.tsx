@@ -227,7 +227,8 @@ export default function DashboardShowcaseSection() {
             </div>
 
             {/* Features Grid */}
-            <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid sm:grid-cols-1 md:grid-cols-1 gap-4 place-items-center">
+
               {dashboardFeatures.map((feature, index) => (
                 <motion.div
                   key={index}
@@ -235,12 +236,12 @@ export default function DashboardShowcaseSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="w-full flex items-start space-x-3 p-4 bg-white/70 backdrop-blur-sm rounded-lg shadow-sm hover:shadow-md transition-shadow border border-white/50"
+                  className="w-full flex items-start place-items-center space-x-3 p-4 bg-white/70 backdrop-blur-sm rounded-lg shadow-sm hover:shadow-md transition-shadow border border-white/50"
                 >
                   {/* <div className="flex-shrink-0 mt-1">{feature.icon}</div> */}
                   <div>
-                    <h4 className="font-medium font-sans text-gray-900 mb-1">{feature.title}</h4>
-                    <p className="text-sm text-gray-600">{feature.description}</p>
+                    <h4 className="font-medium  font-sans text-gray-900 mb-1 place-items-center">{feature.title}</h4>
+                    <p className="text-sm font-sans text-gray-600">{feature.description}</p>
                   </div>
                 </motion.div>
               ))}

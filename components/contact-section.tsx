@@ -170,7 +170,7 @@ export default function ContactSection() {
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Contact Information */}
           <div className="space-y-6">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
+            <h3 className="text-2xl font-sans text-gray-900 mb-6">Contact Information</h3>
             
             {contactInfo.map((info, index) => (
               <div
@@ -179,7 +179,7 @@ export default function ContactSection() {
               >
                 <div className="flex-shrink-0">{info.icon}</div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">{info.title}</h4>
+                  <h4 className="font-medium text-gray-900 font-sans">{info.title}</h4>
                   <p className="text-gray-700">{info.content}</p>
                   <p className="text-sm text-gray-500">{info.secondary}</p>
                 </div>
@@ -191,13 +191,13 @@ export default function ContactSection() {
           <div className="lg:col-span-2">
             <Card className="shadow-lg border-0">
               <CardHeader>
-                <CardTitle className="text-2xl text-gray-900">Contact Us</CardTitle>
+                <CardTitle className="text-2xl text-gray-900 font-medium font-sans">Contact Us</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-6">
                   {/* Full Name */}
                   <div className="space-y-2">
-                    <Label htmlFor="name">Full Name *</Label>
+                    <Label htmlFor="name" className='font-sans'>Full Name *</Label>
                     <Input
                       id="name"
                       value={formData.name}
@@ -290,3 +290,4 @@ export default function ContactSection() {
     </section>
   );
 }
+

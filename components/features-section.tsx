@@ -96,7 +96,7 @@ export default function FeaturesSection() {
                       <h3 className="text-2xl  font-sans text-gray-900 mb-3">
                         {feature.title}
                       </h3>
-                      <p className="text-gray-700 mb-4 leading-relaxed">
+                      <p className="text-gray-700 mb-4 font-sans leading-relaxed">
                         {feature.description}
                       </p>
                       
@@ -105,7 +105,7 @@ export default function FeaturesSection() {
                           <Badge 
                             key={benefitIndex} 
                             variant="secondary"
-                            className="text-xs bg-white/70 text-gray-700"
+                            className="text-xs bg-white/70 font-sans text-gray-700"
                           >
                             {benefit}
                           </Badge>

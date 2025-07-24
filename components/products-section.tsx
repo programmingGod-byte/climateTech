@@ -268,8 +268,8 @@ function MediaTabs({ product, index }) {
           onClick={() => setActiveTab('image')}
           className={`flex-1 py-2 px-4 rounded-md text-sm font-medium transition-all ${
             activeTab === 'image'
-              ? 'bg-white text-blue-600 shadow-sm'
-              : 'text-gray-600 hover:text-gray-800'
+              ? 'bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-sans'
+              : 'text-gray-600 hover:text-gray-800 font-sans'
           }`}
         >
           Image View
@@ -410,26 +410,19 @@ export default function ProductsSection() {
                   {product.description}
                 </p>
                 
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 gap-3">
                   {product.features.map((feature, featureIndex) => (
                     <div
                       key={featureIndex}
                       className="flex font-sans items-center space-x-2 text-sm text-gray-700"
                     >
                       <div className="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0" />
-                      <span>{feature}</span>
+                      <p>{feature}</p>
                     </div>
                   ))}
                 </div>
                 
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-cyan-700 transition-all"
-                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                >
-                  Learn More
-                </motion.button>
+                
               </div>
 
               {/* Media Section with Tabs */}

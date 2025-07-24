@@ -270,13 +270,13 @@ export default function ServicesSection() {
                       whileTap={{ scale: 0.95 }}
                       className="pt-4"
                     >
-                      <Button
+                      {/* <Button
                         onClick={service.buttonAction}
                         className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold py-3 px-6 rounded-lg shadow-lg group"
                       >
                         {service.buttonText}
                         <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                      </Button>
+                      </Button> */}
                     </motion.div>
                   </div>
                 </CardContent>
