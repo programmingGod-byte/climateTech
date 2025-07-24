@@ -13,7 +13,7 @@ export default function ImpactSection() {
       description: "ClimateTech.life can reduce damages by up to 80%",
       imageHeight: "h-64",
       imageWidth: "w-full",
-      imageUrl: "https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=400&h=500&fit=crop"
+      imageUrl: "/images/disaster/1_t9Y-zCbKZ_k7v9yMUkJvpA.png"
     },
     {
       icon: <Users className="h-8 w-8 text-white" />,
@@ -22,7 +22,7 @@ export default function ImpactSection() {
       description: "Early warning saves lives and property",
       imageHeight: "h-80",
       imageWidth: "w-full",
-      imageUrl: "https://images.unsplash.com/photo-1571771019784-3ff35f4f4277?w=400&h=600&fit=crop"
+      imageUrl: "/images/disaster/Hindustan - Copy.avif"
     },
     
     {
@@ -32,7 +32,7 @@ export default function ImpactSection() {
       description: "Climate change demands smart solutions",
       imageHeight: "h-48",
       imageWidth: "w-full",
-      imageUrl: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=350&fit=crop"
+      imageUrl: "/images/disaster/download.png"
     },
     {
       icon: <DollarSign className="h-8 w-8 text-white" />,
@@ -41,7 +41,7 @@ export default function ImpactSection() {
       description: "Urban areas face unprecedented flood risks",
       imageHeight: "h-72",
       imageWidth: "w-full",
-      imageUrl: "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=400&h=550&fit=crop"
+      imageUrl: "/images/disaster/Hindustan.avif"
     },
     
   ];
