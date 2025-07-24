@@ -37,7 +37,7 @@ export default function Home() {
         <CollaboratorsSection />
         <ContactSection />
       </main>
-      {/* <Footer /> */}
+      <Footer />
 
       {/* 🚀 Scroll to Top Button */}
       <ScrollToTopButton />

@@ -8,44 +8,26 @@ export default function Footer() {
   const [email, setEmail] = useState('');
 
   const socialLinks = [
-    { icon: <Twitter className="h-5 w-5" />, href: '#', name: 'Twitter', color: 'hover:text-blue-400' },
-    { icon: <Linkedin className="h-5 w-5" />, href: '#', name: 'LinkedIn', color: 'hover:text-blue-500' },
-    { icon: <Github className="h-5 w-5" />, href: '#', name: 'GitHub', color: 'hover:text-purple-400' },
-    { icon: <Youtube className="h-5 w-5" />, href: '#', name: 'YouTube', color: 'hover:text-red-500' }
+    { icon: <Twitter className="h-4 w-4" />, href: '#', name: 'Twitter', color: 'hover:text-blue-400' },
+    { icon: <Linkedin className="h-4 w-4" />, href: '#', name: 'LinkedIn', color: 'hover:text-blue-500' },
+    { icon: <Github className="h-4 w-4" />, href: '#', name: 'GitHub', color: 'hover:text-purple-400' },
+    { icon: <Youtube className="h-4 w-4" />, href: '#', name: 'YouTube', color: 'hover:text-red-500' }
   ];
 
   const quickLinks = [
-    { name: 'About Us', href: '#' },
-    { name: 'Technology', href: '#' },
-    { name: 'Solutions', href: '#' },
-    { name: 'Research', href: '#' },
-    { name: 'Case Studies', href: '#' },
-    { name: 'Blog', href: '#' }
-  ];
-
-  const services = [
-    { name: 'Flood Prediction AI', href: '#' },
-    { name: 'Early Warning Systems', href: '#' },
-    { name: 'Community Alerts', href: '#' },
-    { name: 'Emergency Response', href: '#' },
-    { name: 'Data Analytics', href: '#' },
-    { name: 'Climate Monitoring', href: '#' }
-  ];
-
-  const support = [
-    { name: 'Help Center', href: '#' },
-    { name: 'Documentation', href: '#' },
-    { name: 'API Reference', href: '#' },
-    { name: 'Community Forum', href: '#' },
-    { name: 'Contact Support', href: '#' },
-    { name: 'Emergency Hotline', href: '#' }
+    { name: 'Festures', href: '#features' },
+    { name: 'Imapct', href: '#impact' },
+    { name: 'Partners', href: '#partners' },
+    { name: 'Contact us', href: '#contact' },
+    { name: 'Web Dashboard', href: 'https://visiflow-tech.vercel.app/' },
+    
   ];
 
   const stats = [
-    { icon: <Users className="h-6 w-6" />, value: '2M+', label: 'People Protected' },
-    { icon: <Shield className="h-6 w-6" />, value: '500+', label: 'Communities Served' },
-    { icon: <Zap className="h-6 w-6" />, value: '99.8%', label: 'Accuracy Rate' },
-    { icon: <Award className="h-6 w-6" />, value: '24/7', label: 'Monitoring' }
+    { icon: <Users className="h-5 w-5" />, value: '2', label: 'currently device' },
+    { icon: <Shield className="h-5 w-5" />, value: '100%', label: 'Durable' },
+    { icon: <Zap className="h-5 w-5" />, value: '90%', label: 'Accuracy' },
+    { icon: <Award className="h-5 w-5" />, value: '24/7', label: 'Monitoring' }
   ];
 
   const scrollToTop = () => {
@@ -53,7 +35,6 @@ export default function Footer() {
   };
 
   const handleSubscribe = () => {
-    // Handle newsletter subscription
     console.log('Subscribed with email:', email);
     setEmail('');
   };
@@ -68,12 +49,38 @@ export default function Footer() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        {/* Stats Section */}
-       
-        {/* Main Footer Content */}
-        <div className="py-16">
-          <div className="grid lg:grid-cols-5 gap-12">
-            {/* Company Info */}
+        {/* Stats Section - Compact */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="py-8 border-b border-gray-700/30"
+        >
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {stats.map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-center p-3 rounded-lg bg-gray-800/20 backdrop-blur-sm border border-gray-700/30"
+              >
+                <div className="flex justify-center mb-2 text-blue-400">
+                  {stat.icon}
+                </div>
+                <div className="text-lg font-bold text-white">{stat.value}</div>
+                <div className="text-xs text-gray-400">{stat.label}</div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Main Footer Content - Reduced Padding */}
+        <div className="py-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Company Info - More Compact */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -81,60 +88,84 @@ export default function Footer() {
               viewport={{ once: true }}
               className="lg:col-span-2"
             >
-              <div className="flex items-center space-x-3 mb-6">
+              <div className="flex items-center space-x-3 mb-4">
                 <div className="p-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl">
-                  <Shield className="h-8 w-8 text-white" />
+                  <Shield className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                  <h3 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
                     ClimmaTech
                   </h3>
                   <p className="text-xs text-gray-400">Flood Protection AI</p>
                 </div>
               </div>
               
-              <p className="text-gray-300 mb-6 leading-relaxed">
+              <p className="text-gray-300 mb-4 text-sm leading-relaxed font-sans">
                 Revolutionizing flood protection in India with cutting-edge AI technology. 
-                We provide real-time monitoring, predictive analytics, and early warning 
-                systems to safeguard communities from monsoon flooding.
+                Real-time monitoring, predictive analytics, and early warning systems.
               </p>
               
-              {/* Newsletter Signup */}
+              {/* Newsletter Signup - Compact */}
+              {/* <div className="mb-4">
+                <div className="flex">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Enter your email"
+                    className="flex-1 px-3 py-2 bg-gray-800/50 border border-gray-600 rounded-l-lg text-sm text-white placeholder-gray-400 focus:outline-none focus:border-blue-500"
+                  />
+                  <button
+                    onClick={handleSubscribe}
+                    className="px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-sm font-medium rounded-r-lg hover:from-blue-600 hover:to-cyan-600 transition-all"
+                  >
+                    Subscribe
+                  </button>
+                </div>
+              </div> */}
               
-              {/* Contact Info */}
-              <div className="space-y-3">
-                <div className="flex items-center space-x-3 text-gray-300">
-                  <Mail className="h-4 w-4 text-blue-400 flex-shrink-0" />
-                  <span className="text-sm">admin@climmatech.life</span>
+              {/* Contact Info - Grid Layout for Better Space Usage */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
+                <div className="flex items-center space-x-2 text-gray-300">
+                  <Mail className="h-3 w-3 text-blue-400 flex-shrink-0" />
+                  <span className="truncate font-sans">admin@climmatech.life</span>
                 </div>
-                <div className="flex items-center space-x-3 text-gray-300">
-                  <Phone className="h-4 w-4 text-blue-400 flex-shrink-0" />
-                  <span className="text-sm">+91 74880 11618</span>
+                <div className="flex items-center space-x-2 text-gray-300">
+                  <Mail className="h-3 w-3 text-blue-400 flex-shrink-0" />
+                  <span className="truncate font-sans">om@climmatech.life</span>
                 </div>
-                <div className="flex items-center space-x-3 text-gray-300">
-                  <MapPin className="h-4 w-4 text-blue-400 flex-shrink-0" />
-                  <span className="text-sm">Mandi, Himachal Pradesh, India</span>
+                <div className="flex items-center space-x-2 text-gray-300">
+                  <Mail className="h-3 w-3 text-blue-400 flex-shrink-0" />
+                  <span className="truncate font-sans">dharkan@climmatech.life</span>
+                </div>
+                <div className="flex items-center space-x-2 text-gray-300">
+                  <Phone className="h-3 w-3 text-blue-400 flex-shrink-0" />
+                  <span className='font-sans'>+91 74880 11618</span>
+                </div>
+                <div className="flex items-center space-x-2 text-gray-300 sm:col-span-2">
+                  <MapPin className="h-3 w-3 text-blue-400 flex-shrink-0" />
+                  <span className='font-sans'>Mandi, Himachal Pradesh, India</span>
                 </div>
               </div>
             </motion.div>
 
-            {/* Quick Links */}
+            {/* Quick Links - More Compact */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              <h4 className="text-lg font-semibold mb-6 text-white">Company</h4>
-              <ul className="space-y-3">
+              <h4 className="text-lg font-semibold mb-4 text-white">Company</h4>
+              <ul className="space-y-2">
                 {quickLinks.map((link) => (
                   <li key={link.name}>
                     <motion.a
                       href={link.href}
-                      whileHover={{ x: 5 }}
-                      className="text-gray-400 hover:text-white transition-colors flex items-center group"
+                      whileHover={{ x: 3 }}
+                      className="text-gray-400 hover:text-white transition-colors flex items-center group text-sm"
                     >
-                      <ChevronRight className="h-3 w-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <ChevronRight className="h-3 w-3 mr-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                       {link.name}
                     </motion.a>
                   </li>
@@ -142,110 +173,60 @@ export default function Footer() {
               </ul>
             </motion.div>
 
-            {/* Services */}
+            {/* Social Links Column */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
+              className="md:col-span-2 lg:col-span-1"
             >
-              <h4 className="text-lg font-semibold mb-6 text-white">Solutions</h4>
-              <ul className="space-y-3">
-                {services.map((service) => (
-                  <li key={service.name}>
-                    <motion.a
-                      href={service.href}
-                      whileHover={{ x: 5 }}
-                      className="text-gray-400 hover:text-white transition-colors flex items-center group"
-                    >
-                      <ChevronRight className="h-3 w-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
-                      {service.name}
-                    </motion.a>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-
-            {/* Support */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              viewport={{ once: true }}
-            >
-              <h4 className="text-lg font-semibold mb-6 text-white">Support</h4>
-              <ul className="space-y-3">
-                {support.map((item) => (
-                  <li key={item.name}>
-                    <motion.a
-                      href={item.href}
-                      whileHover={{ x: 5 }}
-                      className="text-gray-400 hover:text-white transition-colors flex items-center group"
-                    >
-                      <ChevronRight className="h-3 w-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
-                      {item.name}
-                    </motion.a>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          </div>
-        </div>
-
-        {/* Bottom Footer */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="border-t border-gray-700/50 py-8"
-        >
-          <div className="flex flex-col lg:flex-row justify-between items-center space-y-6 lg:space-y-0">
-            <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
-              <div className="text-sm text-gray-400">
-                © 2025 ClimmaTech.life. All rights reserved.
-              </div>
-              <div className="flex items-center space-x-4 text-sm">
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
-                <span className="text-gray-600">•</span>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
-                <span className="text-gray-600">•</span>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">Cookie Policy</a>
-              </div>
-            </div>
-            
-            <div className="flex items-center space-x-6">
-              {/* Social Links */}
-              <div className="flex space-x-3">
+              <h4 className="text-lg font-semibold mb-4 text-white">Connect</h4>
+              <div className="flex flex-wrap gap-3">
                 {socialLinks.map((social) => (
                   <motion.a
                     key={social.name}
                     href={social.href}
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.9 }}
-                    className={`text-gray-400 ${social.color} transition-all p-2 rounded-lg hover:bg-gray-800/50`}
+                    className={`text-gray-400 ${social.color} transition-all p-2 rounded-lg hover:bg-gray-800/50 flex items-center space-x-2`}
                     aria-label={social.name}
                   >
                     {social.icon}
+                    <span className="text-xs hidden sm:inline">{social.name}</span>
                   </motion.a>
                 ))}
               </div>
-
-              {/* Back to Top */}
+              
+              {/* Back to Top in this section */}
               <motion.button
                 onClick={scrollToTop}
-                whileHover={{ scale: 1.1, y: -2 }}
-                whileTap={{ scale: 0.9 }}
-                className="p-2 bg-gray-800/50 text-gray-400 hover:text-white hover:bg-blue-500/20 rounded-lg transition-all flex items-center justify-center"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                className="mt-4 p-2 bg-gray-800/50 text-gray-400 hover:text-white hover:bg-blue-500/20 rounded-lg transition-all flex items-center space-x-2 text-sm"
                 aria-label="Back to top"
               >
                 <ArrowUp className="h-4 w-4" />
+                <span>Back to Top</span>
               </motion.button>
-            </div>
+            </motion.div>
           </div>
-          
-          {/* Made with love */}
-          <div className="flex items-center justify-center mt-6 pt-6 border-t border-gray-700/30">
+        </div>
+
+        {/* Bottom Footer - Compact */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="border-t border-gray-700/50 py-4"
+        >
+          <div className="flex flex-col sm:flex-row justify-between items-center space-y-3 sm:space-y-0">
+            <div className="text-sm text-gray-400 text-center sm:text-left">
+              © 2025 ClimmaTech.life. All rights reserved.
+            </div>
+            
+            {/* Made with love - Inline */}
             <div className="flex items-center space-x-2 text-sm text-gray-400">
               <span>Made with</span>
               <motion.div
@@ -255,7 +236,7 @@ export default function Footer() {
                 <Heart className="h-4 w-4 text-red-500" />
               </motion.div>
               <span>in India</span>
-              <Globe className="h-4 w-4 text-blue-400 ml-2" />
+              <Globe className="h-4 w-4 text-blue-400" />
             </div>
           </div>
         </motion.div>
