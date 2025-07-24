@@ -24,17 +24,15 @@ export default function HeroSection() {
   // }, [displayedText, isTyping, titleText]);
 
   return (
-    <section className="relative min-h-screen w-full overflow-hidden">
-      {/* Background image with dark gradient overlay */}
+    <section className="relative h-screen w-full overflow-hidden z-0">
+      {/* Background image without dark overlay */}
       <div className="absolute inset-0">
-        <div 
-          className="absolute inset-0 bg-cover bg-center "
-          style={{
-            backgroundImage: `url('/images/disaster/ChatGPT Image Jul 24, 2025, 12_06_07 PM-Photoroom.png')`,
-            zIndex: 1
-          }}
+        <img 
+          src="/images/disaster/cropped-ChatGPT Image Jul 24, 2025, 12_06_07 PM-Photoroom-Photoroom.png"
+          alt="Hero background"
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ zIndex: 1 }}
         />
-        <div className="absolute inset-0 bg-black/60 z-2" />
       </div>
 
       {/* Text pinned to bottom left */}
@@ -43,7 +41,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="text-white text-4xl sm:text-6xl md:text-7xl  font-sans tracking-wide uppercase"
+          className="text-white text-4xl sm:text-6xl md:text-7xl font-sans tracking-wide uppercase drop-shadow-2xl"
         >
           {displayedText}
           {isTyping && <span className="text-cyan-400 animate-pulse">|</span>}
