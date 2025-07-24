@@ -22,7 +22,7 @@ export default function ImpactSection() {
       description: "Early warning saves lives and property",
       imageHeight: "h-80",
       imageWidth: "w-full",
-      imageUrl: "/images/disaster/Hindustan - Copy.avif"
+      imageUrl: "/images/disaster/forty2.png"
     },
     
     {
