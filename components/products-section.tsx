@@ -263,7 +263,7 @@ function MediaTabs({ product, index }) {
   return (
     <div className="space-y-4">
       {/* Tab Navigation */}
-      <div className="flex bg-gray-100 rounded-lg p-1">
+      {/* <div className="flex bg-gray-100 rounded-lg p-1">
         <button
           onClick={() => setActiveTab('image')}
           className={`flex-1 py-2 px-4 rounded-md text-sm font-medium transition-all ${
@@ -284,7 +284,7 @@ function MediaTabs({ product, index }) {
         >
           3D Model
         </button>
-      </div>
+      </div> */}
 
       {/* Tab Content */}
       <motion.div
@@ -308,9 +308,9 @@ function MediaTabs({ product, index }) {
         )}
         
         {/* Floating Badge */}
-      <div className="absolute -top-1 -right-1 text-white  rounded-xl text-sm font-semibold shadow-lg flex flex-col items-center ">
+      <div className=" bottom-1 left-1 text-white  ">
   <img
-    src="/images/madeinIndia.png"
+    src="/images/a.png"
     alt="Made in India"
     className="w-20 h-20 object-contain"
   />

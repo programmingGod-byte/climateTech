@@ -21,7 +21,7 @@ export default function CollaboratorsSection() {
     },
     {
       name: "IIT Ropar Awadh",
-      logo: "https://www.iitrpr.ac.in/ai-cps/assets/images/logo.svg",
+      logo: "https://om-bhaiya-testing.s3.ap-south-1.amazonaws.com/c572eb783e46efc8016cf2f7f0d38be62693f26dccdcc3bfbc2e471bc6003d7f.webp",
       description: "Accelerating AI-driven climate resilience in rural India."
     },
   ];
