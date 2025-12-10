@@ -3,6 +3,7 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { TrendingUp, Users, DollarSign, MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
+import Head from 'next/head';
 
 export default function ImpactSection() {
   const statistics = [
@@ -20,7 +21,6 @@ export default function ImpactSection() {
       description: "Early warning saves lives and property",
       imageUrl: "/images/disaster/forty2.png"
     },
-    
     {
       icon: <TrendingUp className="h-8 w-8 text-white" />,
       value: "300%",
@@ -35,11 +35,22 @@ export default function ImpactSection() {
       description: "Urban areas face unprecedented flood risks",
       imageUrl: "/images/disaster/Hindustan.avif"
     },
-    
   ];
 
   return (
     <section id="impact" className="py-20 bg-background">
+      {/* Optional SEO meta for section */}
+      <Head>
+        <meta
+          name="robots"
+          content="index, follow"
+        />
+        <meta
+          name="description"
+          content="Climmatech highlights the impact of floods in India and how smart flood prevention technology can save lives, protect communities, and reduce economic damage."
+        />
+      </Head>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left Side - Text Content */}
@@ -50,15 +61,15 @@ export default function ImpactSection() {
             viewport={{ once: true }}
             className="lg:sticky lg:top-20"
           >
-            <h2 className="text-4xl lg:text-5xl font-sans text-foreground mb-6 leading-tight ">
-              Why  <span className='bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent'>Flood Prevention</span> Matters for India
+            <h2 className="text-4xl lg:text-5xl font-sans text-foreground mb-6 leading-tight">
+              Why <span className='bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent'>Flood Prevention</span> Matters in India
             </h2>
             <p className="text-xl text-muted-foreground leading-relaxed mb-8">
               Flooding is India's most devastating natural disaster, affecting millions during monsoons. 
-              Our technology transforms how Indian cities and communities prepare for and respond to flood risks.
+              Climmatech's smart flood prevention technology transforms how Indian cities and communities prepare for and respond to flood risks.
             </p>
             
-            {/* Additional compelling text */}
+            {/* Key Benefits */}
             <div className="space-y-4 text-muted-foreground">
               <p className="flex items-center gap-3">
                 <div className="w-2 h-2 bg-cyan-600 rounded-full"></div>
@@ -70,12 +81,12 @@ export default function ImpactSection() {
               </p>
               <p className="flex items-center gap-3">
                 <div className="w-2 h-2 bg-cyan-600 rounded-full"></div>
-                Early warnings can protect the citizens
+                Early warnings protect citizens and communities
               </p>
             </div>
           </motion.div>
 
-          {/* Right Side - Pinterest Style Image Grid */}
+          {/* Right Side - Image Grid */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -95,25 +106,20 @@ export default function ImpactSection() {
                 <div className="relative overflow-hidden rounded-2xl shadow-lg">
                   <img
                     src={stat.imageUrl}
-                    alt={stat.label}
+                    alt={`${stat.label} - Impact of floods in India`}
                     className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
                     style={{ display: 'block' }}
                   />
                   
-                  {/* Gradient Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-300"></div>
                   
-                  {/* Hover Text Overlay */}
                   <div className="absolute inset-0 p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
-                    <div className="mb-3 flex items-center gap-2">
-                      {stat.icon}
-                    </div>
+                    <div className="mb-3 flex items-center gap-2">{stat.icon}</div>
                     <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
                     <h3 className="text-lg font-semibold text-white mb-2">{stat.label}</h3>
                     <p className="text-sm text-white/90 leading-relaxed">{stat.description}</p>
                   </div>
                   
-                  {/* Always visible subtle indicator */}
                   <div className="absolute top-4 right-4 w-3 h-3 bg-white/30 rounded-full group-hover:bg-white/60 transition-colors duration-300"></div>
                 </div>
               </motion.div>
@@ -127,14 +133,13 @@ export default function ImpactSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className=" rounded-2xl p-8 lg:p-12 text-black text-center mt-20 shadow-2xl"
+          className="rounded-2xl p-8 lg:p-12 text-black text-center mt-20 shadow-2xl"
         >
           <h3 className="text-2xl lg:text-3xl font-sans mb-4">
             Don't Wait for the <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Next Flood</span>
           </h3>
           <p className="text-lg lg:text-xl opacity-90 mb-6 max-w-2xl mx-auto">
-            Every minute counts in flood prevention Protect your community with India's most 
-            advanced flood early warning system available today.
+            Every minute counts in flood prevention. Protect your community with India's most advanced flood early warning system.
           </p>
           <motion.button
             whileHover={{ scale: 1.05 }}

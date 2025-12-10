@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import Head from 'next/head';
 
 export default function HeroSection() {
   const [displayedText, setDisplayedText] = useState("Predicting the Unpredictable");
@@ -9,7 +10,7 @@ export default function HeroSection() {
 
   const titleText = "Predicting the Unpredictable";
 
-  // Typing effect for the headline
+  // Typing effect
   // useEffect(() => {
   //   if (isTyping) {
   //     const timer = setTimeout(() => {
@@ -24,19 +25,28 @@ export default function HeroSection() {
   // }, [displayedText, isTyping, titleText]);
 
   return (
-    <section className="relative h-screen w-full overflow-hidden z-0">
-      {/* Background image without dark overlay */}
+    <section id="hero" className="relative h-screen w-full overflow-hidden z-0">
+      {/* SEO Meta for Hero Section */}
+      <Head>
+        <title>Climmatech | Predicting the Unpredictable in Smart Energy & Robotics</title>
+        <meta
+          name="description"
+          content="Climmatech provides smart energy and robotics solutions, helping homes and businesses predict and manage unpredictable energy challenges with advanced devices and dashboards."
+        />
+      </Head>
+
+      {/* Background image with descriptive alt text */}
       <div className="absolute inset-0">
         <img 
           src="/images/disaster/cropped-ChatGPT Image Jul 24, 2025, 12_06_07 PM-Photoroom-Photoroom.png"
-          alt="Hero background"
+          alt="Smart energy and robotics technology concept"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ zIndex: 1 }}
         />
       </div>
 
-      {/* Text pinned to bottom left */}
-      <div className="absolute bottom-12 left-6 z-10">
+      {/* Hero Text */}
+      <div className="absolute bottom-12 left-6 z-10 max-w-3xl">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -46,6 +56,9 @@ export default function HeroSection() {
           {displayedText}
           {isTyping && <span className="text-cyan-400 animate-pulse">|</span>}
         </motion.h1>
+        <p className="text-white text-lg sm:text-xl mt-4 drop-shadow-md">
+          Innovative smart energy and robotics solutions for homes and businesses.
+        </p>
       </div>
     </section>
   );

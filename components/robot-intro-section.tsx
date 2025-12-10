@@ -1,10 +1,23 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Head from 'next/head';
 
 export default function RobotIntroSection() {
   return (
-    <section className="py-20 bg-background">
+    <section id="robot-intro" className="py-20 bg-background">
+      {/* Optional SEO meta for this section */}
+      <Head>
+        <meta
+          name="robots"
+          content="index, follow"
+        />
+        <meta
+          name="description"
+          content="Climmatech transforms flood management in India using AI-powered robots and real-time monitoring systems for precise flood prediction and disaster response."
+        />
+      </Head>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Robot Image */}
@@ -18,13 +31,10 @@ export default function RobotIntroSection() {
             <div className="relative rounded-2xl p-8 shadow-2xl">
               <img
                 src="/images/all.png"
-                style={{
-                  objectFit:"contain"
-                }}
-                alt="Flood monitoring robot"
+                alt="Climmatech flood monitoring robot with AI algorithms for precise flood prediction"
                 className="w-full h-96 object-cover rounded-xl"
+                style={{ objectFit: "contain" }}
               />
-              
             </div>
           </motion.div>
 
@@ -36,13 +46,12 @@ export default function RobotIntroSection() {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <h2 className="text-4xl sm:text-4xl  text-foreground leading-tight" style={{fontFamily:"sans-serif"}}>
-              Transforming <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Flood management</span> through pioneering and advanced technology
+            <h2 className="text-4xl sm:text-4xl text-foreground leading-tight" style={{fontFamily:"sans-serif"}}>
+              Transforming <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Flood Management</span> with AI-Powered Robots
             </h2>
             
             <p className="text-xl text-muted-foreground leading-relaxed" style={{fontFamily:"sans-serif"}}>
-              We're innovating the next era of smarter, more efficient flood prevention solutions 
-              specifically designed for the Indian disaster response system.
+              Climmatech innovates smarter, more efficient flood prevention solutions for India’s disaster response system using advanced robotics and real-time monitoring.
             </p>
             
             <div className="space-y-4" style={{fontFamily:"sans-serif"}}>

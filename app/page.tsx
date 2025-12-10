@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Navigation from '@/components/navigation';
 import HeroSection from '@/components/hero-section';
 import ServicesSection from '@/components/services-section';
@@ -19,7 +20,25 @@ import ScrollToTopButton from '@/components/scroll-to-top-button';
 
 export default function Home() {
   return (
+    
     <div className="min-h-screen relative">
+      <Head>
+        <title>Climmatech | Smart Energy & Robotics Solutions</title>
+        <meta
+          name="description"
+          content="Climmatech provides smart energy and robotics solutions for homes and businesses, offering innovative products, dashboards, and sensors to optimize efficiency."
+        />
+        {/* Open Graph for social sharing */}
+        <meta property="og:title" content="Climmatech | Smart Energy & Robotics Solutions" />
+        <meta
+          property="og:description"
+          content="Climmatech provides smart energy and robotics solutions for homes and businesses."
+        />
+        <meta property="og:url" content="https://www.climmatech.com" />
+        <meta property="og:type" content="website" />
+      </Head>
+
+
       <Navigation />
       <main>
         <HeroSection />
