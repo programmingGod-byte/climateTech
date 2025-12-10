@@ -1,18 +1,20 @@
 import { NextResponse } from 'next/server';
-import { getDatabase } from '@/lib/mongodb';
+import getDatabase from '@/lib/mongodb';
 
 export async function GET() {
   try {
     const db = await getDatabase();
+    // get the native MongoDB Db instance: if getDatabase returned mongoose, use connection.db; otherwise assume it's already a native Db
+    const nativeDb: any = (db as any).connection?.db ?? db;
     
     // Get basic stats
-    const totalSubmissions = await db.collection('contacts').countDocuments();
-    const newSubmissions = await db.collection('contacts').countDocuments({ status: 'new' });
-    const inProgressSubmissions = await db.collection('contacts').countDocuments({ status: 'in-progress' });
-    const completedSubmissions = await db.collection('contacts').countDocuments({ status: 'completed' });
+    const totalSubmissions = await nativeDb.collection('contacts').countDocuments();
+    const newSubmissions = await nativeDb.collection('contacts').countDocuments({ status: 'new' });
+    const inProgressSubmissions = await nativeDb.collection('contacts').countDocuments({ status: 'in-progress' });
+    const completedSubmissions = await nativeDb.collection('contacts').countDocuments({ status: 'completed' });
     
     // Get organization type distribution
-    const orgTypeStats = await db.collection('contacts').aggregate([
+    const orgTypeStats = await nativeDb.collection('contacts').aggregate([
       {
         $group: {
           _id: '$organizationType',
@@ -27,7 +29,7 @@ export async function GET() {
     const twelveMonthsAgo = new Date();
     twelveMonthsAgo.setMonth(twelveMonthsAgo.getMonth() - 12);
     
-    const monthlyTrends = await db.collection('contacts').aggregate([
+    const monthlyTrends = await nativeDb.collection('contacts').aggregate([
       {
         $match: {
           submittedAt: { $gte: twelveMonthsAgo }
@@ -51,7 +53,7 @@ export async function GET() {
     const avgResponseTime = 18; // hours - would be calculated from actual response data
     
     // Get recent high-priority submissions
-    const recentHighPriority = await db.collection('contacts')
+    const recentHighPriority = await nativeDb.collection('contacts')
       .find({ 
         priority: { $in: ['high', 'urgent'] },
         status: { $in: ['new', 'in-progress'] }
@@ -61,7 +63,7 @@ export async function GET() {
       .toArray();
     
     // Get geographic distribution
-    const locationStats = await db.collection('contacts').aggregate([
+    const locationStats = await nativeDb.collection('contacts').aggregate([
       {
         $match: { location: { $exists: true, $ne: '' } }
       },
