@@ -1,26 +1,22 @@
+// app/layout.tsx
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, Poppins } from 'next/font/google';
 import { ThemeProvider } from '@/components/theme-provider';
-import { Poppins } from 'next/font/google';
 
+// Fonts
+const inter = Inter({ subsets: ['latin'] });
 const poppins = Poppins({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
   variable: '--font-poppins',
 });
 
-const inter = Inter({ subsets: ['latin'] });
+// Metadata for Next.js
 export const metadata: Metadata = {
   title: 'Climmatech - Smart Flood Prevention for India',
   description:
     'AI-powered real-time flood detection and early warning system designed for Indian monsoons and climate conditions.',
-
-  icons: {
-    icon: '/icon.png',
-    apple: '/apple-icon.png',
-  },
-
   keywords: [
     'flood monitoring system',
     'river water level sensor',
@@ -31,9 +27,13 @@ export const metadata: Metadata = {
     'disaster warning siren',
     'AI flood prediction',
     'river flow monitoring sensor',
-    'smart flood management system'
+    'smart flood management system',
   ],
-  
+  robots: { index: true, follow: true },
+  icons: {
+    icon: '/favicon.png', // standardized favicon
+    apple: '/apple-icon.png',
+  },
   openGraph: {
     title: 'Climmatech - Smart Flood Prevention for India',
     description:
@@ -42,57 +42,60 @@ export const metadata: Metadata = {
     siteName: 'Climmatech',
     images: [
       {
-        url: '/icon.png',
-        width: 512,
-        height: 512,
+        url: 'https://www.climmatech.com/images/social-share.png', // optimized OG image
+        width: 1200,
+        height: 630,
         alt: 'Climmatech Logo',
       },
     ],
     type: 'website',
   },
-
   twitter: {
     card: 'summary_large_image',
     title: 'Climmatech - Smart Flood Prevention for India',
     description:
       'AI-powered real-time flood detection and early warning system',
-    images: ['/icon.png'],
+    images: ['https://www.climmatech.com/images/social-share.png'],
   },
 };
 
-
-// Organization Schema Markup
+// Schema Markup
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Climmatech",
-  "alternateName": "Climmatech India",
-  "url": "https://climmatech.com",
-  "logo": "https://www.climmatech.com/images/logo-removebg-preview.png", // Update with your actual logo URL
-  "description": "AI-powered real-time flood detection and early warning system designed for Indian monsoons and climate conditions",
-  "address": {
+  name: "Climmatech",
+  alternateName: "Climmatech India",
+  url: "https://climmatech.com",
+  logo: "https://www.climmatech.com/images/logo-removebg-preview.png",
+  description:
+    "AI-powered real-time flood detection and early warning system designed for Indian monsoons and climate conditions",
+  address: {
     "@type": "PostalAddress",
-    "addressCountry": "IN"
+    addressCountry: "IN",
   },
-  "sameAs": [
-    // Add your social media profiles here when available
-    // "https://twitter.com/climmatech",
+  sameAs: [
     "https://www.linkedin.com/company/climmatech",
-    // "https://www.facebook.com/climmatech"
-  ]
+    // Add Twitter, Facebook when available
+  ],
+  contactPoint: {
+    "@type": "Phone Number",
+    telephone: "+91-7488011618", // replace with actual number
+    contactType: "Customer Support",
+    areaServed: "IN",
+    availableLanguage: "English",
+  },
 };
 
-// Website Schema Markup
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "Climmatech",
-  "url": "https://climmatech.com",
-  "description": "Smart Flood Prevention Technology for India",
-  "publisher": {
+  name: "Climmatech",
+  url: "https://climmatech.com",
+  description: "Smart Flood Prevention Technology for India",
+  publisher: {
     "@type": "Organization",
-    "name": "Climmatech"
-  }
+    name: "Climmatech",
+  },
 };
 
 export default function RootLayout({
@@ -106,27 +109,26 @@ export default function RootLayout({
         {/* Organization Schema */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
         {/* Website Schema */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(websiteSchema),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
       </head>
-      <body className={`${inter.className} ${poppins.variable}`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+      <body className={inter.className}>
+        {/* Poppins variable font can be used selectively */}
+        <div className={poppins.variable}>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
+        </div>
       </body>
     </html>
   );
