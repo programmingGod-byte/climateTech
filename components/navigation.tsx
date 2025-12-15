@@ -20,10 +20,11 @@ export default function Navigation() {
   }, []);
 
   const navItems = [
-    { name: 'Features', href: '#features' },
-    { name: 'Impact', href: '#impact' },
-    { name: 'Partners', href: '#partners' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Features', href: '/#features' },
+    { name: 'Impact', href: '/#impact' },
+    { name: 'Partners', href: '/#partners' },
+    { name: 'Contact', href: '/#contact' },
+     { name: 'Privacy Policy', href: '/privacy-policy' },
   ];
 
   return (

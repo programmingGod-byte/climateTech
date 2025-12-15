@@ -5,7 +5,7 @@ import { Shield, Zap, Wifi, Brain, Activity, Cloud } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 import * as THREE from 'three';
 import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader';
-
+import Image from 'next/image';
 
 // 3D Model Viewer Component
 function ThreeModelViewer({ modelPath, title }) {
@@ -295,7 +295,9 @@ function MediaTabs({ product, index }) {
         
       >
         {activeTab === 'image' ? (
-          <img
+          <Image
+          width={400}
+          height={400}
             src={product.image}
             alt={product.title}
             className="w-full h-64 object-contain rounded-xl"
@@ -309,7 +311,9 @@ function MediaTabs({ product, index }) {
         
         {/* Floating Badge */}
       <div className=" bottom-1 left-1 text-white  ">
-  <img
+  <Image
+  width={50}
+  height={50}
     src="/images/a.png"
     alt="Made in India"
     className="w-20 h-20 object-contain"
@@ -330,7 +334,7 @@ export default function ProductsSection() {
       title: "Drishti",
       description: "Drishti is a fully integrated, solar-powered, dual-factor flood monitoring sensor that combines image processing (visual data), radar- based measurements, and rain gauge inputs, with key features including",
       features: ["Wide-area monitoring: Accurately monitors river stretches up to 15 meters wide, making it ideal for small to medium rivers, canals, and urban drains", "Dual-sensor technology: Combines image processing (visual monitoring) and radar- based surface velocity measurement for high-accuracy flow estimation"],
-      image: "/images/3.png",
+      image: "/images/3.webp",
       model: "/models/Solar_Alarm_System_0630051501_texture.fbx"
     },
     {
@@ -338,7 +342,7 @@ export default function ProductsSection() {
       title: "Doordrishti",
       description: "DoorDrishti is a fully integrated, solar-powered, dual-factor flood monitoring sensor that combines advanced image processing (visual data), long-range radar-based measurements, and rain gauge inputs, with key features including:",
       features: ["Wide-area monitoring","Rain gauge integration","2-day battery backup for uninterrupted operation even during extreme weather conditions"],
-      image: "/images/4.png",
+      image: "/images/4.webp",
       model: "/models/Solar_Alarm_System_0630051501_texture.fbx"
     },
     {
@@ -346,7 +350,7 @@ export default function ProductsSection() {
       title: "Rakshak",
       description: "Rakshak is a solar-powered, long-range disaster early warning system equipped with sirens for rapid public alerting, with key features including:",
       features: ["High-decibel siren alerts","Low-latency response","Ultra-long-range communication"],
-      image: "/images/2.png",
+      image: "/images/2.webp",
       model: "/models/Solar_Alarm_System_0630051501_texture.fbx"
     },
     {
@@ -354,7 +358,7 @@ export default function ProductsSection() {
       title: "Tarang",
       description: "Tarang is a compact, solar-powered, radar- based river monitoring sensor focused solely on providing accurate depth measurements, with key features including:",
       features: ["Radar-based depth measurement","Single-parameter focus","Solar powered"],
-      image: "/images/1.png",
+      image: "/images/1.webp",
       model: "/models/Solar_Alarm_System_0630051501_texture.fbx"
     },
     {
@@ -362,7 +366,7 @@ export default function ProductsSection() {
       title: "Pravaah",
       description: "Pravaah is a compact, solar-powered, radar- based river monitoring sensor that focuses on depth and surface velocity calculation with key features including:",
       features: ["Wide-area coverage","Solar powered","Real-time data transmission for continuous river flow monitoring and decision support"],
-      image: "/images/5.png",
+      image: "/images/5.webp",
       model: "/models/Solar_Alarm_System_0630051501_texture.fbx"
     }
   ];
