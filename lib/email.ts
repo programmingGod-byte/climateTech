@@ -130,7 +130,7 @@ export async function sendContactNotification(submission: ContactSubmission) {
         </div>
         
         <div class="footer">
-          <p>ClimateTech.life - Smart Flood Prevention for India</p>
+          <p>ClimateTech - Smart Flood Prevention for India</p>
           <p>Protecting communities through advanced technology</p>
         </div>
       </div>
@@ -273,7 +273,7 @@ async function sendUserConfirmation(submission: ContactSubmission) {
         
         <div class="footer">
           <p><strong>ClimateTech.life</strong> - Smart Flood Prevention for India</p>
-          <p>📧 sales@climatetech.life | 📞 +91 98765 43210 | 🌐 climatetech.life</p>
+          <p>📧 sales@climatetech.life | 📞 +91 98765 43210 | 🌐 climatetech.com</p>
           <p>Protecting Indian communities through advanced flood prevention technology</p>
         </div>
       </div>
