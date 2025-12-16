@@ -85,17 +85,18 @@ const organizationSchema = {
     availableLanguage: "English",
   },
 };
-
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": "https://climmatech.com/#website",
   name: "Climmatech",
+  alternateName: "Climmatech India",
   url: "https://climmatech.com",
-  description: "Smart Flood Prevention Technology for India",
-  publisher: {
-    "@type": "Organization",
-    name: "Climmatech",
-  },
+  potentialAction: {
+    "@type": "SearchAction",
+    target: "https://climmatech.com/?s={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
 };
 
 export default function RootLayout({
