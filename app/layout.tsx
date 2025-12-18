@@ -31,9 +31,14 @@ export const metadata: Metadata = {
   ],
   robots: { index: true, follow: true },
   icons: {
-    icon: '/favicon.png', // standardized favicon
-    apple: '/apple-icon.png',
-  },
+  icon: [
+    { url: '/favicon.ico', type: 'image/x-icon' },
+    { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+  ],
+  apple: '/apple-touch-icon.png',
+}
+,
   openGraph: {
     title: 'Climmatech - Smart Flood Prevention for India',
     description:
@@ -60,31 +65,24 @@ export const metadata: Metadata = {
 };
 
 // Schema Markup
+
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Climmatech",
   alternateName: "Climmatech India",
   url: "https://climmatech.com",
-  logo: "https://www.climmatech.com/images/logo-removebg-preview.png",
-  description:
-    "AI-powered real-time flood detection and early warning system designed for Indian monsoons and climate conditions",
-  address: {
-    "@type": "PostalAddress",
-    addressCountry: "IN",
-  },
-  sameAs: [
-    "https://www.linkedin.com/company/climmatech",
-    // Add Twitter, Facebook when available
-  ],
+  logo: "https://climmatech.com/images/logo-removebg-preview.png",
   contactPoint: {
-    "@type": "Phone Number",
-    telephone: "+91-7488011618", // replace with actual number
-    contactType: "Customer Support",
+    "@type": "ContactPoint",
+    telephone: "+91-7488011618",
+    contactType: "customer support",
     areaServed: "IN",
-    availableLanguage: "English",
-  },
+    availableLanguage: "English"
+  }
 };
+
+
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -123,7 +121,7 @@ export default function RootLayout({
         <div className={poppins.variable}>
           <ThemeProvider
             attribute="class"
-            defaultTheme="dark"
+            defaultTheme="light"
             enableSystem
             disableTransitionOnChange
           >
