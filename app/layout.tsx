@@ -1,4 +1,4 @@
-// app/layout.tsx
+
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter, Poppins } from 'next/font/google';
@@ -12,66 +12,68 @@ const poppins = Poppins({
   variable: '--font-poppins',
 });
 
-// Metadata for Next.js
 export const metadata: Metadata = {
-  title: 'Climmatech - Smart Flood Prevention for India',
-  description:
-    'AI-powered real-time flood detection and early warning system designed for Indian monsoons and climate conditions.',
-  keywords: [
-    'flood monitoring system',
-    'river water level sensor',
-    'solar flood sensor',
-    'radar based flood monitoring',
-    'early warning system floods',
-    'IoT flood monitoring India',
-    'disaster warning siren',
-    'AI flood prediction',
-    'river flow monitoring sensor',
-    'smart flood management system',
-  ],
+  title: {
+    default: 'Climmatech – AI Flood Monitoring & Smart IoT Sensors',
+    template: '%s | Climmatech',
+  },
+  description: 
+    'Climmatech offers AI-powered flood prediction, real-time IoT flood monitoring, solar and radar water level sensors, and early warning systems tailored for India’s climate challenges.',
   robots: { index: true, follow: true },
-  icons: {
-  icon: [
-    { url: '/favicon.ico', type: 'image/x-icon' },
-    { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-    { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+  keywords: [
+    'Climmatech',
+    'Climmatech India',
+    'Climmatech flood monitoring',
+    'AI flood monitoring system',
+    'river water level sensor India',
+    'IoT flood monitoring India',
+    'smart flood management system',
+    'AI flood prediction',
+    'early warning system floods',
+    'solar flood sensors',
+    'radar based flood monitoring',
+    'disaster warning siren',
+    'river flow monitoring sensor',
+    'climate resilience tech',
+    'flood prevention solutions',
+    'monsoon flood prediction',
+    // … keep or add other topical keywords here as required
   ],
-  apple: '/apple-touch-icon.png',
-}
-,
+  alternates: {
+    canonical: 'https://climmatech.com/',
+  },
   openGraph: {
-    title: 'Climmatech - Smart Flood Prevention for India',
+    title: 'Climmatech – AI & IoT Flood Monitoring Solutions | Official Site',
     description:
-      'AI-powered real-time flood detection and early warning system designed for Indian monsoons and climate conditions.',
-    url: 'https://climmatech.com',
+      'Official Climmatech site – AI flood prediction, real-time IoT flood sensors, solar and radar monitoring, and early warning systems for India.',
+    url: 'https://climmatech.com/',
     siteName: 'Climmatech',
+    type: 'website',
     images: [
       {
-        url: 'https://www.climmatech.com/images/social-share.png', // optimized OG image
+        url: 'https://climmatech.com/images/social-share.png',
         width: 1200,
         height: 630,
-        alt: 'Climmatech Logo',
+        alt: 'Climmatech – Smart Flood Monitoring',
       },
     ],
-    type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Climmatech - Smart Flood Prevention for India',
+    title: 'Climmatech – AI & IoT Flood Monitoring',
     description:
-      'AI-powered real-time flood detection and early warning system',
-    images: ['https://www.climmatech.com/images/social-share.png'],
+      'Official Climmatech site featuring advanced flood prediction & monitoring solutions for Indian monsoons.',
+    images: ['https://climmatech.com/images/social-share.png'],
   },
 };
 
-// Schema Markup
 
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Climmatech",
   alternateName: "Climmatech India",
-  url: "https://climmatech.com",
+  url: "https://climmatech.com/",
   logo: "https://climmatech.com/images/logo-removebg-preview.png",
   contactPoint: {
     "@type": "ContactPoint",
@@ -79,9 +81,16 @@ const organizationSchema = {
     contactType: "customer support",
     areaServed: "IN",
     availableLanguage: "English"
+  },
+  sameAs: [
+    "https://www.linkedin.com/company/climmatech",
+    "https://twitter.com/climmatech"
+  ],
+  brand: {
+    "@type": "Brand",
+    name: "Climmatech",
   }
 };
-
 
 const websiteSchema = {
   "@context": "https://schema.org",
@@ -89,13 +98,17 @@ const websiteSchema = {
   "@id": "https://climmatech.com/#website",
   name: "Climmatech",
   alternateName: "Climmatech India",
-  url: "https://climmatech.com",
+  url: "https://climmatech.com/",
   potentialAction: {
     "@type": "SearchAction",
     target: "https://climmatech.com/?s={search_term_string}",
     "query-input": "required name=search_term_string"
   }
 };
+
+
+
+
 
 export default function RootLayout({
   children,
@@ -105,19 +118,19 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Organization Schema */}
+        
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
-        {/* Website Schema */}
+        
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
       </head>
       <body className={inter.className}>
-        {/* Poppins variable font can be used selectively */}
+        
         <div className={poppins.variable}>
           <ThemeProvider
             attribute="class"

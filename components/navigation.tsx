@@ -20,11 +20,13 @@ export default function Navigation() {
   }, []);
 
   const navItems = [
+    { name: 'Products', href: '/products' },
     { name: 'Features', href: '/#features' },
     { name: 'Impact', href: '/#impact' },
+    { name: 'Blog', href: '/blog' },
     { name: 'Partners', href: '/#partners' },
     { name: 'Contact', href: '/#contact' },
-     { name: 'Privacy Policy', href: '/privacy-policy' },
+    { name: 'Privacy Policy', href: '/privacy-policy' },
   ];
 
   return (
@@ -38,7 +40,7 @@ export default function Navigation() {
         {/* Changed justify-evenly to justify-between */}
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <motion.div 
+          <motion.div
             className="flex items-center space-x-2"
           >
             <img src='/images/logo-removebg-preview.png' alt="Logo" className="w-16 h-16" />
@@ -60,7 +62,7 @@ export default function Navigation() {
                 {item.name}
               </motion.a>
             ))}
-            
+
             {/* Theme Toggle */}
             <Button
               variant="ghost"
@@ -72,8 +74,8 @@ export default function Navigation() {
               <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
               <span className="sr-only">Toggle theme</span>
             </Button>
-            
-            <Button 
+
+            <Button
               className="bg-gradient-to-r from-cyan-400 to-blue-500 text-white"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
@@ -92,7 +94,7 @@ export default function Navigation() {
               <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
               <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
             </Button>
-            
+
             <Button
               variant="ghost"
               size="sm"
@@ -129,7 +131,7 @@ export default function Navigation() {
                   {item.name}
                 </a>
               ))}
-              <Button 
+              <Button
                 className="w-full mt-4 bg-blue-600 hover:bg-blue-700 text-white"
                 onClick={() => {
                   setIsOpen(false);
