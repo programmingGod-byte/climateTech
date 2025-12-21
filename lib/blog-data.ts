@@ -52,7 +52,7 @@ ${conclusionContent}
 
 <div class="cta-box">
   <h3>Ready to Learn More?</h3>
-  <p>Discover how Climmaech's innovative solutions can protect your community from flood disasters.</p>
+  <p>Discover how Climmatech's innovative solutions can protect your community from flood disasters.</p>
 </div>
 
 <style>
@@ -173,15 +173,15 @@ ${conclusionContent}
 export const blogPosts: BlogPost[] = [
   {
     slug: 'role-of-iot-flood-management-climmaech',
-    title: 'The Pivotal Role of IoT in Modern Flood Management with Climmaech',
-    excerpt: 'How Internet of Things technology is revolutionizing how we detect, analyze, and respond to flood threats using Climmaech solutions.',
+    title: 'The Pivotal Role of IoT in Modern Flood Management with Climmatech',
+    excerpt: 'How Internet of Things technology is revolutionizing how we detect, analyze, and respond to flood threats using Climmatech solutions.',
     date: 'October 24, 2024',
     author: 'Dr. Sarah Chen',
     image: '/images/blog1.jpg',
     readTime: '6 min read',
     category: 'Technology',
     content: generateContent(
-      'In the face of escalating climate change, the unpredictability of weather patterns has become a global crisis. Floods, once considered rare "100-year events," are now occurring with alarming frequency. <strong>Climmaech</strong> stands at the forefront of this battle, deploying advanced IoT technology to safeguard communities and infrastructure.',
+      'In the face of escalating climate change, the unpredictability of weather patterns has become a global crisis. Floods, once considered rare "100-year events," are now occurring with alarming frequency. <strong>Climmatech</strong> stands at the forefront of this battle, deploying advanced IoT technology to safeguard communities and infrastructure.',
 
       'The IoT Revolution in Flood Monitoring',
       `<p>The Internet of Things (IoT) has transformed flood management from a reactive discipline into a proactive science. By connecting sensors like <strong>Tarang</strong> and <strong>Drishti</strong> into a unified network, we create an intelligent mesh that monitors every critical point in real-time.</p>
@@ -207,24 +207,24 @@ export const blogPosts: BlogPost[] = [
       
       <p>This interconnected approach means that a rainfall spike detected 50 kilometers upstream can trigger preventive measures downstream before water levels even begin to rise.</p>`,
 
-      'Climmaech uses an edge-computing architecture where critical analysis happens at the device level, ensuring alerts go out even if the central server is temporarily unreachable. This redundancy is crucial during severe weather when network infrastructure is most vulnerable.',
+      'Climmatech uses an edge-computing architecture where critical analysis happens at the device level, ensuring alerts go out even if the central server is temporarily unreachable. This redundancy is crucial during severe weather when network infrastructure is most vulnerable.',
 
       'How IoT Enables Predictive Capabilities',
-      `<p>Traditional systems could only tell you the current water level. IoT-enabled systems like Climmaech predict where water will be in 2-4 hours.</p>
+      `<p>Traditional systems could only tell you the current water level. IoT-enabled systems like Climmatech predict where water will be in 2-4 hours.</p>
       
-      <p>The integration of IoT with hydrological modeling allows <strong>Climmaech</strong> to simulate flood progression. By combining real-time data from multiple sensors with terrain maps, rainfall forecasts, and historical patterns, our AI can predict flood paths with remarkable accuracy.</p>
+      <p>The integration of IoT with hydrological modeling allows <strong>Climmatech</strong> to simulate flood progression. By combining real-time data from multiple sensors with terrain maps, rainfall forecasts, and historical patterns, our AI can predict flood paths with remarkable accuracy.</p>
       
-      <p class="stat-highlight">🎯 Climmaech systems have achieved 87% accuracy in predicting flood levels 4 hours in advance</p>
+      <p class="stat-highlight">🎯 Climmatech systems have achieved 87% accuracy in predicting flood levels 4 hours in advance</p>
       
       <p>This predictive capability transforms emergency response. Instead of evacuating when water is already rising, communities can mobilize hours earlier, dramatically reducing casualties and property damage.</p>`,
 
-      `<p>In the 2024 monsoon season, Climmaech's IoT network monitored over 150 kilometers of the Brahmaputra river system. When heavy rainfall was detected in the upper catchment area, our sensors tracked the water surge as it moved downstream.</p>
+      `<p>In the 2024 monsoon season, Climmatech's IoT network monitored over 150 kilometers of the Brahmaputra river system. When heavy rainfall was detected in the upper catchment area, our sensors tracked the water surge as it moved downstream.</p>
       
       <p class="stat-highlight">⏱️ The system provided 6 hours advance warning to downstream villages</p>
       
       <p>Local authorities successfully evacuated 15,000 residents before flood waters arrived. Zero casualties were reported, compared to historical averages of 20-30 deaths in similar flood events.</p>`,
 
-      `<p>Climmaech's IoT architecture consists of three layers:</p>
+      `<p>Climmatech's IoT architecture consists of three layers:</p>
       
       <ul>
         <li><strong>Sensor Layer:</strong> Millimeter-wave radar sensors (Tarang) and visual monitoring (Drishti) collect water level, velocity, and visual data</li>
@@ -235,24 +235,24 @@ export const blogPosts: BlogPost[] = [
       <p>All devices communicate via 4G/5G networks with satellite backup, ensuring connectivity even in remote areas. Solar panels and backup batteries provide power independence for up to 72 hours during grid outages.</p>`,
 
       'The Future of IoT in Disaster Management',
-      `<p>As 5G networks expand and sensor costs decrease, IoT-based flood monitoring will become ubiquitous. <strong>Climmaech</strong> is leading this transformation, with deployments planned across India's most flood-prone regions.</p>
+      `<p>As 5G networks expand and sensor costs decrease, IoT-based flood monitoring will become ubiquitous. <strong>Climmatech</strong> is leading this transformation, with deployments planned across India's most flood-prone regions.</p>
       
       <p>The next generation of our systems will incorporate satellite data, drone surveillance, and citizen-reported data to create an even more comprehensive monitoring network. Machine learning models will continuously improve, learning from each monsoon season to deliver ever-more-accurate predictions.</p>
       
-      <p>IoT isn't just changing how we monitor floods—it's revolutionizing how we protect communities, infrastructure, and lives. With Climmaech, the future of flood management is connected, intelligent, and lifesaving.</p>`
+      <p>IoT isn't just changing how we monitor floods—it's revolutionizing how we protect communities, infrastructure, and lives. With Climmatech, the future of flood management is connected, intelligent, and lifesaving.</p>`
     )
   },
   {
     slug: 'climmaech-vs-traditional-monitoring',
-    title: 'Climmaech vs. Traditional Methods: A Comparative Analysis',
-    excerpt: 'Why manual gauges and old telemetry systems are failing, and how Climmaech\'s radar technology offers superior reliability.',
+    title: 'Climmatech vs. Traditional Methods: A Comparative Analysis',
+    excerpt: 'Why manual gauges and old telemetry systems are failing, and how Climmatech\'s radar technology offers superior reliability.',
     date: 'November 02, 2024',
     author: 'Rajesh Kumar',
     image: '/images/blog2.jpg',
     readTime: '8 min read',
     category: 'Analysis',
     content: generateContent(
-      'For decades, flood monitoring relied on manual staff gauges and mechanical float sensors. While these methods served their purpose in a more stable climate, today\'s extreme weather events demand modern solutions. <strong>Climmaech\'s</strong> radar-based technology represents a quantum leap in reliability and accuracy.',
+      'For decades, flood monitoring relied on manual staff gauges and mechanical float sensors. While these methods served their purpose in a more stable climate, today\'s extreme weather events demand modern solutions. <strong>Climmatech\'s</strong> radar-based technology represents a quantum leap in reliability and accuracy.',
 
       'The Failure Points of Traditional Systems',
       `<p>Float-operated sensors have been the standard for river monitoring since the 1950s. A float attached to a cable rises and falls with water levels, mechanically recording depth. This system has critical vulnerabilities:</p>
@@ -278,9 +278,9 @@ export const blogPosts: BlogPost[] = [
       
       <p>During the 2023 monsoon, 43% of traditional sensors in Bihar reported false or stuck readings during peak flood events—precisely when accurate data was most critical.</p>`,
 
-      '<strong>Climmaech\'s</strong> non-contact radar sensors eliminate every mechanical point of failure. Operating from above the water surface, they remain unaffected by debris, silt, or turbulent conditions that disable traditional equipment.',
+      '<strong>Climmatech\'s</strong> non-contact radar sensors eliminate every mechanical point of failure. Operating from above the water surface, they remain unaffected by debris, silt, or turbulent conditions that disable traditional equipment.',
 
-      'How Climmaech\'s Technology Solves These Problems',
+      'How Climmatech\'s Technology Solves These Problems',
       `<p>Our millimeter-wave radar technology measures water levels by emitting radio waves and calculating the time for reflection. This non-contact method provides several critical advantages:</p>
       
       <ul>
@@ -291,21 +291,21 @@ export const blogPosts: BlogPost[] = [
         <li><strong>Weather Resistant:</strong> Functions normally in rain, fog, and extreme temperatures</li>
       </ul>
       
-      <p class="stat-highlight">📈 Climmaech sensors maintain 99.7% uptime during monsoon season vs. 78% for traditional float systems</p>
+      <p class="stat-highlight">📈 Climmatech sensors maintain 99.7% uptime during monsoon season vs. 78% for traditional float systems</p>
       
-      <p>Furthermore, manual gauge readings are prone to human error and are often impossible during severe weather conditions—when data is most needed. A gauge reader isn't going to wade into a swollen, dangerous river to take measurements. Climmaech's automated systems continue operating regardless of conditions.</p>`,
+      <p>Furthermore, manual gauge readings are prone to human error and are often impossible during severe weather conditions—when data is most needed. A gauge reader isn't going to wade into a swollen, dangerous river to take measurements. Climmatech's automated systems continue operating regardless of conditions.</p>`,
 
       `<p>The Yamuna River monitoring network provides a stark comparison. Sections equipped with traditional float sensors showed average downtime of 18 days during the 2023 monsoon due to mechanical failures and inaccessibility.</p>
       
-      <p>Adjacent sections equipped with Climmaech radar sensors operated continuously, providing uninterrupted data throughout the entire season. When flash floods hit in late July, the Climmaech-monitored areas received 4+ hours advance warning, while traditionally monitored areas had less than 1 hour due to data gaps and delays.</p>
+      <p>Adjacent sections equipped with Climmatech radar sensors operated continuously, providing uninterrupted data throughout the entire season. When flash floods hit in late July, the Climmatech-monitored areas received 4+ hours advance warning, while traditionally monitored areas had less than 1 hour due to data gaps and delays.</p>
       
-      <p class="stat-highlight">💰 Total cost of ownership for Climmaech systems is 35% lower over 10 years despite higher initial investment</p>`,
+      <p class="stat-highlight">💰 Total cost of ownership for Climmatech systems is 35% lower over 10 years despite higher initial investment</p>`,
 
-      `<p><strong>Visual Verification</strong> sets Climmaech apart from both traditional and competing modern systems. Our <em>Drishti</em> cameras provide visual confirmation of sensor readings, virtually eliminating false alarms.</p>
+      `<p><strong>Visual Verification</strong> sets Climmatech apart from both traditional and competing modern systems. Our <em>Drishti</em> cameras provide visual confirmation of sensor readings, virtually eliminating false alarms.</p>
       
       <p>When a sensor detects rising water, <em>Drishti</em> captures high-resolution images. AI algorithms analyze the imagery to confirm the reading and assess flood characteristics—is it clear water or debris-laden? Is the current dangerous? This multi-sensor approach provides decision-makers with complete situational awareness.</p>
       
-      <p>Traditional systems provide only a number—current depth. Climmaech provides the full picture.</p>`,
+      <p>Traditional systems provide only a number—current depth. Climmatech provides the full picture.</p>`,
 
       'Making the Switch: Implementation and ROI',
       `<p>Transitioning from traditional to modern monitoring infrastructure requires investment, but the returns justify the cost across multiple dimensions:</p>
@@ -331,7 +331,7 @@ export const blogPosts: BlogPost[] = [
       
       <p>Installation is straightforward—most sites become operational within 48 hours. Our systems integrate with existing emergency response infrastructure and command centers.</p>
       
-      <p>The era of manual gauges and mechanical floats is ending. Climate change demands better tools. <strong>Climmaech</strong> provides them.</p>`
+      <p>The era of manual gauges and mechanical floats is ending. Climate change demands better tools. <strong>Climmatech</strong> provides them.</p>`
     )
   },
   {
@@ -344,7 +344,7 @@ export const blogPosts: BlogPost[] = [
     readTime: '5 min read',
     category: 'Case Study',
     content: generateContent(
-      'Advanced flood monitoring is meaningless if warnings don\'t reach the people who need them. The "last mile problem"—getting alerts to remote communities—has been disaster management\'s persistent failure. <strong>Climmaech\'s Rakshak</strong> system solves this critical gap.',
+      'Advanced flood monitoring is meaningless if warnings don\'t reach the people who need them. The "last mile problem"—getting alerts to remote communities—has been disaster management\'s persistent failure. <strong>Climmatech\'s Rakshak</strong> system solves this critical gap.',
 
       'The Last Mile Problem in Disaster Alerts',
       `<p>Imagine this scenario: sophisticated sensors detect a flash flood developing 50 kilometers upstream. AI systems calculate it will reach a downstream village in 3 hours. Emergency managers receive the alert instantly via their command center software.</p>
@@ -387,11 +387,11 @@ export const blogPosts: BlogPost[] = [
         </div>
       </div>
       
-      <p>When Climmaech's monitoring network detects danger, the alert propagates through multiple channels—to emergency centers, to mobile apps, and directly to Rakshak units in affected areas.</p>`,
+      <p>When Climmatech's monitoring network detects danger, the alert propagates through multiple channels—to emergency centers, to mobile apps, and directly to Rakshak units in affected areas.</p>`,
 
       `<p>In Assam's Majuli island, one of India's largest river islands and highly flood-prone, 25 Rakshak units were installed in 2023. During the July monsoon, a sudden glacial lake burst upstream triggered flash flooding.</p>
       
-      <p>Climmaech sensors detected the surge at 2:45 AM. Rakshak alarms activated automatically at 2:47 AM—while most residents were sleeping. The loud sirens and voice broadcasts woke the community, giving them critical time to move to higher ground.</p>
+      <p>Climmatech sensors detected the surge at 2:45 AM. Rakshak alarms activated automatically at 2:47 AM—while most residents were sleeping. The loud sirens and voice broadcasts woke the community, giving them critical time to move to higher ground.</p>
       
       <p class="stat-highlight">✅ Complete evacuation achieved in 85 minutes. Zero casualties despite 12-foot flood surge</p>
       
@@ -404,7 +404,7 @@ export const blogPosts: BlogPost[] = [
       <p>Regular test alarms ensure community familiarity. Residents know exactly what the siren means and what to do when they hear it.</p>`,
 
       'Bridging Technology and Community Safety',
-      `<p>The best technology means nothing without community trust and understanding. Climmaech's deployment includes:</p>
+      `<p>The best technology means nothing without community trust and understanding. Climmatech's deployment includes:</p>
       
       <ul>
         <li><strong>Community Workshops:</strong> Training residents on interpreting alerts and evacuation protocols</li>
@@ -422,15 +422,15 @@ export const blogPosts: BlogPost[] = [
   // Continue with remaining blog posts...
   {
     slug: 'urban-flooding-smart-cities-climmaech',
-    title: 'Urban Flooding: Safeguarding Smart Cities with Climmaech',
-    excerpt: 'As cities become denser, the risk of urban flooding rises. Discover how Climmaech provides hyper-local monitoring for metropolises.',
+    title: 'Urban Flooding: Safeguarding Smart Cities with Climmatech',
+    excerpt: 'As cities become denser, the risk of urban flooding rises. Discover how Climmatech provides hyper-local monitoring for metropolises.',
     date: 'November 28, 2024',
     author: 'Anita Roy',
     image: '/images/blog4.jpg',
     readTime: '7 min read',
     category: 'Urban Planning',
     content: generateContent(
-      'Urban flooding is distinct from riverine flooding. In cities, concrete prevents water absorption, storm drains become overwhelmed, and flooding can occur in minutes from intense rainfall—even without any river nearby. <strong>Climmaech</strong> provides the hyper-local intelligence modern cities need.',
+      'Urban flooding is distinct from riverine flooding. In cities, concrete prevents water absorption, storm drains become overwhelmed, and flooding can occur in minutes from intense rainfall—even without any river nearby. <strong>Climmatech</strong> provides the hyper-local intelligence modern cities need.',
 
       'Why Cities Flood Differently',
       `<p>In natural environments, soil absorbs rainfall and vegetation slows runoff. Cities replace these natural buffers with impermeable surfaces—roads, buildings, parking lots. Water has nowhere to go except storm drains designed for rainfall patterns that no longer exist.</p>
@@ -446,10 +446,10 @@ export const blogPosts: BlogPost[] = [
       
       <p class="stat-highlight">📊 Urban flooding causes 60% of India's flood-related economic losses despite cities occupying only 3% of land area</p>`,
 
-      'In a city, rain intensity can vary block by block. Climmaech sensors deployed on drainage channels provide the granular data needed for efficient pump operation and traffic management.',
+      'In a city, rain intensity can vary block by block. Climmatech sensors deployed on drainage channels provide the granular data needed for efficient pump operation and traffic management.',
 
-      'Climmaech\'s Urban Flood Monitoring Solutions',
-      `<p>Urban environments need sensor networks, not just individual monitoring points. Climmaech deploys multiple types of sensors across the urban watershed:</p>
+      'Climmatech\'s Urban Flood Monitoring Solutions',
+      `<p>Urban environments need sensor networks, not just individual monitoring points. Climmatech deploys multiple types of sensors across the urban watershed:</p>
       
       <div class="feature-grid">
         <div class="feature-card">
@@ -474,9 +474,9 @@ export const blogPosts: BlogPost[] = [
       
       <p>This hyper-local approach means a flash flood in one neighborhood triggers responses only for that area—preventing unnecessary panic elsewhere while ensuring affected residents get timely, specific guidance.</p>`,
 
-      `<p>During Mumbai's 2023 monsoon, Climmaech's pilot deployment in the Bandra-Kurla Complex demonstrated the value of intelligent urban monitoring.</p>
+      `<p>During Mumbai's 2023 monsoon, Climmatech's pilot deployment in the Bandra-Kurla Complex demonstrated the value of intelligent urban monitoring.</p>
       
-      <p>On July 18th, intense rainfall—128mm in 90 minutes—overwhelmed drainage systems. Traditional citywide warnings would have been too general. Climmaech's sensors provided block-by-block precision:</p>
+      <p>On July 18th, intense rainfall—128mm in 90 minutes—overwhelmed drainage systems. Traditional citywide warnings would have been too general. Climmatech's sensors provided block-by-block precision:</p>
       
       <ul>
         <li>Traffic authorities rerouted vehicles away from flooding underpasses before they became impassable</li>
@@ -497,12 +497,12 @@ export const blogPosts: BlogPost[] = [
         <li><strong>Citizen Apps:</strong> Push location-specific notifications with actionable guidance</li>
       </ul>
       
-      <p>Climmaech's API integrates with existing smart city infrastructure, making implementation seamless. We don't replace your existing systems—we enhance them with better data and intelligence.</p>`,
+      <p>Climmatech's API integrates with existing smart city infrastructure, making implementation seamless. We don't replace your existing systems—we enhance them with better data and intelligence.</p>`,
 
       'Building Flood-Resilient Smart Cities',
       `<p>The cities of tomorrow must be flood-resilient by design. This means:</p>
       
-      <p><strong>Permeable Infrastructure:</strong> Rain gardens, permeable pavements, and green roofs that absorb water—monitored by Climmaech sensors to verify performance.</p>
+      <p><strong>Permeable Infrastructure:</strong> Rain gardens, permeable pavements, and green roofs that absorb water—monitored by Climmatech sensors to verify performance.</p>
       
       <p><strong>Intelligent Drainage:</strong> Storm drains equipped with sensors and automated gates that optimize water flow across the network, preventing localized overwhelm.</p>
       
@@ -510,7 +510,7 @@ export const blogPosts: BlogPost[] = [
       
       <p><strong>Predictive Maintenance:</strong> Sensor data identifies drainage system blockages before they cause flooding, enabling preventive cleaning.</p>
       
-      <p>Urban flooding is no longer inevitable. With intelligent monitoring and responsive infrastructure, cities can weather the most intense storms. <strong>Climmaech makes smart cities truly flood-smart.</strong></p>`
+      <p>Urban flooding is no longer inevitable. With intelligent monitoring and responsive infrastructure, cities can weather the most intense storms. <strong>Climmatech makes smart cities truly flood-smart.</strong></p>`
     )
   },
 
@@ -524,7 +524,7 @@ export const blogPosts: BlogPost[] = [
     readTime: '9 min read',
     category: 'Hydrology',
     content: generateContent(
-      'Water depth tells only part of the story. Two rivers at the same depth can have vastly different flood dangers depending on flow velocity. <strong>Climmaech\'s Pravaah</strong> sensor measures what truly matters: discharge volume—the total water flowing past a point.',
+      'Water depth tells only part of the story. Two rivers at the same depth can have vastly different flood dangers depending on flow velocity. <strong>Climmatech\'s Pravaah</strong> sensor measures what truly matters: discharge volume—the total water flowing past a point.',
 
       'The Physics of River Flow',
       `<p>Discharge volume is calculated as velocity × cross-sectional area. Traditional depth sensors measure only area. To understand flood danger, you must know both dimensions.</p>
@@ -546,7 +546,7 @@ export const blogPosts: BlogPost[] = [
       
       <p class="stat-highlight">📐 A 2-meter deep river flowing at 4 m/s carries 8x more water than the same river at 0.5 m/s</p>`,
 
-      '<strong>Climmaech\'s Pravaah</strong> sensor measures surface velocity using Doppler radar principles. By tracking the speed of water movement, it calculates real-time discharge data crucial for dam management and flood prediction.',
+      '<strong>Climmatech\'s Pravaah</strong> sensor measures surface velocity using Doppler radar principles. By tracking the speed of water movement, it calculates real-time discharge data crucial for dam management and flood prediction.',
 
       'How Pravaah Measures Flow Velocity',
       `<p>Pravaah uses the Doppler effect—the same principle that makes an approaching siren sound higher-pitched. The sensor emits radar waves at the water surface. Moving water reflects these waves back with a frequency shift proportional to its velocity.</p>
@@ -578,7 +578,7 @@ export const blogPosts: BlogPost[] = [
 
       `<p>Understanding river discharge transforms flood prediction accuracy. Historical models based only on water level frequently underestimated or overestimated flood severity because they couldn't account for flow dynamics.</p>
       
-      <p>With Pravaah data, Climmaech's AI models factor in:</p>
+      <p>With Pravaah data, Climmatech's AI models factor in:</p>
       
       <ul>
         <li><strong>Flow Momentum:</strong> Fast-moving floods arrive sooner than slow-moving ones at same volume</li>
@@ -594,20 +594,20 @@ export const blogPosts: BlogPost[] = [
       
       <p>Integration with satellite imagery and drone surveys will provide even more comprehensive river characterization. The goal: predict not just how much water is coming, but exactly how the river will behave during flood events.</p>
       
-      <p><strong>Climmaech's vision is complete hydrological intelligence</strong>—understanding rivers as dynamic systems, not static water bodies. Pravaah is making that vision reality, one measurement at a time.</p>`
+      <p><strong>Climmatech's vision is complete hydrological intelligence</strong>—understanding rivers as dynamic systems, not static water bodies. Pravaah is making that vision reality, one measurement at a time.</p>`
     )
   },
   {
     slug: 'climate-change-adaptation-india',
     title: 'Climate Change Adaptation Strategies for India',
-    excerpt: 'India is on the frontlines of the climate crisis. How technology like Climmaech is part of the national adaptation strategy.',
+    excerpt: 'India is on the frontlines of the climate crisis. How technology like Climmatech is part of the national adaptation strategy.',
     date: 'December 12, 2024',
     author: 'Dr. Sarah Chen',
     image: '/images/blog6.jpg',
     readTime: '6 min read',
     category: 'Policy',
     content: generateContent(
-      'India faces some of the world\'s most severe climate change impacts—erratic monsoons, glacial melt floods, and coastal inundation. With 1.4 billion people dependent on climate-sensitive agriculture, adaptation isn\'t optional. <strong>Climmaech</strong> technology is part of India\'s national strategy for climate resilience.',
+      'India faces some of the world\'s most severe climate change impacts—erratic monsoons, glacial melt floods, and coastal inundation. With 1.4 billion people dependent on climate-sensitive agriculture, adaptation isn\'t optional. <strong>Climmatech</strong> technology is part of India\'s national strategy for climate resilience.',
 
       'India\'s Climate Vulnerability',
       `<p>India's geography and economy make it exceptionally vulnerable to climate disruption:</p>
@@ -635,10 +635,10 @@ export const blogPosts: BlogPost[] = [
       
       <p>With monsoons becoming erratic—intense bursts followed by dry spells—traditional flood management approaches based on historical patterns no longer work.</p>`,
 
-      '<strong>Climmaech</strong> supports the vision of a climate-resilient India. Our technology is made in India, for Indian conditions—from the Himalayas to the coastal deltas, adaptable monitoring infrastructure is the first line of defense against climate-induced disasters.',
+      '<strong>Climmatech</strong> supports the vision of a climate-resilient India. Our technology is made in India, for Indian conditions—from the Himalayas to the coastal deltas, adaptable monitoring infrastructure is the first line of defense against climate-induced disasters.',
 
       'National Adaptation Programs and Technology',
-      `<p>India's National Action Plan on Climate Change prioritizes infrastructure resilience and early warning systems. Climmaech aligns with these national goals:</p>
+      `<p>India's National Action Plan on Climate Change prioritizes infrastructure resilience and early warning systems. Climmatech aligns with these national goals:</p>
       
       <p><strong>National Disaster Management Authority (NDMA) Integration:</strong> Our sensors feed real-time data into NDMA's disaster monitoring systems, enhancing their forecasting capabilities.</p>
       
@@ -646,7 +646,7 @@ export const blogPosts: BlogPost[] = [
       
       <p><strong>Jal Jeevan Mission:</strong> Ensuring water security requires understanding water availability and flood risks—our sensors provide both.</p>
       
-      <p><strong>Namami Gange Program:</strong> Monitoring the Ganga River's health and flood risks is enhanced by Climmaech's comprehensive sensor network.</p>
+      <p><strong>Namami Gange Program:</strong> Monitoring the Ganga River's health and flood risks is enhanced by Climmatech's comprehensive sensor network.</p>
       
       <ul>
         <li>Real-time water quality monitoring alongside flood detection</li>
@@ -656,7 +656,7 @@ export const blogPosts: BlogPost[] = [
 
       `<p>The Brahmaputra basin represents one of India's most challenging flood management scenarios—glacial melt, intense monsoons, and complex transboundary water sharing with China and Bangladesh.</p>
       
-      <p>Climmaech's deployment across Assam provides:</p>
+      <p>Climmatech's deployment across Assam provides:</p>
       
       <ul>
         <li><strong>Cross-border Monitoring:</strong> Sensors at entry points detect floods originating in China</li>
@@ -669,13 +669,13 @@ export const blogPosts: BlogPost[] = [
 
       `<p>Climate adaptation requires integration across multiple technologies and institutions:</p>
       
-      <p><strong>Satellite Integration:</strong> Climmaech data combines with ISRO's satellite monitoring for comprehensive coverage—ground sensors verify satellite observations and provide real-time updates.</p>
+      <p><strong>Satellite Integration:</strong> Climmatech data combines with ISRO's satellite monitoring for comprehensive coverage—ground sensors verify satellite observations and provide real-time updates.</p>
       
-      <p><strong>Weather Forecasting:</strong> IMD (India Meteorological Department) rainfall forecasts combined with Climmaech's ground data improves prediction accuracy by 35%.</p>
+      <p><strong>Weather Forecasting:</strong> IMD (India Meteorological Department) rainfall forecasts combined with Climmatech's ground data improves prediction accuracy by 35%.</p>
       
       <p><strong>Agricultural Advisory:</strong> Farmers receive flood warnings and water availability data to optimize planting and harvesting schedules.</p>
       
-      <p><strong>Insurance Systems:</strong> Parametric flood insurance uses Climmaech sensor data to trigger automatic payouts, accelerating disaster recovery.</p>`,
+      <p><strong>Insurance Systems:</strong> Parametric flood insurance uses Climmatech sensor data to trigger automatic payouts, accelerating disaster recovery.</p>`,
 
       'Building a Climate-Resilient Nation',
       `<p>Technology alone cannot solve climate change, but it's an essential tool for adaptation. India's response to climate threats must include:</p>
@@ -699,7 +699,7 @@ export const blogPosts: BlogPost[] = [
         </div>
       </div>
       
-      <p>From the Himalayas to the coastal deltas, adaptable monitoring infrastructure serves as the first line of defense. <strong>Climmaech is proud to be part of India's climate adaptation journey, providing the technology that saves lives and protects livelihoods.</strong></p>`
+      <p>From the Himalayas to the coastal deltas, adaptable monitoring infrastructure serves as the first line of defense. <strong>Climmatech is proud to be part of India's climate adaptation journey, providing the technology that saves lives and protects livelihoods.</strong></p>`
     )
   },
   {
@@ -712,7 +712,7 @@ export const blogPosts: BlogPost[] = [
     readTime: '5 min read',
     category: 'Technology',
     content: generateContent(
-      'Some rivers flow through forests, mountains, and conflict zones where installing traditional monitoring equipment is impractical or impossible. <strong>Climmaech\'s Doordrishti</strong> system provides "distant vision"—monitoring kilometers of riverfront from a single strategic location.',
+      'Some rivers flow through forests, mountains, and conflict zones where installing traditional monitoring equipment is impractical or impossible. <strong>Climmatech\'s Doordrishti</strong> system provides "distant vision"—monitoring kilometers of riverfront from a single strategic location.',
 
       'The Challenge of Remote River Monitoring',
       `<p>India has over 400 major rivers and thousands of tributaries. Many flow through:</p>
@@ -745,7 +745,7 @@ export const blogPosts: BlogPost[] = [
         </div>
       </div>`,
 
-      '<strong>Climmaech\'s Doordrishti</strong> combines long-range radar with PTZ (Pan-Tilt-Zoom) cameras to cover kilometers of riverfront from a single vantage point. This capability is essential for monitoring borders, forest reserves, and areas where physical access is dangerous or impossible.',
+      '<strong>Climmatech\'s Doordrishti</strong> combines long-range radar with PTZ (Pan-Tilt-Zoom) cameras to cover kilometers of riverfront from a single vantage point. This capability is essential for monitoring borders, forest reserves, and areas where physical access is dangerous or impossible.',
 
       'How Doordrishti Works: Eyes Everywhere',
       `<p>Doordrishti is installed at strategic high points—hilltops, towers, or buildings with clear sightlines. From there, it provides:</p>
@@ -764,7 +764,7 @@ export const blogPosts: BlogPost[] = [
 
       `<p>The Teesta River in Sikkim flows through steep Himalayan terrain—beautiful but dangerous. Traditional monitoring was limited to a few road-accessible points, leaving 60+ kilometers unmonitored.</p>
       
-      <p>Climmaech installed three Doordrishti units at strategic elevations. These provide:</p>
+      <p>Climmatech installed three Doordrishti units at strategic elevations. These provide:</p>
       
       <ul>
         <li>Complete coverage of the previously unmonitored river stretch</li>
@@ -819,14 +819,14 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'data-driven-disaster-response',
     title: 'Data-Driven Disaster Response: The New Normal',
-    excerpt: 'Moving from intuition to information. How improved data granularity from Climmaech empowers first responders.',
+    excerpt: 'Moving from intuition to information. How improved data granularity from Climmatech empowers first responders.',
     date: 'December 20, 2024',
     author: 'Anita Roy',
     image: '/images/blog8.jpg',
     readTime: '7 min read',
     category: 'Response',
     content: generateContent(
-      'Emergency responders have traditionally operated with limited information—vague reports, delayed updates, and dangerous uncertainty. <strong>Climmaech</strong> transforms disaster response by providing first responders with real-time, location-specific data that saves both civilian and rescuer lives.',
+      'Emergency responders have traditionally operated with limited information—vague reports, delayed updates, and dangerous uncertainty. <strong>Climmatech</strong> transforms disaster response by providing first responders with real-time, location-specific data that saves both civilian and rescuer lives.',
 
       'The Information Gap in Emergency Response',
       `<p>When floods strike, emergency services face critical unknowns:</p>
@@ -862,16 +862,16 @@ export const blogPosts: BlogPost[] = [
         </div>
       </div>`,
 
-      'NDRF and local fire services use <strong>Climmaech</strong> dashboards to plan rescue operations. Knowing the depth and current velocity helps them choose the right boats and gear. This data-first approach minimizes risk to the rescuers while maximizing the efficiency of their operations.',
+      'NDRF and local fire services use <strong>Climmatech</strong> dashboards to plan rescue operations. Knowing the depth and current velocity helps them choose the right boats and gear. This data-first approach minimizes risk to the rescuers while maximizing the efficiency of their operations.',
 
-      'How Climmaech Empowers First Responders',
-      `<p>Climmaech provides emergency services with a real-time operational picture:</p>
+      'How Climmatech Empowers First Responders',
+      `<p>Climmatech provides emergency services with a real-time operational picture:</p>
       
       <p><strong>Location-Specific Data:</strong> Exact water depths at every monitored point, updated every 5 minutes. Responders know precisely which streets are impassable and which remain navigable.</p>
       
       <p><strong>Visual Confirmation:</strong> HD camera feeds from Drishti and Doordrishti units provide visual assessment—is it clear water or debris-laden? Are power lines down? Is the current dangerous?</p>
       
-      <p><strong>Trend Analysis:</strong> Is flooding worsening or receding? Climmaech's AI predicts conditions 2-4 hours ahead, enabling proactive resource positioning.</p>
+      <p><strong>Trend Analysis:</strong> Is flooding worsening or receding? Climmatech's AI predicts conditions 2-4 hours ahead, enabling proactive resource positioning.</p>
       
       <p><strong>Safe Route Mapping:</strong> Integration with mapping systems highlights passable routes in real-time, crucial for both evacuation and rescue access.</p>
       
@@ -884,7 +884,7 @@ export const blogPosts: BlogPost[] = [
 
       `<p>During the July 2024 Gujarat floods, the Vadodara Municipal Corporation's emergency response demonstrated data-driven disaster management at its best.</p>
       
-      <p>As the Vishwamitri River overflowed, Climmaech sensors provided:</p>
+      <p>As the Vishwamitri River overflowed, Climmatech sensors provided:</p>
       
       <ul>
         <li>Real-time water levels at 15 points across the city</li>
@@ -903,7 +903,7 @@ export const blogPosts: BlogPost[] = [
       
       <p>Fire Chief Rajendra Patel: "Having real-time data meant we weren't guessing. We knew exactly where to go, what equipment to bring, and what conditions to expect. It's the difference between reactive chaos and organized response."</p>`,
 
-      `<p>Climmaech's emergency response dashboard provides:</p>
+      `<p>Climmatech's emergency response dashboard provides:</p>
       
       <p><strong>Multi-Layer Maps:</strong></p>
       <ul>
@@ -949,7 +949,7 @@ export const blogPosts: BlogPost[] = [
       'From Information Gaps to Information Advantage',
       `<p>Modern disaster response demands modern tools. First responders are among our bravest citizens—they deserve the best information technology can provide.</p>
       
-      <p>Climmaech doesn't just save the public—it protects the protectors. By providing accurate, real-time data, we ensure that emergency responders can focus on saving lives rather than verifying information.</p>
+      <p>Climmatech doesn't just save the public—it protects the protectors. By providing accurate, real-time data, we ensure that emergency responders can focus on saving lives rather than verifying information.</p>
       
       <p><strong>In the critical hours of a disaster, information isn't just power—it's the difference between life and death.</strong></p>`
     )
@@ -957,14 +957,14 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'community-centric-flood-resilience',
     title: 'Building Community-Centric Flood Resilience',
-    excerpt: 'Technology is a tool, but people are the focus. How Climmaech integrates with community knowledge systems.',
+    excerpt: 'Technology is a tool, but people are the focus. How Climmatech integrates with community knowledge systems.',
     date: 'December 21, 2024',
     author: 'Vikram Singh',
     image: '/images/blog9.jpg',
     readTime: '5 min read',
     category: 'Community',
     content: generateContent(
-      'The most advanced flood monitoring system fails if communities don\'t trust it, understand it, or have access to it. <strong>Climmaech</strong> recognizes that technology must serve people—not the other way around. Our approach integrates modern sensors with traditional community knowledge.',
+      'The most advanced flood monitoring system fails if communities don\'t trust it, understand it, or have access to it. <strong>Climmatech</strong> recognizes that technology must serve people—not the other way around. Our approach integrates modern sensors with traditional community knowledge.',
 
       'Why Community-Centric Matters',
       `<p>Top-down technology deployment often fails because it ignores local realities:</p>
@@ -997,9 +997,9 @@ export const blogPosts: BlogPost[] = [
         </div>
       </div>`,
 
-      '<strong>Climmaech</strong> isn\'t just for engineers. We build simplified public interfaces that allow citizens to check the safety of their local water bodies. Empowering the community with information builds trust and ensures faster compliance with evacuation orders.',
+      '<strong>Climmatech</strong> isn\'t just for engineers. We build simplified public interfaces that allow citizens to check the safety of their local water bodies. Empowering the community with information builds trust and ensures faster compliance with evacuation orders.',
 
-      'How Climmaech Builds Community Resilience',
+      'How Climmatech Builds Community Resilience',
       `<p><strong>Multi-Channel Communication:</strong></p>
       
       <ul>
@@ -1010,7 +1010,7 @@ export const blogPosts: BlogPost[] = [
         <li><strong>Voice Calls:</strong> Automated calls in local languages for registered households</li>
       </ul>
       
-      <p><strong>Community Workshops:</strong> Before installing any system, Climmaech teams conduct village meetings to:</p>
+      <p><strong>Community Workshops:</strong> Before installing any system, Climmatech teams conduct village meetings to:</p>
       
       <div class="feature-grid">
         <div class="feature-card">
@@ -1035,9 +1035,9 @@ export const blogPosts: BlogPost[] = [
 
       `<p>The village of Majuli Gaon in Assam represents successful community integration. This 2,500-resident village has flooded regularly for decades. Residents had traditional warning systems—observing river color changes, bird behavior, and upstream weather reports.</p>
       
-      <p>When Climmaech proposed installation, initial skepticism was high: "We've survived floods for generations without your technology."</p>
+      <p>When Climmatech proposed installation, initial skepticism was high: "We've survived floods for generations without your technology."</p>
       
-      <p><strong>Climmaech's Approach:</strong></p>
+      <p><strong>Climmatech's Approach:</strong></p>
       
       <ul>
         <li>Spent 3 days interviewing village elders about flood patterns</li>
@@ -1047,7 +1047,7 @@ export const blogPosts: BlogPost[] = [
         <li>Created public display board showing both sensor data and traditional indicators</li>
       </ul>
       
-      <p>Result: The 2024 monsoon brought severe flooding. Traditional indicators and Climmaech sensors both predicted danger—each validating the other. The community trusted the combined approach.</p>
+      <p>Result: The 2024 monsoon brought severe flooding. Traditional indicators and Climmatech sensors both predicted danger—each validating the other. The community trusted the combined approach.</p>
       
       <p class="stat-highlight">🏆 100% evacuation compliance—entire village reached safety 4 hours before flood peak</p>`,
 
@@ -1074,7 +1074,7 @@ export const blogPosts: BlogPost[] = [
       
       <p>Combined, they create resilience that neither could achieve alone.</p>
       
-      <p><strong>Climmaech's philosophy:</strong> Technology should empower, not replace. Our sensors enhance community capabilities—they don't override community wisdom.</p>
+      <p><strong>Climmatech's philosophy:</strong> Technology should empower, not replace. Our sensors enhance community capabilities—they don't override community wisdom.</p>
       
       <p>When communities trust and understand their flood warning systems, compliance is nearly universal. When they're excluded from the process, even perfect technology fails.</p>
       
@@ -1083,15 +1083,15 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'future-of-hydrology-ai-climmaech',
-    title: 'The Future of Hydrology: AI and Climmaech',
-    excerpt: 'Predictive modelling and neural networks. What the next decade of flood forecasting looks like with Climmaech.',
+    title: 'The Future of Hydrology: AI and Climmatech',
+    excerpt: 'Predictive modelling and neural networks. What the next decade of flood forecasting looks like with Climmatech.',
     date: 'December 22, 2024',
     author: 'Dr. Sarah Chen',
     image: '/images/blog10.jpg',
     readTime: '4 min read',
     category: 'Innovation',
     content: generateContent(
-      'Hydrological science stands at an inflection point. Artificial intelligence is transforming flood forecasting from educated guesswork into precise science. <strong>Climmaech</strong> is at the forefront of this AI revolution, training models that can predict floods with unprecedented accuracy.',
+      'Hydrological science stands at an inflection point. Artificial intelligence is transforming flood forecasting from educated guesswork into precise science. <strong>Climmatech</strong> is at the forefront of this AI revolution, training models that can predict floods with unprecedented accuracy.',
 
       'The AI Advantage in Flood Prediction',
       `<p>Traditional flood forecasting relied on statistical models based on historical patterns. These models fail when:</p>
@@ -1124,11 +1124,11 @@ export const blogPosts: BlogPost[] = [
         </div>
       </div>
       
-      <p class="stat-highlight">🎯 Climmaech's AI models achieve 89% accuracy in predicting flood levels 6 hours in advance</p>`,
+      <p class="stat-highlight">🎯 Climmatech's AI models achieve 89% accuracy in predicting flood levels 6 hours in advance</p>`,
 
-      'We are training neural networks on decades of river data. <strong>Climmaech\'s</strong> AI can now spot potential flash floods by correlating upstream rain with downstream micro-level changes. This predictive capability is the holy grail of hydrology, moving us from "warning" to "forecasting" with high confidence.',
+      'We are training neural networks on decades of river data. <strong>Climmatech\'s</strong> AI can now spot potential flash floods by correlating upstream rain with downstream micro-level changes. This predictive capability is the holy grail of hydrology, moving us from "warning" to "forecasting" with high confidence.',
 
-      'How Climmaech\'s AI Works',
+      'How Climmatech\'s AI Works',
       `<p><strong>Data Collection Layer:</strong> Thousands of sensors continuously feed data:</p>
       
       <ul>
@@ -1159,9 +1159,9 @@ export const blogPosts: BlogPost[] = [
         <li>Identifies areas of highest risk</li>
       </ul>`,
 
-      `<p>During the 2024 Kerala monsoon, Climmaech's AI demonstrated capabilities that astonished even our engineering team.</p>
+      `<p>During the 2024 Kerala monsoon, Climmatech's AI demonstrated capabilities that astonished even our engineering team.</p>
       
-      <p>On August 12th, moderate rainfall began in the Western Ghats. Traditional models predicted minor river rises—nothing alarming. But Climmaech's AI detected an anomaly:</p>
+      <p>On August 12th, moderate rainfall began in the Western Ghats. Traditional models predicted minor river rises—nothing alarming. But Climmatech's AI detected an anomaly:</p>
       
       <p>Soil moisture levels (from satellite data) were unusually high from previous week's rain. Rainfall intensity showed a specific pattern the AI had learned predicts flash floods. Upstream tributary flows exhibited micro-variations indicating rapid accumulation.</p>
       
@@ -1171,11 +1171,11 @@ export const blogPosts: BlogPost[] = [
       
       <p><strong>Human forecasters:</strong> Would not have predicted severe flooding based on moderate rainfall<br>
       <strong>Traditional models:</strong> Projected minor river rise<br>
-      <strong>Climmaech AI:</strong> Correctly predicted major flood 8 hours in advance</p>
+      <strong>Climmatech AI:</strong> Correctly predicted major flood 8 hours in advance</p>
       
       <p class="stat-highlight">✅ 15,000+ people evacuated before flooding—zero casualties</p>`,
 
-      `<p>The next evolution of Climmaech's AI will incorporate:</p>
+      `<p>The next evolution of Climmatech's AI will incorporate:</p>
       
       <p><strong>Climate Model Integration:</strong> Long-term climate projections inform seasonal flood risk assessments, enabling proactive infrastructure planning.</p>
       
@@ -1219,7 +1219,7 @@ export const blogPosts: BlogPost[] = [
         <li><strong>Transportation:</strong> Reroute logistics before supply chains break</li>
       </ul>
       
-      <p>The holy grail—accurate 24-hour flood forecasts—is nearly here. Climmaech's AI is making it reality.</p>
+      <p>The holy grail—accurate 24-hour flood forecasts—is nearly here. Climmatech's AI is making it reality.</p>
       
       <p><strong>We're not just monitoring floods anymore. We're seeing them before they happen.</strong></p>`
     )

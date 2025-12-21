@@ -142,7 +142,7 @@ export default function BlogPostPage({ params }: Props) {
                             <div>
                                 <h4 className="text-xl font-bold text-slate-900 mb-2">About {post.author}</h4>
                                 <p className="text-slate-600 leading-relaxed text-lg">
-                                    {post.author} is a climate technology expert and technical writer at Climmaech. With over a decade of experience in environmental monitoring systems, they specialize in translating complex hydrological concepts into actionable insights for disaster management professionals.
+                                    {post.author} is a climate technology expert and technical writer at Climmatech. With over a decade of experience in environmental monitoring systems, they specialize in translating complex hydrological concepts into actionable insights for disaster management professionals.
                                 </p>
                             </div>
                         </div>
@@ -158,7 +158,7 @@ export default function BlogPostPage({ params }: Props) {
                     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
                         <h3 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">Ready to Protect Your Community?</h3>
                         <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto leading-relaxed">
-                            Learn more about how Climmaech's advanced flood monitoring sensors are saving lives and protecting infrastructure across India.
+                            Learn more about how Climmatech's advanced flood monitoring sensors are saving lives and protecting infrastructure across India.
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                             <Link href="/products" className="w-full sm:w-auto inline-block bg-white text-blue-600 px-8 py-4 rounded-full font-bold hover:bg-blue-50 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1">
