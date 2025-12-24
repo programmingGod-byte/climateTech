@@ -10,6 +10,18 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true, 
   },
+  async redirects() {
+    return [
+      {
+        source: '/blog/urban-flooding-smart-cities-climmaech',
+        destination: '/',
+        permanent: true, 
+      },
+    ]
+  },
 };
 
-module.exports = nextConfig;
+
+
+
+module.exports = nextConfig

@@ -36,9 +36,9 @@ export default function HeroSection() {
           {displayedText}
         </motion.h1>
 
-        <p className="text-white text-lg sm:text-xl mt-4 drop-shadow-md">
+        {/* <p className="text-white text-lg sm:text-xl mt-4 drop-shadow-md">
           Innovative smart energy and robotics solutions for homes and businesses.
-        </p>
+        </p> */}
       </div>
     </section>
   )

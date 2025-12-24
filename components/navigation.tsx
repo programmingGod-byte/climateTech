@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Menu, X, Shield, Phone, Mail, Moon, Sun } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from 'next-themes';
+import Link from 'next/link';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,9 +45,9 @@ export default function Navigation() {
             className="flex items-center space-x-2"
           >
             <img src='/images/logo-removebg-preview.png' alt="Logo" className="w-16 h-16" />
-            <span className={`text-3xl font-sans text-foreground`}>
+            <Link href={"/"} className={`text-3xl font-sans text-foreground`}>
               ClimMaTech
-            </span>
+            </Link>
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -75,12 +76,12 @@ export default function Navigation() {
               <span className="sr-only">Toggle theme</span>
             </Button>
 
-            <Button
+            <Link
               className="bg-gradient-to-r from-cyan-400 to-blue-500 text-white"
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              href={"/#contact"}
             >
               Request Demo
-            </Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}

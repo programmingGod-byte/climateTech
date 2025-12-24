@@ -34,7 +34,7 @@ export default function ProductsIndexPage() {
                             <span className="tracking-wide uppercase text-xs">The Climmatech Ecosystem</span>
                         </div>
 
-                        <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-slate-900 font-sans">
+                        <h1 className="text-5xl md:text-7xl  tracking-tight text-slate-900 font-sans">
                             Engineering <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">Resilience</span>
                         </h1>
 
@@ -125,7 +125,7 @@ export default function ProductsIndexPage() {
                     <div className="max-w-3xl mx-auto px-4">
                         <h2 className="text-3xl font-bold text-slate-900 mb-6">Built for scale. Deployed for impact.</h2>
                         <Link
-                            href="/contact"
+                            href="/#contact"
                             className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white rounded-full font-bold hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/30"
                         >
                             Contact Sales
