@@ -22,6 +22,8 @@ export default function Navigation() {
 
   const navItems = [
     { name: 'Products', href: '/products' },
+    { name: 'Technology', href: '/technology' },
+    { name: 'Case Studies', href: '/case-studies' },
     { name: 'Features', href: '/#features' },
     { name: 'Impact', href: '/#impact' },
     { name: 'Blog', href: '/blog' },

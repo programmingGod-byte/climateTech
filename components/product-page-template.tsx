@@ -7,7 +7,8 @@ import Link from 'next/link';
 import Navigation from '@/components/navigation';
 import Footer from '@/components/footer';
 import { Product } from '@/lib/products-data';
-import { CheckCircle2, Activity, Zap, Wifi, ArrowLeft, Download, MessageSquare } from 'lucide-react';
+import { CheckCircle2, Activity, Zap, Wifi, ArrowLeft, Download, MessageSquare, ChevronRight, FileText, HelpCircle, Layers, Settings2 } from 'lucide-react';
+
 
 interface Props {
     product: Product;
@@ -173,6 +174,157 @@ export default function ProductPageTemplate({ product }: Props) {
                         </div>
                     </div>
                 </section>
+                {/* --- NEW SECTIONS APPENDED AUTOMATICALLY --- */}
+                {/* Overview List */}
+                {product.overviewList && (
+                    <section className="py-16 bg-slate-50 border-t border-slate-100">
+                        <div className="max-w-5xl mx-auto px-4">
+                            <h2 className="text-3xl font-bold text-slate-900 mb-8">System Overview</h2>
+                            <ul className="grid md:grid-cols-2 gap-4">
+                                {product.overviewList.map((item, i) => (
+                                    <li key={i} className="flex items-center gap-3 bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                                        <CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0" />
+                                        <span className="text-slate-700 font-medium">{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </section>
+                )}
+
+                {/* Detailed Specifications Tables */}
+                {product.detailedSpecsTables && (
+                    <section className="py-24 bg-white border-t border-slate-100">
+                        <div className="max-w-5xl mx-auto px-4">
+                            <div className="text-center mb-16">
+                                <h2 className="text-3xl font-bold text-slate-900">Comprehensive Component Specifications</h2>
+                            </div>
+                            <div className="space-y-12">
+                                {product.detailedSpecsTables.map((table, i) => (
+                                    <div key={i} className="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
+                                        <div className="bg-slate-50 px-6 py-4 flex items-center gap-3 border-b border-slate-200">
+                                            <Settings2 className="w-6 h-6 text-blue-600 shrink-0" />
+                                            <h3 className="text-xl font-bold text-slate-900">{table.category}</h3>
+                                        </div>
+                                        <div className="divide-y divide-slate-100">
+                                            {Object.entries(table.specs).map(([key, value], idx) => (
+                                                <div key={idx} className="flex flex-col md:flex-row px-6 py-4 hover:bg-slate-50 transition-colors">
+                                                    <span className="md:w-1/3 text-sm font-bold text-slate-500 uppercase tracking-wide mb-1 md:mb-0">{key}</span>
+                                                    <span className="md:w-2/3 text-slate-800 text-lg">{value}</span>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+                )}
+
+                {/* Detailed Descriptions (Long text) */}
+                {product.detailedDescriptions && (
+                    <section className="py-24 bg-slate-50 border-t border-slate-100">
+                        <div className="max-w-4xl mx-auto px-4 space-y-16">
+                            <div className="text-center mb-16">
+                                <h2 className="text-3xl font-bold text-slate-900">Detailed System Requirements</h2>
+                            </div>
+                            {product.detailedDescriptions.map((desc, i) => (
+                                <div key={i} className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+                                    <h3 className="text-2xl font-bold text-slate-900 mb-6">{desc.title}</h3>
+                                    <div className="space-y-4 text-slate-600 text-lg leading-relaxed">
+                                        {desc.paragraphs.map((p, idx) => (
+                                            <p key={idx}>{p}</p>
+                                        ))}
+                                    </div>
+                                    {desc.listItems && (
+                                        <ul className="mt-6 space-y-3">
+                                            {desc.listItems.map((item, idx) => (
+                                                <li key={idx} className="flex items-start gap-3">
+                                                    <div className="mt-2.5 w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0" />
+                                                    <span className="text-slate-700 text-lg">{item}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+                )}
+
+                {/* Unique Capabilities & Applications */}
+                {(product.uniqueCapabilitiesList || product.applicationsList) && (
+                    <section className="py-24 bg-white border-t border-slate-100">
+                        <div className="max-w-5xl mx-auto px-4 grid md:grid-cols-2 gap-12">
+                            {product.uniqueCapabilitiesList && (
+                                <div>
+                                    <h2 className="text-3xl font-bold text-slate-900 mb-8">Unique Capabilities</h2>
+                                    <ul className="space-y-4">
+                                        {product.uniqueCapabilitiesList.map((cap, i) => (
+                                            <li key={i} className="flex items-center gap-4 bg-slate-50 p-5 rounded-xl border border-slate-200 shadow-sm">
+                                                <Layers className="w-6 h-6 text-blue-500 shrink-0" />
+                                                <span className="text-lg text-slate-700 font-medium">{cap}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+                            {product.applicationsList && (
+                                <div>
+                                    <h2 className="text-3xl font-bold text-slate-900 mb-8">Applications</h2>
+                                    <ul className="space-y-4">
+                                        {product.applicationsList.map((app, i) => (
+                                            <li key={i} className="flex items-center gap-4 bg-slate-50 p-5 rounded-xl border border-slate-200 shadow-sm">
+                                                <Activity className="w-6 h-6 text-emerald-500 shrink-0" />
+                                                <span className="text-lg text-slate-700 font-medium">{app}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+                        </div>
+                    </section>
+                )}
+
+                {/* Downloads */}
+                {product.downloadsSections && (
+                    <section className="py-24 bg-slate-900 text-white border-t border-slate-800">
+                        <div className="max-w-5xl mx-auto px-4 text-center">
+                            <h2 className="text-3xl font-bold mb-10">Product Downloads</h2>
+                            <div className="flex flex-wrap justify-center gap-6">
+                                {product.downloadsSections.map((doc, i) => (
+                                    <a key={i} href={doc.url} className="flex items-center gap-3 bg-white/10 hover:bg-white/20 px-8 py-5 rounded-2xl transition-all border border-white/20 backdrop-blur-sm">
+                                        <FileText className="w-6 h-6 text-blue-400" />
+                                        <span className="font-semibold text-lg">{doc.name}</span>
+                                        <Download className="w-5 h-5 ml-2 opacity-60" />
+                                    </a>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+                )}
+
+                {/* FAQs */}
+                {product.faqSections && (
+                    <section className="py-24 bg-white border-t border-slate-100">
+                        <div className="max-w-4xl mx-auto px-4">
+                            <div className="text-center mb-16">
+                                <h2 className="text-3xl font-bold text-slate-900">Frequently Asked Questions</h2>
+                            </div>
+                            <div className="space-y-6">
+                                {product.faqSections.map((faq, i) => (
+                                    <div key={i} className="bg-slate-50 rounded-2xl p-8 border border-slate-200 shadow-sm">
+                                        <h3 className="text-xl font-bold text-slate-900 flex items-center gap-3 mb-4">
+                                            <HelpCircle className="w-6 h-6 text-blue-600 shrink-0" /> 
+                                            {faq.q}
+                                        </h3>
+                                        <p className="text-slate-600 text-lg leading-relaxed pl-9">{faq.a}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+                )}
             </main>
 
             <Footer />

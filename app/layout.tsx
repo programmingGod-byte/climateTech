@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     default: 'Climmatech – AI Flood Monitoring & Smart IoT Sensors',
     template: '%s | Climmatech',
   },
-  description: 
+  description:
     'Climmatech offers AI-powered flood prediction, real-time IoT flood monitoring, solar and radar water level sensors, and early warning systems tailored for India’s climate challenges.',
   robots: { index: true, follow: true },
   keywords: [
@@ -31,12 +31,12 @@ export const metadata: Metadata = {
     'AI flood prediction',
     'early warning system floods',
     'solar flood sensors',
-    'radar based flood monitoring',
-    'disaster warning siren',
-    'river flow monitoring sensor',
-    'climate resilience tech',
-    'flood prevention solutions',
-    'monsoon flood prediction',
+    'radar water level sensor India',
+    'river monitoring system India',
+    'flood monitoring system India',
+    'river monitoring system with camera',
+    'non-contact discharge measurement system',
+    'solar water level monitoring system',
     // … keep or add other topical keywords here as required
   ],
   alternates: {
@@ -118,19 +118,19 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
-        
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
       </head>
       <body className={inter.className}>
-        
+
         <div className={poppins.variable}>
           <ThemeProvider
             attribute="class"
