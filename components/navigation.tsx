@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from 'next-themes';
 import { Button } from '@/components/ui/button';
@@ -14,6 +15,7 @@ export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isProductsHovered, setIsProductsHovered] = useState(false);
   const { theme, setTheme } = useTheme();
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,13 +53,13 @@ export default function Navigation() {
             className="flex items-center space-x-2"
           >
             <img src='/images/logo-removebg-preview.png' alt="Logo" className="w-16 h-16" />
-            <Link href={"/"} className={`text-3xl font-sans text-foreground`}>
+            <Link href={"/"} className={`text-xl 2xl:text-3xl font-sans text-foreground shrink-0`}>
               ClimMaTech
             </Link>
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden xl:flex items-center space-x-2 2xl:space-x-8">
             {navItems.map((item) => (
               <div
                 key={item.name}
@@ -67,8 +69,11 @@ export default function Navigation() {
               >
                 <Link
                   href={item.href}
-                  className={`flex items-center space-x-1 transition-all font-medium font-sans text-foreground/80 hover:text-foreground py-2 px-1
-                    ${item.name === 'Achievements' ? 'border-b-2 border-green-500 text-green-600 dark:text-green-400 hover:-translate-y-1' : ''}
+                  className={`flex items-center space-x-1 transition-all font-medium font-sans py-2 px-1 text-sm 2xl:text-base whitespace-nowrap
+                    ${pathname === item.href
+                      ? 'border-b-2 border-blue-500 text-blue-600 dark:text-blue-400'
+                      : 'text-foreground/80 hover:text-foreground'
+                    }
                   `}
                 >
                   <span>{item.name}</span>
@@ -142,7 +147,7 @@ export default function Navigation() {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center space-x-2">
+          <div className="xl:hidden flex items-center space-x-2">
             <Button
               variant="ghost"
               size="sm"
@@ -176,7 +181,7 @@ export default function Navigation() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background border-t shadow-lg"
+            className="xl:hidden bg-background border-t shadow-lg"
           >
             <div className="px-4 py-2 space-y-2">
               {navItems.map((item) => (
