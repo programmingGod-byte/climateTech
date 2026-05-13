@@ -1,12 +1,14 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Mail, Phone, MapPin, Clock, Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
+import ParticleStars from './particle-stars';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -20,6 +22,12 @@ export default function ContactSection() {
   const [submitStatus, setSubmitStatus] = useState('idle');
   const [submitMessage, setSubmitMessage] = useState('');
   const [referenceId, setReferenceId] = useState('');
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  });
+  const y = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -92,8 +100,13 @@ export default function ContactSection() {
 
   if (submitStatus === 'success') {
     return (
-      <section id="contact" className="py-20 bg-gradient-to-br from-blue-50 via-white to-green-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="contact" ref={sectionRef} className="py-20 relative overflow-hidden text-white">
+        <motion.div 
+          style={{ y }} 
+          className="absolute inset-0 bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 z-0"
+        />
+        <ParticleStars />
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
             <Card className="shadow-2xl border-0 bg-white">
               <CardContent className="p-12">
@@ -101,11 +114,11 @@ export default function ContactSection() {
                   <CheckCircle className="h-20 w-20 text-green-500 mx-auto mb-6" />
                 </div>
                 
-                <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                <h2 className="text-3xl font-bold text-white mb-4">
                   Thank You for Contacting Us!
                 </h2>
                 
-                <p className="text-xl text-gray-600 mb-6">
+                <p className="text-xl text-white/80 mb-6">
                   Your message has been successfully submitted.
                 </p>
                 
@@ -155,13 +168,18 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-blue-50 via-white to-green-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" ref={sectionRef} className="py-20 relative overflow-hidden text-white">
+      <motion.div 
+        style={{ y }} 
+        className="absolute inset-0 bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 z-0"
+      />
+      <ParticleStars />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-sans text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-sans text-white mb-4">
             Get Started with <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">ClimateTech.life</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl font-sans mx-auto">
+          <p className="text-xl text-white/80 max-w-3xl font-sans mx-auto">
             Contact us for a personalized demonstration 
             and learn how ClimateTech.life can safeguard your area.
           </p>
@@ -170,18 +188,18 @@ export default function ContactSection() {
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Contact Information */}
           <div className="space-y-6">
-            <h3 className="text-2xl font-sans text-gray-900 mb-6">Contact Information</h3>
+            <h3 className="text-2xl font-sans text-white mb-6">Contact Information</h3>
             
             {contactInfo.map((info, index) => (
               <div
                 key={index}
-                className="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-sm"
+                className="flex items-start space-x-4 p-4 bg-white/10 backdrop-blur-sm border border-white/10 rounded-lg shadow-sm"
               >
                 <div className="flex-shrink-0">{info.icon}</div>
                 <div>
-                  <h4 className="font-medium text-gray-900 font-sans">{info.title}</h4>
-                  <p className="text-gray-700">{info.content}</p>
-                  <p className="text-sm text-gray-500">{info.secondary}</p>
+                  <h4 className="font-medium text-white font-sans">{info.title}</h4>
+                  <p className="text-white/90">{info.content}</p>
+                  <p className="text-sm text-white/60">{info.secondary}</p>
                 </div>
               </div>
             ))}
@@ -189,69 +207,74 @@ export default function ContactSection() {
 
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <Card className="shadow-lg border-0">
+            <Card className="shadow-lg border-white/10 bg-white/5 backdrop-blur-md">
               <CardHeader>
-                <CardTitle className="text-2xl text-gray-900 font-medium font-sans">Contact Us</CardTitle>
+                <CardTitle className="text-2xl text-white font-medium font-sans">Contact Us</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-6">
                   {/* Full Name */}
                   <div className="space-y-2">
-                    <Label htmlFor="name" className='font-sans'>Full Name *</Label>
+                    <Label htmlFor="name" className='font-sans text-white'>Full Name *</Label>
                     <Input
                       id="name"
                       value={formData.name}
                       onChange={(e) => handleInputChange('name', e.target.value)}
                       placeholder="Enter your full name"
+                      className="bg-white/10 border-white/20 text-white placeholder:text-white/40"
                       required
                     />
                   </div>
 
                   {/* Email */}
                   <div className="space-y-2">
-                    <Label htmlFor="email">Email Address *</Label>
+                    <Label htmlFor="email" className="text-white">Email Address *</Label>
                     <Input
                       id="email"
                       type="email"
                       value={formData.email}
                       onChange={(e) => handleInputChange('email', e.target.value)}
                       placeholder="Enter your email address"
+                      className="bg-white/10 border-white/20 text-white placeholder:text-white/40"
                       required
                     />
                   </div>
 
                   {/* Phone */}
                   <div className="space-y-2">
-                    <Label htmlFor="phone">Phone Number</Label>
+                    <Label htmlFor="phone" className="text-white">Phone Number</Label>
                     <Input
                       id="phone"
                       type="tel"
                       value={formData.phone}
                       onChange={(e) => handleInputChange('phone', e.target.value)}
                       placeholder="Enter your phone number"
+                      className="bg-white/10 border-white/20 text-white placeholder:text-white/40"
                     />
                   </div>
 
                   {/* Location */}
                   <div className="space-y-2">
-                    <Label htmlFor="location">Location</Label>
+                    <Label htmlFor="location" className="text-white">Location</Label>
                     <Input
                       id="location"
                       value={formData.location}
                       onChange={(e) => handleInputChange('location', e.target.value)}
                       placeholder="Enter your location/city"
+                      className="bg-white/10 border-white/20 text-white placeholder:text-white/40"
                     />
                   </div>
 
                   {/* Message */}
                   <div className="space-y-2">
-                    <Label htmlFor="message">Message *</Label>
+                    <Label htmlFor="message" className="text-white">Message *</Label>
                     <Textarea
                       id="message"
                       value={formData.message}
                       onChange={(e) => handleInputChange('message', e.target.value)}
                       placeholder="Tell us about your requirements or any questions you have..."
                       rows={5}
+                      className="bg-white/10 border-white/20 text-white placeholder:text-white/40"
                       required
                     />
                   </div>

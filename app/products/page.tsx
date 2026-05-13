@@ -11,7 +11,7 @@ import { Zap, Activity, ChevronRight, Waves } from 'lucide-react';
 
 export default function ProductsIndexPage() {
     return (
-        <div className="min-h-screen relative flex flex-col bg-slate-50 text-slate-900 selection:bg-blue-200">
+        <div className="min-h-screen relative flex flex-col bg-slate-50 text-slate-900 selection:bg-blue-200" style={{ fontFamily: 'sans-serif' }}>
             <Navigation />
 
             <main className="flex-grow pt-24 pb-16 relative overflow-hidden">
@@ -31,14 +31,14 @@ export default function ProductsIndexPage() {
                     >
                         <div className="inline-flex items-center space-x-2 bg-white border border-blue-100 rounded-full px-4 py-1.5 text-sm font-medium text-blue-600 shadow-sm">
                             <Waves className="w-4 h-4 text-blue-500" />
-                            <span className="tracking-wide uppercase text-xs">The Climmatech Ecosystem</span>
+                            <span className="tracking-wide uppercase text-xs" style={{ fontFamily: 'sans-serif' }}>The Climmatech Ecosystem</span>
                         </div>
 
-                        <h1 className="text-5xl md:text-7xl  tracking-tight text-slate-900 font-sans">
+                        <h1 className="text-5xl md:text-7xl  tracking-tight text-slate-900" style={{ fontFamily: 'sans-serif' }}>
                             Engineering <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">Resilience</span>
                         </h1>
 
-                        <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed font-light">
+                        <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed font-light" style={{ fontFamily: 'sans-serif' }}>
                             Advanced sensors and early warning systems designed to protect communities and infrastructure from the unpredictable.
                         </p>
                     </motion.div>
@@ -81,15 +81,15 @@ export default function ProductsIndexPage() {
                                         {/* Card Content */}
                                         <div className="p-8 flex flex-col flex-grow bg-white">
                                             <div className="mb-4">
-                                                <h2 className="text-2xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
+                                                <h2 className="text-2xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors" style={{ fontFamily: 'sans-serif' }}>
                                                     {product.name}
                                                 </h2>
-                                                <p className="text-sm font-medium text-slate-500 uppercase tracking-wider">
+                                                <p className="text-sm font-medium text-slate-500 uppercase tracking-wider" style={{ fontFamily: 'sans-serif' }}>
                                                     {product.tagline}
                                                 </p>
                                             </div>
 
-                                            <p className="text-slate-600 mb-8 line-clamp-3 text-sm leading-relaxed flex-grow border-t border-slate-100 pt-4">
+                                            <p className="text-slate-600 mb-8 line-clamp-3 text-sm leading-relaxed flex-grow border-t border-slate-100 pt-4" style={{ fontFamily: 'sans-serif' }}>
                                                 {product.description}
                                             </p>
 
@@ -106,7 +106,7 @@ export default function ProductsIndexPage() {
                                                         </div>
                                                     </div>
 
-                                                    <span className="flex items-center text-blue-600 font-bold group-hover/btn:translate-x-1 transition-transform">
+                                                    <span className="flex items-center text-blue-600 font-bold group-hover/btn:translate-x-1 transition-transform" style={{ fontFamily: 'sans-serif' }}>
                                                         View Specs
                                                         <ChevronRight className="w-4 h-4 ml-1" />
                                                     </span>
@@ -123,7 +123,7 @@ export default function ProductsIndexPage() {
                 {/* Bottom CTA */}
                 <section className="relative z-10 py-16 text-center">
                     <div className="max-w-3xl mx-auto px-4">
-                        <h2 className="text-3xl font-bold text-slate-900 mb-6">Built for scale. Deployed for impact.</h2>
+                        <h2 className="text-3xl font-bold text-slate-900 mb-6" style={{ fontFamily: 'sans-serif' }}>Built for scale. Deployed for impact.</h2>
                         <Link
                             href="/#contact"
                             className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white rounded-full font-bold hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/30"

@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 
 export default function HeroSection() {
   const [displayedText] = useState('Predicting the Unpredictable')
@@ -12,18 +11,20 @@ export default function HeroSection() {
       id="hero"
       className="relative h-screen w-full overflow-hidden"
     >
-      {/* ✅ Optimized LCP Background Image */}
-      <Image
-        src="/images/disaster/cropped-ChatGPT Image Jul 24, 2025, 12_06_07 PM-Photoroom-Photoroom.webp" // 🔥 convert to webp/avif
-        alt="Smart energy and robotics technology for climate resilience"
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover"
-      />
+      {/* ✅ Video Background */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="/website/home.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
-      {/* Overlay (optional for contrast) */}
-      <div className="absolute inset-0 bg-black/30 z-[1]" />
+      {/* Overlay (for contrast) */}
+      <div className="absolute inset-0 bg-black/50 z-[1]" />
 
       {/* Hero Text */}
       <div className="absolute bottom-12 left-6 z-[2] max-w-3xl">

@@ -1,14 +1,14 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Activity, BarChart3, Bell, Monitor, ArrowRight, ExternalLink, Play, Pause } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Head from 'next/head';
 
 // Background Particles Component
-const BackgroundParticles = () => (
-  <div className="absolute inset-0 overflow-hidden pointer-events-none">
+const BackgroundParticles = ({ y }: { y: any }) => (
+  <motion.div style={{ y }} className="absolute inset-0 overflow-hidden pointer-events-none">
     <div className="absolute inset-0 opacity-20">
       <svg className="w-full h-full">
         <defs>
@@ -20,11 +20,17 @@ const BackgroundParticles = () => (
       </svg>
     </div>
     <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-transparent to-cyan-50/50" />
-  </div>
+  </motion.div>
 );
 
 export default function DashboardShowcaseSection() {
   const [isPlaying, setIsPlaying] = useState(true);
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  });
+  const y = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
 
   const dashboardFeatures = [
     { icon: <Activity className="h-5 w-5 text-green-500" />, title: "Real-Time Monitoring", description: "Live sensor data from all deployed devices" },
@@ -33,22 +39,22 @@ export default function DashboardShowcaseSection() {
   ];
 
   return (
-    <section id="dashboard-showcase" className="relative py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-cyan-50 overflow-hidden">
+    <section id="dashboard-showcase" ref={sectionRef} className="relative py-20 bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white overflow-hidden">
       <Head>
         <meta name="robots" content="index, follow" />
         <meta name="description" content="Climmatech's web dashboard provides real-time monitoring, analytics, and alert management for flood prevention. Access critical flood data and insights from anywhere." />
       </Head>
 
       {/* Background Particles */}
-      <BackgroundParticles />
+      <BackgroundParticles y={y} />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-sans font-medium text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-sans font-medium text-white mb-4">
             Comprehensive <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Web Dashboard</span> for Flood Prevention
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-white/80 max-w-3xl mx-auto">
             Monitor, manage, and analyze your entire flood prevention network using Climmatech's powerful web dashboard. Real-time insights at your fingertips help protect communities and reduce flood risk.
           </p>
         </motion.div>
@@ -77,21 +83,21 @@ export default function DashboardShowcaseSection() {
           {/* Features & CTA */}
           <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.2 }} viewport={{ once: true }} className="space-y-8">
             <div>
-              <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-100">
+              <Badge className="mb-4 bg-blue-500/20 text-blue-300 border-blue-500/30 hover:bg-blue-500/30">
                 <Monitor className="h-3 w-3 mr-1" /> Web Dashboard
               </Badge>
-              <h3 className="text-3xl font-sans text-gray-900 mb-4">Complete Flood Prevention Control</h3>
-              <p className="text-lg text-gray-600 font-sans leading-relaxed">
+              <h3 className="text-3xl font-sans text-white mb-4">Complete Flood Prevention Control</h3>
+              <p className="text-lg text-white/80 font-sans leading-relaxed">
                 Access real-time monitoring, analytics, and alerts from anywhere. Climmatech's dashboard helps communities respond faster and prevent flood damage.
               </p>
             </div>
 
             <div className="grid sm:grid-cols-1 md:grid-cols-1 gap-4 place-items-center">
               {dashboardFeatures.map((feature, index) => (
-                <motion.div key={index} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: index * 0.1 }} viewport={{ once: true }} className="w-full flex items-start place-items-center space-x-3 p-4 bg-white/70 backdrop-blur-sm rounded-lg shadow-sm hover:shadow-md transition-shadow border border-white/50">
+                <motion.div key={index} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: index * 0.1 }} viewport={{ once: true }} className="w-full flex items-start place-items-center space-x-3 p-4 bg-white/10 backdrop-blur-sm rounded-lg shadow-sm hover:shadow-md transition-shadow border border-white/20">
                   <div>
-                    <h4 className="font-medium font-sans text-gray-900 mb-1">{feature.title}</h4>
-                    <p className="text-sm font-sans text-gray-600">{feature.description}</p>
+                    <h4 className="font-medium font-sans text-white mb-1">{feature.title}</h4>
+                    <p className="text-sm font-sans text-white/70">{feature.description}</p>
                   </div>
                 </motion.div>
               ))}

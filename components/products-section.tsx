@@ -1,8 +1,9 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 import { Shield, Zap, Wifi, Brain, Activity, Cloud } from 'lucide-react';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import * as THREE from 'three';
 import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader';
 import Image from 'next/image';
@@ -331,34 +332,10 @@ export default function ProductsSection() {
   const products = [
     {
       icon: <Shield className="h-8 w-8 text-blue-600" />,
-      title: "Drishti",
-      description: "Drishti is a fully integrated, solar-powered, dual-factor flood monitoring sensor that combines image processing (visual data), radar- based measurements, and rain gauge inputs, with key features including",
-      features: ["Wide-area monitoring: Accurately monitors river stretches up to 15 meters wide, making it ideal for small to medium rivers, canals, and urban drains", "Dual-sensor technology: Combines image processing (visual monitoring) and radar- based surface velocity measurement for high-accuracy flow estimation"],
-      image: "/images/3.webp",
-      model: "/models/Solar_Alarm_System_0630051501_texture.fbx"
-    },
-    {
-      icon: <Shield className="h-8 w-8 text-blue-600" />,
       title: "Doordrishti",
       description: "DoorDrishti is a fully integrated, solar-powered, dual-factor flood monitoring sensor that combines advanced image processing (visual data), long-range radar-based measurements, and rain gauge inputs, with key features including:",
-      features: ["Wide-area monitoring", "Rain gauge integration", "2-day battery backup for uninterrupted operation even during extreme weather conditions"],
-      image: "/images/4.webp",
-      model: "/models/Solar_Alarm_System_0630051501_texture.fbx"
-    },
-    {
-      icon: <Shield className="h-8 w-8 text-blue-600" />,
-      title: "Rakshak",
-      description: "Rakshak is a solar-powered, long-range disaster early warning system equipped with sirens for rapid public alerting, with key features including:",
-      features: ["High-decibel siren alerts", "Low-latency response", "Ultra-long-range communication"],
-      image: "/images/2.webp",
-      model: "/models/Solar_Alarm_System_0630051501_texture.fbx"
-    },
-    {
-      icon: <Shield className="h-8 w-8 text-blue-600" />,
-      title: "Tarang",
-      description: "Tarang is a compact, solar-powered, radar- based river monitoring sensor focused solely on providing accurate depth measurements, with key features including:",
-      features: ["Radar-based depth measurement", "Single-parameter focus", "Solar powered"],
-      image: "/images/1.webp",
+      features: ["Wide-area monitoring", "Rain gauge integration", "10-day battery backup for uninterrupted operation even during extreme weather conditions"],
+      image: "/images/oao7myog4yvvidtrday6.webp",
       model: "/models/Solar_Alarm_System_0630051501_texture.fbx"
     },
     {
@@ -366,14 +343,50 @@ export default function ProductsSection() {
       title: "Pravaah",
       description: "Pravaah is a compact, solar-powered, radar- based river monitoring sensor that focuses on depth and surface velocity calculation with key features including:",
       features: ["Wide-area coverage", "Solar powered", "Real-time data transmission for continuous river flow monitoring and decision support"],
-      image: "/images/5.webp",
+      image: "/images/vamdzjwkr8kcj3u1x6lg.webp",
       model: "/models/Solar_Alarm_System_0630051501_texture.fbx"
-    }
+    },
+    {
+      icon: <Shield className="h-8 w-8 text-blue-600" />,
+      title: "Tarang",
+      description: "Tarang is a compact, solar-powered, radar- based river monitoring sensor focused solely on providing accurate depth measurements, with key features including:",
+      features: ["Radar-based depth measurement", "Single-parameter focus", "Solar powered"],
+      image: "/images/mvl9v9vqlbrxux2dmm8c.webp",
+      model: "/models/Solar_Alarm_System_0630051501_texture.fbx"
+    },
+    {
+      icon: <Shield className="h-8 w-8 text-blue-600" />,
+      title: "Rakshak",
+      description: "Rakshak is a solar-powered, long-range disaster early warning system equipped with sirens for rapid public alerting, with key features including:",
+      features: ["High-decibel siren alerts", "Low-latency response", "Ultra-long-range communication"],
+      image: "/images/2-removebg-preview.png",
+      model: "/models/Solar_Alarm_System_0630051501_texture.fbx"
+    },
   ];
 
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  });
+  const y = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
+
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section ref={sectionRef} className="py-20 relative overflow-hidden">
+      <motion.div style={{ y }} className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover blur-[10px]"
+        >
+          <source src="/models/videomp_.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-black/40 backdrop-blur-md"></div>
+      </motion.div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-white">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -381,11 +394,11 @@ export default function ProductsSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-6xl sm:text-6xl font-sans text-gray-900 mb-4">
+          <h2 className="text-6xl sm:text-6xl font-sans text-white mb-4">
             Presenting Our <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Products</span>
           </h2>
 
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-white/80 max-w-3xl mx-auto">
             Comprehensive flood prevention solutions designed specifically for Indian conditions,
             from advanced sensors to AI-powered analytics and cloud-based monitoring systems.
           </p>
@@ -399,55 +412,64 @@ export default function ProductsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
-                }`}
             >
-              {/* Content */}
-              <div className={`space-y-6 ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
-                <div className="flex items-center space-x-3">
+              <motion.div
+                animate={{
+                  y: [0, -15, 0]
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: index * 0.2
+                }}
+                className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}
+              >
+                {/* Content */}
+                <div className={`space-y-6 p-8 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
+                  <div className="flex items-center space-x-3">
+                    <h3 className="text-2xl font-sans text-gray-900 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">{product.title}</h3>
+                  </div>
 
-                  <h3 className="text-2xl font-sans text-gray-900 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">{product.title}</h3>
-                </div>
+                  <p className="text-lg font-sans text-white/90 leading-relaxed">
+                    {product.description}
+                  </p>
 
-                <p className="text-lg font-sans text-gray-600 leading-relaxed">
-                  {product.description}
-                </p>
+                  <div className="grid grid-cols-1 gap-3">
+                    {product.features.map((feature, featureIndex) => (
+                      <div
+                        key={featureIndex}
+                        className="flex font-sans items-center space-x-2 text-sm text-white/80"
+                      >
+                        <div className="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0" />
+                        <p>{feature}</p>
+                      </div>
+                    ))}
+                  </div>
 
-                <div className="grid grid-cols-1 gap-3">
-                  {product.features.map((feature, featureIndex) => (
-                    <div
-                      key={featureIndex}
-                      className="flex font-sans items-center space-x-2 text-sm text-gray-700"
+                  <div className="pt-6">
+                    <a
+                      href={`/products/${product.title.toLowerCase()}`}
+                      className="inline-flex items-center space-x-2 text-blue-400 font-semibold hover:text-blue-300 transition-colors group"
                     >
-                      <div className="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0" />
-                      <p>{feature}</p>
-                    </div>
-                  ))}
+                      <span>View Details</span>
+                      <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </a>
+                  </div>
                 </div>
 
-
-                <div className="pt-6">
-                  <a
-                    href={`/products/${product.title.toLowerCase()}`}
-                    className="inline-flex items-center space-x-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors group"
+                {/* Media Section with Tabs */}
+                <div className={`${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
+                  <motion.div
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.3 }}
                   >
-                    <span>View Details</span>
-                    <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </a>
+                    <MediaTabs product={product} index={index} />
+                  </motion.div>
                 </div>
-              </div>
-
-              {/* Media Section with Tabs */}
-              <div className={`${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
-                <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <MediaTabs product={product} index={index} />
-                </motion.div>
-              </div>
+              </motion.div>
             </motion.div>
           ))}
         </div>

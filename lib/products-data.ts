@@ -19,444 +19,321 @@ export interface Product {
     faqSections?: { q: string, a: string }[];
     detailedSpecsTables?: { category: string, specs: Record<string, string> }[];
     detailedDescriptions?: { title: string, paragraphs: string[], listItems?: string[] }[];
+    slideshow?: string[];
 }
 
 export const products: Product[] = [
     {
-        slug: 'clm-cvdr05',
-        name: 'CLM-CVDR05',
-        tagline: 'Radar + Vision Based River Monitoring System',
-        description: 'Integrated system for non-contact radar-based monitoring with integrated vision and real-time data systems for critical infrastructure and disaster management.',
+        slug: 'data-logger',
+        name: 'Data Logger',
+        tagline: 'CLM-DL01: High-Performance Industrial Data Logger',
+        description: 'The CLM-DL01 is a versatile, high-performance industrial data logger designed for real-time monitoring and edge computing. Built on a Raspberry Pi 5 core with secondary Arduino-based IO handling, it provides unparalleled processing power and interface flexibility for mission-critical environmental sensing.',
         features: [
-            '61 GHz radar level sensor',
-            '24 GHz velocity sensor',
-            'Integrated camera monitoring',
-            'Built-in data logger',
-            'WiFi + Bluetooth',
-            'Multi-network (4G / LoRa / NB-IoT)',
-            'Solar powered (15-day backup)',
-            'IMU-based calibration'
+            'Core Compute: Raspberry Pi 5 (Quad-core ARM Cortex-A76) + Arduino (ESP32 option)',
+            'Sensor Interfaces: SDI-12 (Master), RS-485 (Modbus RTU), Analog (0-5V/4-20mA)',
+            'Multi-Network Comms: 4G LTE, NB-IoT, LoRaWAN, Wi-Fi, GigE Ethernet',
+            'Storage: 128 GB Onboard microSD + optional USB SSD expansion',
+            'Power Management: DC 9-30V input with integrated solar charge controller',
+            'Telemetry: MQTT over TLS, HTTPS/REST, SFTP, Modbus-RTU/TCP support',
+            'Programmable Relays (NO/NC) for automated siren/control activation'
         ],
-        overviewList: [
-            'Water level monitoring (radar)',
-            'Surface velocity measurement (radar)',
-            'Visual monitoring (camera)',
-            'On-device data logging',
-            'Remote telemetry'
-        ],
-        uniqueCapabilitiesList: [
-            'Radar + camera in single unit',
-            'No external data logger required',
-            'Real-time visual monitoring',
-            'Remote device access',
-            'Multi-network failover'
-        ],
-        applicationsList: [
-            'Flood monitoring',
-            'River discharge measurement',
-            'Dam monitoring',
-            'Early warning systems'
+        technicalSpecs: {
+            'Model No': 'CLM-DL01',
+            'CPU': 'Raspberry Pi 5 (Cortex-A76)',
+            'Storage': '128 GB microSD',
+            'Interfaces': 'SDI-12, RS-485, Analog',
+            'Power': 'DC 9-30V (Solar Ready)',
+            'Comms': '4G LTE / LoRaWAN / GigE'
+        },
+        deviceType: 'Industrial Data Logger',
+        image: '/models/image.png',
+        model: '/models/Solar_Alarm_System_0630051501_texture.fbx',
+        benefits: [
+            'High-priority interrupt handling for real-time IO',
+            'Galvanic isolation for superior sensor protection',
+            'Deep sleep modes for extreme low-power operation',
+            'Failsafe I/Os and integrated hardware watchdog'
         ],
         detailedSpecsTables: [
             {
-                category: "Radar specs",
+                category: "Computing & Storage",
                 specs: {
-                    "Measurement Principle": "Non-contact radar",
-                    "Operating Frequency": "61 GHz FMCW radar",
-                    "Measurement Range": "Minimum 0–30 meters",
-                    "Accuracy": "±1 mm or better",
+                    "Core Compute": "Raspberry Pi 5 (64-bit OS) + Arduino (watchdog)",
+                    "Custom Electronics": "Custom PCB with galvanic isolation",
+                    "Storage": "microSD 128 GB + USB SSD expansion support"
+                }
+            },
+            {
+                category: "Interfaces & Comms",
+                specs: {
+                    "Sensor Interfaces": "SDI-12, RS-485, 4-20mA, UART, I2C, SPI",
+                    "Communications": "4G LTE (Primary) + NB-IoT / LoRaWAN / GigE",
+                    "Telemetry Protocols": "MQTT over TLS, HTTPS/REST, SFTP, Modbus-RTU/TCP"
+                }
+            },
+            {
+                category: "Power & Control",
+                specs: {
+                    "Power Supply": "DC input 9-30 V; integrated solar controller",
+                    "Power Management": "Low-power sleep & deep sleep control",
+                    "Relays & Outputs": "Programmable relays (NO/NC) for remote control",
+                    "Real-time IO": "High-priority interrupts, pulse counting"
+                }
+            }
+        ]
+    },
+
+    {
+        slug: 'doordrishti',
+        name: 'Doordrishti',
+        tagline: 'CLM-CVDR05: Dual-Mode Radar + Vision Monitoring',
+        description: 'Doordrishti (CLM-CVDR05) is our flagship integrated system that provides true "Visual Ground Truth" through sensor fusion. It combines millimetre-accurate radar water level sensing, Doppler radar flow velocity tracking, and AI-enabled optical monitoring in a single, solar-powered autonomous unit.',
+        features: [
+            'Level 1: 61 GHz FMCW Radar for millimetre-accurate water level sensing (+/- 1cm accuracy)',
+            'Level 2: 24 GHz Doppler Radar optimized for continuous surface flow velocity tracking',
+            'Level 3: 1080p Optical Module providing environmental context and visual ground truth',
+            'Level 4: Data Logger Core with ARM Cortex-M7 and 64GB onboard storage',
+            'Level 5: Multi-Protocol Comms Hub supporting 4G LTE, LoRa, and VSAT Satellite',
+            'Dual-Factor Authentication: Cross-verifying hydrodynamic physics with visual ground truth',
+            'Power Architecture: Fully autonomous solar energy system with 10-day battery backup'
+        ],
+        technicalSpecs: {
+            'Water Level Range': '0 – 30 metres',
+            'Water Level Accuracy': '±1 mm',
+            'Velocity Range': '0.02 – 20 m/s',
+            'Velocity Accuracy': '±1-2% of measured value',
+            'Camera': 'Full HD (1080p) AI-enabled',
+            'Field of View': '100-120° horizontal',
+            'Storage': '64 GB Internal (Expandable via USB/SSD)',
+            'Communication': '4G LTE / LoRa / VSAT / MQTT',
+            'Environmental': 'IP67 Weatherproof, Aluminum Body',
+            'Operating Temp': '-20°C to +70°C'
+        },
+        overviewList: [
+            'Millimetre-accurate water level sensing',
+            'Continuous surface flow velocity tracking',
+            'AI-enabled visual monitoring & ground truth',
+            'On-device edge processing & data logging',
+            'Multi-network failover capabilities'
+        ],
+        detailedSpecsTables: [
+            {
+                category: "Water Level Profile",
+                specs: {
+                    "Technology": "61 GHz FMCW Radar (Non-contact)",
+                    "Range": "0 – 30 metres",
+                    "Accuracy": "±1 mm",
                     "Resolution": "≤ 1 mm",
-                    "Sampling Frequency": "Configurable up to 1 sample per second",
-                    "Mounting": "Bridge / pole / structure mount",
-                    "Output Interfaces": "RS-485 / MODBUS / digital interface"
+                    "Sampling": "Configurable up to 1 sample/sec"
                 }
             },
             {
-                category: "Velocity specs",
+                category: "Surface Velocity Profile",
                 specs: {
-                    "Measurement Principle": "Doppler radar",
-                    "Operating Frequency": "24 GHz",
-                    "Beam Aperture": "less than 12°x25°",
-                    "Velocity Range": "0.02 – 20 m/s",
-                    "Accuracy": "±1–2 % of measured value",
-                    "Resolution": "≤ 0.01 m/s",
-                    "Installation Height": "Up to 20 meters above water surface",
-                    "Signal Quality": "Should provide signal quality information"
+                    "Technology": "24 GHz Doppler Radar",
+                    "Beam Aperture": "< 12° x 25°",
+                    "Range": "0.02 – 20 m/s (up to 20m height)",
+                    "Accuracy": "±1-2% of measured value",
+                    "Resolution": "≤ 0.01 m/s"
                 }
             },
             {
-                category: "Camera specs",
+                category: "Optical & Processing",
                 specs: {
-                    "Camera Type": "Industrial monitoring camera",
-                    "Resolution": "Minimum Full HD (1080p)",
-                    "Lens": "Adjustable / wide-angle lens",
-                    "Field of View": "Approx. 100–120° horizontal",
-                    "Image Capture": "Automatic image capture at predefined interval (minimum 1 image per hour)",
-                    "Housing": "Outdoor weatherproof enclosure integrated with radar unit"
-                }
-            },
-            {
-                category: "Data logger",
-                specs: {
-                    "Processor": "ARM Cortex-M7 core Embedded 64-bit processor based computing unit",
-                    "Storage": "Minimum 64 GB onboard storage",
-                    "External Storage": "Provision for external storage expansion (USB / SSD)",
-                    "Data Backup": "Local buffering in case of network outage",
-                    "Sensor Interfaces": "RS-485 / SDI-12 / analog / digital inputs",
-                    "Telemetry Protocols": "MQTT / HTTPS / MODBUS",
-                    "Time Synchronization": "GPS / NTP support",
-                    "Relay Outputs": "Programmable relay outputs for external device control"
-                }
-            },
-            {
-                category: "Communication",
-                specs: {
-                    "Cellular": "4G LTE / GSM; Auto-switch between available networks",
-                    "LPWAN": "LoRa / NB-IoT",
-                    "Local Connectivity": "Wi-Fi",
-                    "Device Configuration": "Bluetooth",
-                    "Wired Interface": "RS-485 / Ethernet",
-                    "Satellite (Optional)": "Modular integration of VSAT or equivalent"
-                }
-            },
-            {
-                category: "Power",
-                specs: {
-                    "Solar Panel": "Minimum 40–80 W",
-                    "Battery": "Lithium Iron Phosphate (LiFePO4)",
-                    "Autonomy": "Minimum 15 days backup without solar charging",
-                    "Voltage": "12 V DC system",
-                    "Power Management": "Intelligent charge controller with low power operation"
-                }
-            },
-            {
-                category: "Environmental",
-                specs: {
-                    "Enclosure Rating": "Minimum IP67",
-                    "Operating Temperature": "-25 °C to +70 °C",
-                    "Housing Material": "Corrosion-resistant industrial grade material (marine-grade aluminum alloy, anodized aluminum, or UV-stabilized polycarbonate)",
-                    "Structural Design": "Suitable for high humidity, heavy rainfall, and cold weather conditions",
-                    "Mounting": "Bridge mount / pole mount / riverbank installation"
+                    "Camera Resolution": "1080p Full HD Industrial",
+                    "Field of View": "100-120° horizontal wide-angle",
+                    "Processing Power": "ARM Cortex-M7 embedded 64-bit unit",
+                    "Data Vault": "64 GB onboard storage (USB/SSD support)"
                 }
             }
         ],
         detailedDescriptions: [
             {
-                title: "3. Radar Water Level Monitoring",
+                title: "Visual Ground Truth via Optical Integration",
                 paragraphs: [
-                    "The water level monitoring system shall meet the following minimum requirements:",
-                    "The radar sensor shall provide continuous measurement of river water level without direct contact with water."
+                    "Technical Insight: This sensor fusion enables true dual-factor authentication. Automated hourly captures, event-triggered images, and live streaming allow control room operators to visually verify flow conditions, bank erosion, and debris blockages in real-time, eliminating reliance on unverified numerical spikes."
                 ],
                 listItems: [
-                    "Measurement Principle: Non-contact radar",
-                    "Operating Frequency: Approximately 61 GHz FMCW radar",
-                    "Measurement Range: Minimum 0–30 meters",
-                    "Accuracy: ±1 mm or better",
-                    "Resolution: ≤ 1 mm",
-                    "Sampling Frequency: Configurable up to 1 sample per second",
-                    "Mounting: Bridge / pole / structure mount",
-                    "Output Interfaces: RS-485 / MODBUS / digital interface"
-                ]
-            },
-            {
-                title: "4. Surface Flow Velocity Monitoring",
-                paragraphs: [
-                    "The system shall support radar-based surface flow velocity measurement.",
-                    "The velocity sensor shall operate in non-contact mode and shall be capable of operating reliably during turbulent flow conditions."
-                ],
-                listItems: [
-                    "Measurement Principle: Doppler radar",
-                    "Operating Frequency: 24 GHz",
-                    "Beam Aperture should be less than 12°x25°",
-                    "Velocity Range: 0.02 – 20 m/s",
-                    "Accuracy: ±1–2 % of measured value",
-                    "Resolution: ≤ 0.01 m/s",
-                    "Installation Height: Up to 20 meters above water surface",
-                    "Should provide signal quality information"
-                ]
-            },
-            {
-                title: "5. Optical River Monitoring Module",
-                paragraphs: [
-                    "Each monitoring station shall include an integrated optical monitoring camera module within the same sensing unit as the radar sensor for continuous visual observation of river conditions.",
-                    "The optical monitoring module shall be integrated with the radar monitoring unit as a single device assembly. Additionally, the system should support vision-based river condition assessment such as surface flow pattern observation and discharge estimation support where applicable."
-                ],
-                listItems: [
-                    "Camera Type: Industrial monitoring camera",
-                    "Resolution: Minimum Full HD (1080p)",
-                    "Lens: Adjustable / wide-angle lens",
-                    "Field of View: Approx. 100–120° horizontal",
-                    "Image Capture: Automatic image capture at predefined interval (minimum 1 image per hour)",
-                    "Housing: Outdoor weatherproof enclosure integrated with radar unit",
-                    "Real-time viewing of river conditions through remote access",
-                    "Live streaming capability when required by the control center",
-                    "Remote camera tilt adjustment for improved monitoring of river cross-section",
-                    "Periodic automated image capture and transmission to central server",
-                    "Visual documentation of river flow conditions, debris movement, and flood events"
-                ]
-            },
-            {
-                title: "6. Integrated Data Logger",
-                paragraphs: [
-                    "Each monitoring station shall include a built-in industrial data logging unit integrated within the monitoring device.",
-                    "The system shall support local data storage on the device itself, allowing operational continuity even when communication links are temporarily unavailable."
-                ],
-                listItems: [
-                    "Processor: ARM Cortex-M7 core Embedded 64-bit processor based computing unit",
-                    "Storage: Minimum 64 GB onboard storage",
-                    "External Storage: Provision for external storage expansion (USB / SSD)",
-                    "Data Backup: Local buffering in case of network outage",
-                    "Sensor Interfaces: RS-485 / SDI-12 / analog / digital inputs",
-                    "Telemetry Protocols: MQTT / HTTPS / MODBUS",
-                    "Time Synchronization: GPS / NTP support",
-                    "Relay Outputs: Programmable relay outputs for external device control"
-                ]
-            },
-            {
-                title: "7. Communication and Telemetry",
-                paragraphs: [
-                    "The monitoring station shall support multi-mode communication for reliable data transmission."
-                ],
-                listItems: [
-                    "Cellular: 4G LTE / GSM; The device should be able to connect to any of the available networks. If one network is down, it should be able to switch to other network.",
-                    "LPWAN: LoRa / NB-IoT",
-                    "Local Connectivity: Wi-Fi",
-                    "Device Configuration: Bluetooth",
-                    "Wired Interface: RS-485 / Ethernet",
-                    "Encrypted telemetry transmission",
-                    "Automated data synchronization with central server",
-                    "Fail-safe data buffering during communication interruptions"
-                ]
-            },
-            {
-                title: "8. Satellite Communication (Optional)",
-                paragraphs: [
-                    "The system shall support optional satellite communication capability (VSAT or equivalent) for deployments in areas where cellular connectivity is not available.",
-                    "The monitoring station shall support modular integration of satellite communication equipment when required."
-                ]
-            },
-            {
-                title: "9. Power System",
-                paragraphs: [
-                    "Each monitoring station shall operate using a solar powered autonomous system suitable for remote field deployments.",
-                    "The system shall support continuous long-term unattended operation in remote locations."
-                ],
-                listItems: [
-                    "Solar Panel: Minimum 40–80 W",
-                    "Battery: Lithium Iron Phosphate (LiFePO4)",
-                    "Autonomy: Minimum 15 days backup without solar charging",
-                    "Voltage: 12 V DC system",
-                    "Power Management: Intelligent charge controller with low power operation"
-                ]
-            },
-            {
-                title: "10. Environmental Protection and Enclosure",
-                paragraphs: [
-                    "The monitoring system shall be designed for harsh outdoor river environments and cold weather conditions.",
-                    "The enclosure material shall be suitable for long-term deployment in cold and mountainous environmental conditions."
-                ],
-                listItems: [
-                    "Enclosure Rating: Minimum IP67",
-                    "Operating Temperature: −25 °C to +70 °C",
-                    "Housing Material: Corrosion-resistant industrial grade material such as marine-grade aluminum alloy, anodized aluminum, or UV-stabilized polycarbonate",
-                    "Structural Design: Suitable for high humidity, heavy rainfall, and cold weather conditions",
-                    "Mounting: Bridge mount / pole mount / riverbank installation"
-                ]
-            },
-            {
-                title: "11. Additional System Features",
-                paragraphs: [
-                    "The monitoring system shall support the following operational capabilities:"
-                ],
-                listItems: [
-                    "Integrated radar and optical monitoring unit",
-                    "Built-in data logger within the device",
-                    "Wi-Fi and Bluetooth connectivity for local device access",
-                    "IMU-based tilt sensing for installation alignment and automatic calibration of vibration rejection",
-                    "Encrypted telemetry communication",
-                    "Automatic hourly image capture and upload on GSM network",
-                    "Optional event-triggered image capture during rapid water level change"
+                    "Automated hourly capture",
+                    "Live streaming on demand",
+                    "Event-triggered capture during rapid water level changes",
+                    "Remote camera tilt adjustment for optimal monitoring"
                 ]
             }
         ],
-        downloadsSections: [
-            { name: 'Brochure PDF', url: '/downloads/brochure.pdf' },
-            { name: 'Technical spec sheet', url: '/downloads/specs.pdf' }
-        ],
-        faqSections: [
-            {
-                q: 'What is radar water level sensor?',
-                a: 'A non-contact sensor that measures water levels continuously using high-frequency radar without physical contact with the water.'
-            },
-            {
-                q: 'How does non-contact monitoring work?',
-                a: 'It uses radar and Doppler technology to determine water level and surface flow velocity remotely from above the surface, functioning safely during heavy floods and turbulent flows.'
-            },
-            {
-                q: 'Can system work in remote areas?',
-                a: 'Yes. The system utilizes solar power with a 15-day backup and supports multi-network connectivity including optional Satellite, specifically designed for unattended operation.'
-            },
-            {
-                q: 'How is data transmitted?',
-                a: 'Data is transmitted securely through a fail-safe multi-network mode supporting 4G LTE/GSM, LoRa/NB-IoT, or local Wi-Fi, buffering data locally if the network goes down.'
-            }
-        ],
-        technicalSpecs: {
-            'Measurement Range': '0-30m',
-            'Power': 'Solar 40-80W',
-            'Enclosure': 'IP67',
-        },
-        image: '/images/3.webp',
+        image: '/images/oao7myog4yvvidtrday6.webp',
         model: '/models/Solar_Alarm_System_0630051501_texture.fbx',
         benefits: [
-            'Real-time numerical and visual validation',
-            'Unattended non-contact reliability',
+            'Eliminates reliance on unverified numerical spikes',
+            'Visual verification of debris and bank erosion',
+            'Uninterrupted operation during extreme weather',
+            'Reduced maintenance via non-contact sensing'
         ],
-        deviceType: 'Integrated System'
-    },
-    {
-        slug: 'drishti',
-        name: 'Drishti',
-        tagline: 'Advanced Visual & Radar Flood Monitoring',
-        description: 'Drishti is Climmatech’s flagship flood monitoring solution. It is a fully integrated, solar-powered unit that combines image processing with radar-based measurements to provide the most accurate flood data possible. Designed for critical river stretches, it acts as the eyes of the flood management system.',
-        features: [
-            'Visual Image Processing for validation',
-            'Radar-based surface velocity measurement',
-            'Rain gauge inputs for localized weather data',
-            'Solar-powered for autonomous operation',
-            'Cloud connectivity for real-time alerts'
-        ],
-        technicalSpecs: {
-            'Range': 'Up to 15 meters width',
-            'Power Source': 'Solar Panel + Battery Backup',
-            'Sensors': 'Radar, Camera, Rain Gauge',
-            'Connectivity': '4G/LTE, LoRaWAN',
-            'Operating Temp': '-10°C to 60°C'
-        },
-        image: '/images/3.webp',
-        model: '/models/Solar_Alarm_System_0630051501_texture.fbx',
-        benefits: [
-            'Provides visual confirmation of flood levels',
-            'Reduces false alarms through dual-factor authentication',
-            'Low maintenance with self-sustaining power',
-            'Rapid deployment in remote areas'
-        ],
-        deviceType: 'Monitoring Sensor'
-    },
-    {
-        slug: 'doordrishti',
-        name: 'Doordrishti',
-        tagline: 'Long-Range Comprehensive Monitoring',
-        description: 'Doordrishti extends the capabilities of standard monitoring to wider areas. It is engineered for major river systems where long-range detection is crucial. With its powerful radar and high-resolution camera, it captures data from a distance, ensuring equipment safety even during high floods.',
-        features: [
-            'Long-range radar measurement',
-            'High-definition visual monitoring',
-            'Integrated rain gauge',
-            '2-day battery backup',
-            'Robust weather-proof enclosure'
-        ],
-        technicalSpecs: {
-            'Range': 'Wide-area monitoring (>20m)',
-            'Battery Life': '48 hours backup',
-            'Sensors': 'Long-range Radar, HD Camera',
-            'Data Interval': 'Configurable (Standard 15 mins)',
-            'IP Rating': 'IP67'
-        },
-        image: '/images/4.webp',
-        model: '/models/Solar_Alarm_System_0630051501_texture.fbx',
-        benefits: [
-            'Covers large river cross-sections',
-            'Ensures continuous operation in storms',
-            'Provides rich data for hydrological modeling',
-            'Remote firmware updates'
-        ],
-        deviceType: 'Long-Range Sensor'
+        deviceType: 'Integrated Monitoring System',
+        slideshow: [
+            '/doordrishti/image.png',
+            '/doordrishti/image copy.png',
+            '/doordrishti/image copy 2.png',
+            '/doordrishti/image copy 3.png'
+        ]
     },
     {
         slug: 'rakshak',
         name: 'Rakshak',
-        tagline: 'The Guardian of Communities',
-        description: 'Rakshak is designed to save lives. It is a dedicated early warning system that bridges the gap between data and action. When flood levels breach critical thresholds, Rakshak activates high-decibel sirens to alert downstream communities immediately.',
+        tagline: 'CLM-EWS-01: Community Early Warning System',
+        description: 'Rakshak (CLM-EWS-01) is a specialized community-level flood and disaster early warning siren system. It serves as the critical final link in the safety chain, converting real-time sensor data into immediate, actionable public alerts through high-decibel sirens and voice messages.',
         features: [
-            'High-decibel alert sirens',
-            'Ultra-long-range communication',
-            'Low-latency activation',
-            'Solar-powered operation',
-            'remote manual activation'
+            'Function: Community-level flood / disaster early warning siren system',
+            'Activation Source: Remote wireless trigger from devices / Aagah™ EWS platform / manual trigger',
+            'Alert Types: Multi-tone siren + programmable voice message playback',
+            'Sound Output Level: 120–130 dB @ 1 m (effective reach up to 500 m radius)',
+            'Coverage Range: Up to 50 km network coverage (via LoRa / LTE)',
+            'Solar-powered operation for disaster resilience',
+            'Low-latency response and remote manual activation'
         ],
         technicalSpecs: {
-            'Siren Range': 'Up to 2 km radius',
-            'Response Time': '< 30 seconds',
+            'Model No': 'CLM-EWS-01',
+            'Sound Output': '120–130 dB @ 1 m',
+            'Effective Radius': 'Up to 500 m',
+            'Network Coverage': 'Up to 50 km (LoRa/LTE)',
+            'Alert Type': 'Multi-tone + Voice Playback',
             'Power': 'Solar + Heavy Duty Battery',
-            'Communication': 'Satellite / LoRa / GSM',
-            'Height': 'Mountable on 10m poles'
+            'Enclosure': 'IP67 Ruggedized'
         },
-        image: '/images/2.webp',
-        model: '/models/Solar_Alarm_System_0630051501_texture.fbx',
         benefits: [
             'Immediate public warning system',
             'Works when phone networks are down',
             'Rugged design for disaster zones',
-            'Customizable alert tones'
+            'Customizable alert tones and voice messages'
         ],
-        deviceType: 'Early Warning System'
+        deviceType: 'Early Warning System',
+        image: '/images/2-removebg-preview.png',
+        model: '/models/Solar_Alarm_System_0630051501_texture.fbx'
     },
     {
         slug: 'tarang',
         name: 'Tarang',
-        tagline: 'Precision Depth Sensing',
-        description: 'Tarang is a specialized sensor focused on one thing: accurate water depth measurement. Compact and efficient, it uses advanced radar technology to monitor water levels in canals, small rivers, and urban drainage systems without physical contact with the water.',
+        tagline: 'CLM-LR05: High-Precision Radar Level Sensor',
+        description: 'Tarang (CLM-LR05) is a specialized radar-based level sensor designed for high-precision water level monitoring. Utilizing 61 GHz FMCW technology, it provides millimetre-level accuracy without physical contact, making it ideal for critical infrastructure monitoring in challenging environments.',
         features: [
-            'Non-contact radar depth measurement',
-            'Compact form factor',
-            'High precision (mm level accuracy)',
-            'Easy installation on bridges/poles',
-            'Solar powered'
+            'Measuring Principle: 61 GHz FMCW Radar (W-Band) Non-contact',
+            'Accuracy: ± 1 mm with 0.5 mm resolution',
+            'Range: 0 – 50 m (customizable)',
+            'Beam Angle: 8° Azimuth × 8° Elevation',
+            'Sampling Frequency: 1 sps (default) / up to 10 sps configurable',
+            'Ingress Protection: IP68 fully sealed polycarbonate enclosure',
+            'Power Consumption: < 1.5 W active / 0.2 W standby',
+            'Material: PVDF sensor housing for chemical and UV resistance'
         ],
         technicalSpecs: {
-            'Measurement Range': '0.5m to 20m',
-            'Accuracy': '±3mm',
-            'Frequency': '60GHz Radar',
-            'Power': 'Compact Solar Panel',
-            'Weight': '< 2kg'
+            'Model No': 'CLM-LR05',
+            'Technology': '61 GHz FMCW Radar',
+            'Range': '0 – 50 metres',
+            'Accuracy': '±1 mm',
+            'Resolution': '0.5 mm',
+            'Power': '9 – 30 V DC (Solar compatible)',
+            'Output': '4-20 mA / RS-485 / RS-232 / SDI-12 / LoRa / MQTT',
+            'Operating Temp': '-25°C to +70°C'
         },
-        image: '/images/1.webp',
-        model: '/models/Solar_Alarm_System_0630051501_texture.fbx',
+        detailedSpecsTables: [
+            {
+                category: "Radar Specification",
+                specs: {
+                    "Measuring Principle": "61 GHz FMCW Radar (W-Band) Non-contact",
+                    "Range": "0 – 50 m (customizable)",
+                    "Accuracy": "± 1 mm",
+                    "Resolution": "0.5 mm",
+                    "Beam Angle": "8° Azimuth × 8° Elevation",
+                    "Sampling Frequency": "1 sps (default) / up to 10 sps configurable"
+                }
+            },
+            {
+                category: "Electrical & Enclosure",
+                specs: {
+                    "Output Signal": "4 – 20 mA / RS-485 / RS-232 / SDI-12 / LoRa / MQTT",
+                    "Ingress Protection": "IP68 (fully sealed polycarbonate)",
+                    "Operating Voltage": "9 – 30 V DC (solar compatible)",
+                    "Power Consumption": "< 1.5 W active / 0.2 W standby",
+                    "Material": "PVDF sensor housing"
+                }
+            },
+            {
+                category: "Integration",
+                specs: {
+                    "Temp Range": "-25 °C to +70 °C",
+                    "Comms Interface": "LoRa / NB-IoT / Wi-Fi / GSM (optional)",
+                    "Mounting": "Top-mount / bridge mount with adjustable bracket",
+                    "Data Integration": "Direct sync with ClimMaTech Cloud & Digital Twin"
+                }
+            }
+        ],
         benefits: [
             'Unaffected by water turbidity or debris',
             'Ideal for urban flood monitoring',
             'Minimal infrastructure required',
             'Cost-effective scalable solution'
         ],
-        deviceType: 'Depth Sensor'
+        deviceType: 'Depth Sensor',
+        image: '/images/mvl9v9vqlbrxux2dmm8c.webp',
+        model: '/models/Solar_Alarm_System_0630051501_texture.fbx'
     },
     {
         slug: 'pravaah',
         name: 'Pravaah',
-        tagline: 'Flow & Velocity Analytics',
-        description: 'Pravaah goes beyond just depth to understand the dynamics of the river. It measures surface velocity and depth simultaneously to calculate discharge rates. This data is vital for water resource management and predicting downstream impact.',
+        tagline: 'CLM-LVR05: Radar Surface Velocity Sensor',
+        description: 'Pravaah (CLM-LVR05) is an advanced radar surface velocity sensor designed for high-accuracy flow tracking. It utilizes 24 GHz Doppler Radar to monitor velocity from up to 40m away, featuring Edge-AI filtering for noise reduction and automatic self-calibration.',
         features: [
-            'Surface velocity calculation',
-            'Depth measurement integration',
-            'Real-time data transmission',
-            'Wide-area coverage',
-            'Analytics-ready data stream'
+            'Measuring Principle: 24 GHz K-Band Doppler Radar (FMCW)',
+            'Velocity Range: 0.02 – 20 m/s with ± 1 % accuracy',
+            'Detection Distance: Up to 40 m above water surface',
+            'Beam Angle: 12° Azimuth × 30° Elevation',
+            'Special Features: Edge-AI filtering for noise reduction, auto self-calibration',
+            'Ingress Protection: IP68 Waterproof & dust-proof housing',
+            'Material: Aluminum body with PVDF antenna shield',
+            'Output Signal: 4 – 20 mA, RS-485, RS-232, LoRa, MQTT'
         ],
         technicalSpecs: {
-            'Velocity Range': '0.1 to 15 m/s',
-            'Depth Range': 'up to 30m',
-            'Technology': 'Doppler Radar',
-            'Power': 'Solar + Li-ion',
-            'Interface': 'RS485 / Modbus'
+            'Model No': 'CLM-LVR05',
+            'Technology': '24 GHz Doppler Radar',
+            'Velocity Range': '0.02 – 20 m/s',
+            'Accuracy': '±1 % of measured value',
+            'Resolution': '0.01 m/s',
+            'Power': '9 – 30 V DC (Solar compatible)',
+            'Output': '4-20 mA / RS-485 / LoRa / MQTT',
+            'Digital Output': 'Open Collector (50 V / 200 mA)'
         },
-        image: '/images/5.webp',
-        model: '/models/Solar_Alarm_System_0630051501_texture.fbx',
+        detailedSpecsTables: [
+            {
+                category: "Velocity Specification",
+                specs: {
+                    "Measuring Principle": "24 GHz K-Band Doppler Radar (FMCW)",
+                    "Detection Distance": "Up to 40 m above surface",
+                    "Velocity Range": "0.02 – 20 m/s",
+                    "Resolution": "0.01 m/s",
+                    "Accuracy": "± 1 % of measured value",
+                    "Beam Angle": "12° Azimuth × 30° Elevation"
+                }
+            },
+            {
+                category: "System & Integration",
+                specs: {
+                    "Output Signal": "4 – 20 mA, RS-485, RS-232, LoRa, MQTT",
+                    "Ingress Protection": "IP68 (Waterproof & dust-proof)",
+                    "Operating Voltage": "9 – 30 V DC (solar/battery compatible)",
+                    "Material": "Aluminum body with PVDF antenna shield",
+                    "Temp Range": "-30 °C to +70 °C",
+                    "Data Integration": "Direct sync with ClimMaTech Dashboard"
+                }
+            }
+        ],
         benefits: [
             'Essential for discharge volume calculation',
             'Helps in dam release planning',
             'Detects sudden surges in flow',
-            'Robust against environmental noise'
+            'Edge-AI filtering for superior accuracy'
         ],
-        deviceType: 'Flow Sensor'
+        deviceType: 'Flow Sensor',
+        image: '/images/vamdzjwkr8kcj3u1x6lg.webp',
+        model: '/models/Solar_Alarm_System_0630051501_texture.fbx'
     }
 ];

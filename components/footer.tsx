@@ -1,6 +1,6 @@
 'use client';
 
-import { Shield, Mail, Phone, MapPin, Twitter, Linkedin, Github, Youtube, ChevronRight, Heart, ArrowUp, Zap, Users, Award, Globe } from 'lucide-react';
+import { Shield, Mail, Phone, MapPin, Linkedin, ChevronRight, Heart, Zap, Globe, Target, Clock, Bell, Database } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
@@ -9,23 +9,22 @@ export default function Footer() {
 
   const socialLinks = [
     { icon: <Linkedin className="h-4 w-4" />, href: 'https://www.linkedin.com/company/climmatech/?viewAsMember=true', name: 'LinkedIn', color: 'hover:text-blue-500' },
-    
   ];
 
   const quickLinks = [
     { name: 'Features', href: '#features' },
-    { name: 'Imapct', href: '#impact' },
+    { name: 'Impact', href: '#impact' },
     { name: 'Partners', href: '#partners' },
     { name: 'Contact us', href: '#contact' },
     { name: 'Web Dashboard', href: 'https://visiflow-tech.vercel.app/' },
-    
   ];
 
   const stats = [
-   
-    { icon: <Shield className="h-5 w-5" />, value: '100%', label: 'Durable' },
-    { icon: <Zap className="h-5 w-5" />, value: '90%', label: 'Accuracy' },
-    { icon: <Award className="h-5 w-5" />, value: '24/7', label: 'Monitoring' }
+    { icon: <Shield className="h-5 w-5" />, value: '98.5%', label: 'Uptime', desc: 'Extreme environment reliability' },
+    { icon: <Target className="h-5 w-5" />, value: '95.6%', label: 'Accuracy', desc: 'Field-validated predictions' },
+    { icon: <Clock className="h-5 w-5" />, value: '<60 sec', label: 'Latency', desc: 'Real-time processing' },
+    { icon: <Bell className="h-5 w-5" />, value: '15-20 min', label: 'Lead Time', desc: 'Early warning & evacuation' },
+    { icon: <Database className="h-5 w-5" />, value: '25,000+', label: 'Data Points', desc: 'Proprietary growing dataset' }
   ];
 
   const scrollToTop = () => {
@@ -55,7 +54,7 @@ export default function Footer() {
           viewport={{ once: true }}
           className="py-8 border-b border-gray-700/30"
         >
-           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-center">
+           <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6 text-center">
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -68,9 +67,10 @@ export default function Footer() {
                 <div className="flex justify-center mb-2 text-blue-400">
                   {stat.icon}
                 </div>
-                <div className="text-lg font-bold text-white">{stat.value}</div>
-                <div className="text-xs text-gray-400">{stat.label}</div>
-              </motion.div>
+                 <div className="text-lg md:text-xl font-bold text-white">{stat.value}</div>
+                 <div className="text-xs font-semibold text-blue-400 uppercase tracking-wider mb-1">{stat.label}</div>
+                 <div className="text-[10px] text-gray-500 leading-tight hidden md:block">{stat.desc}</div>
+               </motion.div>
             ))}
           </div>
         </motion.div>

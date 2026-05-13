@@ -3,6 +3,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter, Poppins } from 'next/font/google';
 import { ThemeProvider } from '@/components/theme-provider';
+import CustomCursor from '@/components/custom-cursor';
 
 // Fonts
 const inter = Inter({ subsets: ['latin'] });
@@ -13,13 +14,24 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://climmatech.com'),
   title: {
-    default: 'Climmatech – AI Flood Monitoring & Smart IoT Sensors',
-    template: '%s | Climmatech',
+    default: 'ClimMaTech | AI Flood Monitoring & River Water Level Sensors India',
+    template: '%s | ClimMaTech',
   },
   description:
-    'Climmatech offers AI-powered flood prediction, real-time IoT flood monitoring, solar and radar water level sensors, and early warning systems tailored for India’s climate challenges.',
-  robots: { index: true, follow: true },
+    'ClimMaTech is India\'s leading AI flood monitoring system. We provide smart IoT flood monitoring, non-contact radar river water level sensors, and solar-powered early warning systems for extreme climate resilience.',
+  robots: { 
+    index: true, 
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   keywords: [
     'Climmatech',
     'Climmatech India',
@@ -37,33 +49,40 @@ export const metadata: Metadata = {
     'river monitoring system with camera',
     'non-contact discharge measurement system',
     'solar water level monitoring system',
-    // … keep or add other topical keywords here as required
   ],
+  authors: [{ name: 'ClimMaTech India' }],
+  creator: 'ClimMaTech',
+  publisher: 'ClimMaTech',
   alternates: {
     canonical: 'https://climmatech.com/',
   },
   openGraph: {
-    title: 'Climmatech – AI & IoT Flood Monitoring Solutions | Official Site',
+    title: 'ClimMaTech | AI Flood Monitoring & River Water Level Sensors India',
     description:
-      'Official Climmatech site – AI flood prediction, real-time IoT flood sensors, solar and radar monitoring, and early warning systems for India.',
+      'ClimMaTech is India\'s leading AI flood monitoring system. We provide smart IoT flood monitoring, non-contact radar river water level sensors, and solar-powered early warning systems for extreme climate resilience.',
     url: 'https://climmatech.com/',
-    siteName: 'Climmatech',
+    siteName: 'ClimMaTech India',
+    locale: 'en_IN',
     type: 'website',
     images: [
       {
-        url: 'https://climmatech.com/images/social-share.png',
+        url: '/images/social-share.png',
         width: 1200,
         height: 630,
-        alt: 'Climmatech – Smart Flood Monitoring',
+        alt: 'ClimMaTech – AI & IoT Smart Flood Monitoring System India',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Climmatech – AI & IoT Flood Monitoring',
+    title: 'ClimMaTech | AI Flood Monitoring & River Water Level Sensors India',
     description:
-      'Official Climmatech site featuring advanced flood prediction & monitoring solutions for Indian monsoons.',
-    images: ['https://climmatech.com/images/social-share.png'],
+      'ClimMaTech is India\'s leading AI flood monitoring system. We provide smart IoT flood monitoring, non-contact radar river water level sensors, and solar-powered early warning systems for extreme climate resilience.',
+    images: ['/images/social-share.png'],
+    creator: '@climmatech',
+  },
+  verification: {
+    google: 'your-google-site-verification-code', // Replace when you connect to Google Search Console
   },
 };
 
@@ -71,10 +90,11 @@ export const metadata: Metadata = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Climmatech",
-  alternateName: "Climmatech India",
+  name: "ClimMaTech",
+  alternateName: "ClimMaTech India",
   url: "https://climmatech.com/",
   logo: "https://climmatech.com/images/logo-removebg-preview.png",
+  description: "India's leading AI flood monitoring system, providing smart IoT flood monitoring, non-contact radar river water level sensors, and solar-powered early warning systems.",
   contactPoint: {
     "@type": "ContactPoint",
     telephone: "+91-7488011618",
@@ -88,7 +108,7 @@ const organizationSchema = {
   ],
   brand: {
     "@type": "Brand",
-    name: "Climmatech",
+    name: "ClimMaTech",
   }
 };
 
@@ -96,9 +116,10 @@ const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "@id": "https://climmatech.com/#website",
-  name: "Climmatech",
+  name: "ClimMaTech | AI Flood Monitoring",
   alternateName: "Climmatech India",
   url: "https://climmatech.com/",
+  description: "India's leading AI flood monitoring system and IoT river water level sensors.",
   potentialAction: {
     "@type": "SearchAction",
     target: "https://climmatech.com/?s={search_term_string}",
@@ -138,6 +159,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+            <CustomCursor />
             {children}
           </ThemeProvider>
         </div>
