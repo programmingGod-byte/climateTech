@@ -79,4 +79,9 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  ::selection {
+    background-color: black;
+    color: white;
+  }
 }
