@@ -4,258 +4,18 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { Shield, Zap, Wifi, Brain, Activity, Cloud } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import * as THREE from 'three';
-import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 
-// 3D Model Viewer Component
-function ThreeModelViewer({ modelPath, title }) {
-  const mountRef = useRef(null);
-  const sceneRef = useRef(null);
-  const rendererRef = useRef(null);
-  const frameRef = useRef(null);
-  const modelRef = useRef(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-
-
-  useEffect(() => {
-    if (!mountRef.current) return;
-
-    // Scene setup
-    const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0xf8fafc);
-    sceneRef.current = scene;
-
-    // Camera
-    const camera = new THREE.PerspectiveCamera(
-      75,
-      mountRef.current.clientWidth / mountRef.current.clientHeight,
-      0.1,
-      1000
-    );
-    camera.position.set(0, 0, 5);
-
-    // Renderer
-    const renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setSize(mountRef.current.clientWidth, mountRef.current.clientHeight);
-    renderer.shadowMap.enabled = true;
-    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-    rendererRef.current = renderer;
-    mountRef.current.appendChild(renderer.domElement);
-
-    // Lighting
-    const ambientLight = new THREE.AmbientLight(0x404040, 0.6);
-    scene.add(ambientLight);
-
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
-    directionalLight.position.set(10, 10, 5);
-    directionalLight.castShadow = true;
-    scene.add(directionalLight);
-
-    // FBX Loader
-    const loader = new FBXLoader();
-
-    // Load FBX model
-    loader.load(
-      modelPath,
-      (fbx) => {
-        // Model loaded successfully
-        setIsLoading(false);
-        setError(null);
-
-        // Enable shadows on all meshes first
-        fbx.traverse((child) => {
-          if (child.isMesh) {
-            child.castShadow = true;
-            child.receiveShadow = true;
-          }
-        });
-
-        // Get initial bounding box
-        const box = new THREE.Box3().setFromObject(fbx);
-        const size = box.getSize(new THREE.Vector3());
-        const maxDim = Math.max(size.x, size.y, size.z);
-
-        console.log('Original model size:', size);
-        console.log('Original max dimension:', maxDim);
-
-        // Aggressive scaling - most FBX models from Blender need significant scaling
-        let scaleMultiplier = 1;
-
-        if (maxDim < 10) {
-          // Scale up small models significantly
-          scaleMultiplier = 50 / maxDim; // Target size of 50 units
-        } else if (maxDim > 100) {
-          // Scale down large models
-          scaleMultiplier = 50 / maxDim;
-        } else {
-          // Models in good range, slight adjustment
-          scaleMultiplier = 5;
-        }
-
-        console.log('Applied scale multiplier:', scaleMultiplier);
-        fbx.scale.setScalar(scaleMultiplier);
-
-        // Recalculate bounding box after scaling
-        const scaledBox = new THREE.Box3().setFromObject(fbx);
-        const scaledSize = box.getSize(new THREE.Vector3());
-        const scaledCenter = scaledBox.getCenter(new THREE.Vector3());
-
-        // Center the model
-        fbx.position.sub(scaledCenter);
-
-        // Set camera position based on scaled model
-        const finalMaxDim = Math.max(scaledSize.x, scaledSize.y, scaledSize.z) * scaleMultiplier;
-        const cameraDistance = finalMaxDim * 1.5;
-
-        console.log('Final model size:', finalMaxDim);
-        console.log('Camera distance:', cameraDistance);
-
-        // Position camera
-        camera.position.set(
-          cameraDistance * 0.8,
-          cameraDistance * 0.6,
-          cameraDistance
-        );
-        camera.lookAt(0, 0, 0);
-
-        // Update camera near/far planes for better rendering
-        camera.near = cameraDistance * 0.1;
-        camera.far = cameraDistance * 10;
-        camera.updateProjectionMatrix();
-
-        scene.add(fbx);
-        modelRef.current = fbx;
-      },
-      (progress) => {
-        // Loading progress
-        console.log('Loading progress:', (progress.loaded / progress.total) * 100, '%');
-      },
-      (error) => {
-        // Error loading model
-        console.error('Error loading FBX model:', error);
-        setError('Failed to load 3D model');
-        setIsLoading(false);
-
-        // Fallback to placeholder geometry
-        const geometry = new THREE.BoxGeometry(2, 2, 2);
-        const material = new THREE.MeshPhongMaterial({
-          color: 0x3b82f6,
-          transparent: true,
-          opacity: 0.8
-        });
-        const cube = new THREE.Mesh(geometry, material);
-        cube.castShadow = true;
-        cube.receiveShadow = true;
-        scene.add(cube);
-        modelRef.current = cube;
-      }
-    );
-
-    // Add mouse wheel zoom functionality
-    const handleWheel = (event) => {
-      event.preventDefault();
-      const zoomSpeed = 0.1;
-      const zoom = event.deltaY > 0 ? 1 + zoomSpeed : 1 - zoomSpeed;
-
-      // Prevent zooming too close or too far
-      const currentDistance = camera.position.length();
-      const newDistance = currentDistance * zoom;
-
-      if (newDistance > 1 && newDistance < 100) {
-        camera.position.multiplyScalar(zoom);
-      }
-    };
-
-    // Animation loop
-    const animate = () => {
-      frameRef.current = requestAnimationFrame(animate);
-
-      // Rotate the model if it exists
-      if (modelRef.current) {
-        modelRef.current.rotation.y += 0.01;
-      }
-
-      renderer.render(scene, camera);
-    };
-    animate();
-
-    // Handle resize
-    const handleResize = () => {
-      if (mountRef.current && rendererRef.current) {
-        const width = mountRef.current.clientWidth;
-        const height = mountRef.current.clientHeight;
-
-        camera.aspect = width / height;
-        camera.updateProjectionMatrix();
-        rendererRef.current.setSize(width, height);
-      }
-    };
-
-    // Add event listeners
-    window.addEventListener('resize', handleResize);
-    if (mountRef.current) {
-      mountRef.current.addEventListener('wheel', handleWheel);
-    }
-
-    // Cleanup
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      if (mountRef.current) {
-        mountRef.current.removeEventListener('wheel', handleWheel);
-      }
-      if (frameRef.current) {
-        cancelAnimationFrame(frameRef.current);
-      }
-      if (mountRef.current && rendererRef.current) {
-        mountRef.current.removeChild(rendererRef.current.domElement);
-      }
-      if (rendererRef.current) {
-        rendererRef.current.dispose();
-      }
-    };
-  }, [modelPath]);
-
-
-
-
-  return (
-    <div className="relative w-full h-64 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl overflow-hidden">
-      <div ref={mountRef} className="w-full h-full" />
-
-      {/* Loading indicator */}
-      {isLoading && (
-        <div className="absolute inset-0 flex items-center justify-center bg-gray-100 bg-opacity-75">
-          <div className="flex flex-col items-center space-y-2">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-            <span className="text-sm text-gray-600">Loading 3D Model...</span>
-          </div>
-        </div>
-      )}
-
-      {/* Error indicator */}
-      {error && (
-        <div className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded text-xs">
-          {error}
-        </div>
-      )}
-
-      {/* Model info */}
-      <div className="absolute bottom-2 left-2 bg-black bg-opacity-50 text-white px-2 py-1 rounded text-xs">
-        3D Model: {title}
-      </div>
-
-      {/* Controls hint */}
-      {!isLoading && !error && (
-        <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white px-2 py-1 rounded text-xs">
-          Auto-rotating view
-        </div>
-      )}
+// Dynamically load the heavy Three.js model viewer so it is only loaded on-demand
+const ThreeModelViewer = dynamic(() => import('./three-model-viewer'), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-64 bg-gray-100 flex items-center justify-center rounded-xl font-sans text-sm text-gray-500">
+      Loading 3D Engine...
     </div>
-  );
-}
+  )
+});
 
 // Tab Component
 function MediaTabs({ product, index }) {
@@ -315,7 +75,7 @@ function MediaTabs({ product, index }) {
           <Image
             width={50}
             height={50}
-            src="/images/a.png"
+            src="/images/a.webp"
             alt="Made in India"
             className="w-20 h-20 object-contain"
           />
@@ -359,7 +119,7 @@ export default function ProductsSection() {
       title: "Rakshak",
       description: "Rakshak is a solar-powered, long-range disaster early warning system equipped with sirens for rapid public alerting, with key features including:",
       features: ["High-decibel siren alerts", "Low-latency response", "Ultra-long-range communication"],
-      image: "/images/2-removebg-preview.png",
+      image: "/images/2-removebg-preview.webp",
       model: "/models/Solar_Alarm_System_0630051501_texture.fbx"
     },
   ];

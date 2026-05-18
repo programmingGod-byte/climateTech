@@ -3,6 +3,7 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Waves, Thermometer, Wind, Gauge, Zap, Wifi } from 'lucide-react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function SensorsSection() {
   const sensors = [
@@ -60,9 +61,11 @@ export default function SensorsSection() {
               <Card className="h-full hover:shadow-xl transition-all duration-300 group">
                 <CardContent className="p-0">
                   <div className="relative overflow-hidden rounded-t-lg">
-                    <img
+                    <Image
                       src={sensor.image}
                       alt={sensor.name}
+                      width={400}
+                      height={200}
                       className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                     <div className="absolute top-4 left-4 bg-background/90 backdrop-blur-sm rounded-full p-2">

@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useRef } from 'react';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Activity, BarChart3, Bell, Monitor, ArrowRight, ExternalLink, Play, Pause } from 'lucide-react';
@@ -64,17 +65,18 @@ export default function DashboardShowcaseSection() {
           <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="relative">
             <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200 backdrop-blur-sm">
               <div className="w-full h-80 sm:h-96 flex items-center justify-center p-4">
-                <img 
+                <Image 
                   src="/images/WhatsApp Image 2025-07-21 at 10.16.07 AM.jpeg" 
                   alt="Climmatech VeriFlow web dashboard preview showing flood prevention analytics"
+                  width={800}
+                  height={600}
                   className="w-full h-full object-contain rounded-lg shadow-sm"
-                  style={{ maxWidth: '100%', height: 'auto' }}
                 />
               </div>
             </div>
 
             <motion.div className="absolute -bottom-4 -right-4 flex space-x-2" initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, delay: 0.8 }} viewport={{ once: true }}>
-              <Button variant="outline" size="sm" className="bg-white/90 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all border-white/50" onClick={() => setIsPlaying(!isPlaying)}>
+              <Button variant="outline" size="sm" className="bg-white/90 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all border-white/50" onClick={() => setIsPlaying(!isPlaying)} aria-label={isPlaying ? "Pause dashboard animation" : "Play dashboard animation"}>
                 {isPlaying ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
               </Button>
             </motion.div>

@@ -41,7 +41,7 @@ export default function ImpactSection() {
       value: '13',
       label: 'District Affected',
       description: 'Flooding in 13 UP District',
-      imageUrl: '/images/disaster/image.png',
+      imageUrl: '/images/disaster/image.webp',
     },
 
      {
@@ -49,7 +49,7 @@ export default function ImpactSection() {
       value: '13',
       label: 'District Affected',
       description: 'Flooding in 13 UP District',
-      imageUrl: '/images/disaster/imagecopy.png',
+      imageUrl: '/images/disaster/imagecopy.webp',
     },
   ]
 
@@ -69,7 +69,7 @@ export default function ImpactSection() {
       <motion.div 
         style={{ 
           y,
-          backgroundImage: "url('/images/bgsecond.png')",
+          backgroundImage: "url('/images/bgsecond.webp')",
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }} 

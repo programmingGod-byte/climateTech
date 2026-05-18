@@ -103,7 +103,7 @@ export default function ContactSection() {
       <section id="contact" ref={sectionRef} className="py-20 relative overflow-hidden text-white">
         <motion.div 
           style={{ y }} 
-          className="absolute inset-0 bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 z-0"
+          className="absolute inset-0 bg-gradient-to-b from-black via-[#090a0f] to-black z-0"
         />
         <ParticleStars />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -171,7 +171,7 @@ export default function ContactSection() {
     <section id="contact" ref={sectionRef} className="py-20 relative overflow-hidden text-white">
       <motion.div 
         style={{ y }} 
-        className="absolute inset-0 bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 z-0"
+        className="absolute inset-0 bg-gradient-to-b from-black via-[#090a0f] to-black z-0"
       />
       <ParticleStars />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

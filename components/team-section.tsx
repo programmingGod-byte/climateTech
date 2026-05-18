@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import Image from 'next/image';
 import ParticleStars from './particle-stars';
 
 export default function TeamSection() {
@@ -27,7 +28,7 @@ export default function TeamSection() {
       name: "Dharkan Anand",
       role: "CEO",
       expertise: "Vision · Strategy · Growth · Market · Business ",
-      image: "/images/dharkan.png",
+      image: "/images/dharkan.webp",
       icon: <Activity className="w-5 h-5 text-blue-500" />,
       description: "Alumni’25 - B.Tech in CE with specialization in Entrepreneurship IIT Mandi - India",
       email: "dharkan@climmatech.life",
@@ -37,7 +38,7 @@ export default function TeamSection() {
       name: "Dr. Vivek Gupta",
       role: "CIO",
       expertise: "Research · Innovation · Domain Expertise",
-      image: "/website/vivekgupta.png",
+      image: "/website/vivekgupta.webp",
       icon: <Activity className="w-5 h-5 text-blue-500" />,
       description: "Co-Founder & CIO, Assistant Prof., SCEnE - IIT Mandi, India",
       email: "admin@climmatech.life",
@@ -47,7 +48,7 @@ export default function TeamSection() {
       name: "Om Maheshwari",
       role: "CTO",
       expertise: "AI Systems · Architecture · Technology",
-      image: "/images/om.png",
+      image: "/images/om.webp",
       icon: <Activity className="w-5 h-5 text-blue-500" />,
       description: "Co-founder & CTO, BTech in VLSI, IIT Mandi - India",
       email: "om@climmatech.life",
@@ -57,7 +58,7 @@ export default function TeamSection() {
       name: "Kunal Mittal",
       role: "Lead Electronics",
       expertise: "Embedded Systems · PCB Design · IoT Hardware",
-      image: "/kunal.png",
+      image: "/kunal.webp",
       icon: <Activity className="w-5 h-5 text-blue-500" />,
       description: "Lead - Electronics, BTech in VLSI, IIT Mandi - India",
       email: "admin@climmatech.life",
@@ -67,7 +68,7 @@ export default function TeamSection() {
       name: "Siddik Barbhuiya",
       role: "LEAD Hydrologist",
       expertise: "Flood Modeling · River Hydraulics · Computational Hydrology",
-      image: "/website/siddik Barbhujya.png",
+      image: "/website/siddik Barbhujya.webp",
       icon: <Activity className="w-5 h-5 text-blue-500" />,
       description: "PhD in Hydrology leading river modeling and computational hydraulics.",
       email: "admin@climmatech.life",
@@ -77,7 +78,7 @@ export default function TeamSection() {
       name: "Shivam kumar",
       role: "SDE",
       expertise: "Full Stack Development",
-      image: "/images/shivamimage.png",
+      image: "/images/shivamimage.webp",
       icon: <Activity className="w-5 h-5 text-blue-500" />,
       description: "SDE - Full Stack Development, specialized in scalable cloud architectures.",
       email: "admin@climmatech.life",
@@ -113,7 +114,7 @@ export default function TeamSection() {
     <section ref={sectionRef} className="py-24 relative overflow-hidden text-white">
       <motion.div 
         style={{ y }} 
-        className="absolute inset-0 bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 z-0"
+        className="absolute inset-0 bg-gradient-to-b from-black via-[#090a0f] to-black z-0"
       />
       <ParticleStars />
       
@@ -178,9 +179,11 @@ export default function TeamSection() {
                       <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 text-center flex flex-col justify-center items-center">
                         <div className="relative w-32 h-32 mb-6">
                           <div className="absolute inset-0 bg-blue-500/20 rounded-full scale-110" />
-                          <img
+                          <Image
                             src={member.image}
                             alt={member.name}
+                            width={128}
+                            height={128}
                             className="relative w-full h-full object-cover rounded-full border-4 border-white/20 shadow-inner"
                           />
                         </div>
@@ -199,6 +202,7 @@ export default function TeamSection() {
                           <a 
                             href={`mailto:${member.email}`}
                             className="p-2 bg-white/10 rounded-full hover:bg-blue-600 transition-colors"
+                            aria-label={`Email ${member.name}`}
                           >
                             <Mail className="w-5 h-5 text-white" />
                           </a>
@@ -207,6 +211,7 @@ export default function TeamSection() {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="p-2 bg-white/10 rounded-full hover:bg-blue-600 transition-colors"
+                            aria-label={`LinkedIn profile of ${member.name}`}
                           >
                             <Linkedin className="w-5 h-5 text-white" />
                           </a>

@@ -3,6 +3,7 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Star, Quote, MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function TestimonialsSection() {
   const testimonials = [
@@ -151,9 +152,11 @@ export default function TestimonialsSection() {
                   </div>
 
                   <div className="flex items-center">
-                    <img
+                    <Image
                       src={testimonial.image}
                       alt={testimonial.name}
+                      width={48}
+                      height={48}
                       className="w-12 h-12 rounded-full object-cover mr-4"
                     />
                     <div className="flex-1">

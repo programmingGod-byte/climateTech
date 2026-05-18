@@ -37,7 +37,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-gradient-to-br font-sans from-gray-900 via-blue-900 to-gray-900 text-white relative overflow-hidden">
+    <footer className="bg-gradient-to-b font-sans from-black via-[#090a0f] to-black text-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -88,7 +88,7 @@ export default function Footer() {
             >
               <div className="flex items-center space-x-3 mb-4">
                 <div className="p-2  rounded-xl">
-                  <img src='/images/logo-removebg-preview.png' alt="Logo" className="w-16 h-16" />
+                  <img src='/images/logo-removebg-preview.webp' alt="Logo" className="w-16 h-16" />
                 </div>
                 <div>
                   <h3 className="text-xl font-medium bg-gradient-to-r from-blue-400 font-sans to-cyan-400 bg-clip-text text-transparent">

@@ -28,7 +28,7 @@ export default function ArchitecturePage() {
           >
             <div className="relative w-full h-full p-4 md:p-8">
               <Image
-                src="/images/image copy.png"
+                src="/images/image copy.webp"
                 alt="System Architecture Diagram"
                 fill
                 className="object-contain"

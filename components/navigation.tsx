@@ -55,7 +55,7 @@ export default function Navigation() {
           <motion.div
             className="flex items-center space-x-2"
           >
-            <img src='/images/logo-removebg-preview.png' alt="Logo" className="w-16 h-16" />
+            <Image src='/images/logo-removebg-preview.webp' alt="Logo" width={64} height={64} className="w-16 h-16" />
             <Link href={"/"} className={`text-xl 2xl:text-3xl font-sans text-foreground shrink-0`}>
               ClimMaTech
             </Link>
@@ -135,6 +135,7 @@ export default function Navigation() {
               size="sm"
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
               className="p-2 text-foreground"
+              aria-label="Toggle theme"
             >
               <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
               <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
@@ -156,6 +157,7 @@ export default function Navigation() {
               size="sm"
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
               className="p-2 text-foreground"
+              aria-label="Toggle theme"
             >
               <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
               <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
@@ -166,6 +168,7 @@ export default function Navigation() {
               size="sm"
               onClick={() => setIsOpen(!isOpen)}
               className="p-2"
+              aria-label="Toggle navigation menu"
             >
               {isOpen ? (
                 <X className="h-6 w-6 text-foreground" />

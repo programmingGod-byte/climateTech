@@ -150,7 +150,7 @@ export default function AchievementsPage() {
                       className="w-full md:w-32 h-40 relative rounded-lg overflow-hidden border border-slate-100 shadow-inner group cursor-pointer"
                     >
                        <Image 
-                         src="/website/image.png" 
+                         src="/website/image.webp" 
                          alt="Patent Certificate - Climmatech"
                          fill
                          className="object-cover transition-transform duration-500 group-hover:scale-110"
@@ -340,7 +340,7 @@ export default function AchievementsPage() {
 
               <div className="relative w-full h-full p-2">
                 <Image 
-                   src="/website/image.png" 
+                   src="/website/image.webp" 
                    alt="Patent Certificate Full View"
                    fill
                    className="object-contain"

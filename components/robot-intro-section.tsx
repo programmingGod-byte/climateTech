@@ -23,7 +23,7 @@ export default function RobotIntroSection() {
       <motion.div 
         style={{ 
           y,
-          backgroundImage: "url('/images/bgthird.png')",
+          backgroundImage: "url('/images/bgthird.webp')",
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }} 
@@ -46,7 +46,7 @@ export default function RobotIntroSection() {
               style={{
                 paddingTop:"20px"
               }}
-                src="/images/Gemini_Generated_Image_pv6vufpv6vufpv6v.png" //  convert to webp
+                src="/images/Gemini_Generated_Image_pv6vufpv6vufpv6v.webp" //  convert to webp
                 alt="Climmatech AI-powered flood monitoring robot for real-time disaster prediction in India"
                 width={1200}
                 height={750}

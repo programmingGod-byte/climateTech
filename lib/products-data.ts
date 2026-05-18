@@ -46,7 +46,7 @@ export const products: Product[] = [
             'Comms': '4G LTE / LoRaWAN / GigE'
         },
         deviceType: 'Industrial Data Logger',
-        image: '/models/image.png',
+        image: '/models/image.webp',
         model: '/models/Solar_Alarm_System_0630051501_texture.fbx',
         benefits: [
             'High-priority interrupt handling for real-time IO',
@@ -171,10 +171,10 @@ export const products: Product[] = [
         ],
         deviceType: 'Integrated Monitoring System',
         slideshow: [
-            '/doordrishti/image.png',
-            '/doordrishti/image copy.png',
-            '/doordrishti/image copy 2.png',
-            '/doordrishti/image copy 3.png'
+            '/doordrishti/image.webp',
+            '/doordrishti/image copy.webp',
+            '/doordrishti/image copy 2.webp',
+            '/doordrishti/image copy 3.webp'
         ]
     },
     {
@@ -207,7 +207,7 @@ export const products: Product[] = [
             'Customizable alert tones and voice messages'
         ],
         deviceType: 'Early Warning System',
-        image: '/images/2-removebg-preview.png',
+        image: '/images/2-removebg-preview.webp',
         model: '/models/Solar_Alarm_System_0630051501_texture.fbx'
     },
     {

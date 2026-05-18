@@ -60,7 +60,7 @@ export default function FeaturesSection() {
       <motion.div 
         style={{ 
           y,
-          backgroundImage: "url('/website/featuresimages.png')",
+          backgroundImage: "url('/website/featuresimages.webp')",
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }} 

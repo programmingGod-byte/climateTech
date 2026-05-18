@@ -93,7 +93,7 @@ const organizationSchema = {
   name: "ClimMaTech",
   alternateName: "ClimMaTech India",
   url: "https://climmatech.com/",
-  logo: "https://climmatech.com/images/logo-removebg-preview.png",
+  logo: "https://climmatech.com/images/logo-removebg-preview.webp",
   description: "India's leading AI flood monitoring system, providing smart IoT flood monitoring, non-contact radar river water level sensors, and solar-powered early warning systems.",
   contactPoint: {
     "@type": "ContactPoint",

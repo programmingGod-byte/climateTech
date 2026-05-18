@@ -3,17 +3,18 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import ParticleStars from './particle-stars';
+import Image from 'next/image';
 
 export default function CollaboratorsSection() {
   const collaborators = [
     {
       name: "Indian Institute of Technology Mandi",
-      logo: "/images/iitmandi.png",
+      logo: "/images/iitmandi.webp",
       description: "for technological innovation"
     },
     {
       name: "C≡DAR Indian Institute of Technology Mandi",
-      logo: "/images/cedar.png",
+      logo: "/images/cedar.webp",
       description: "Driving innovation in environmental sensing and disaster response."
     },
     {
@@ -48,12 +49,12 @@ export default function CollaboratorsSection() {
     },
     {
       name: "NVIDIA",
-      logo: "/images/nvidia.png",
+      logo: "/images/nvidia.webp",
       description: "A global leader in AI and accelerated computing, known for its GPUs and platforms powering innovation in machine learning "
     },
     {
       name: "INDIaI",
-      logo: "/images/indiai.png",
+      logo: "/images/indiai.webp",
       description: "A rapidly growing hub for innovation and technology, fostering startups, research, and advancements across AI"
     },
   ];
@@ -69,7 +70,7 @@ export default function CollaboratorsSection() {
     <section ref={sectionRef} className="py-24 relative overflow-hidden text-white">
       <motion.div 
         style={{ y }} 
-        className="absolute inset-0 bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 z-0"
+        className="absolute inset-0 bg-gradient-to-b from-black via-[#090a0f] to-black z-0"
       />
       <ParticleStars />
       <div className="max-w-7xl mx-auto px-6 relative z-10" id="partners">
@@ -106,9 +107,11 @@ export default function CollaboratorsSection() {
             >
               <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 w-full text-center shadow-md hover:shadow-xl transition-all duration-300 border border-white/10 hover:border-blue-400/50 flex flex-col items-center group-hover:-translate-y-2">
                 <div className="mb-6 flex items-center justify-center h-20 w-full bg-white/5 rounded-xl p-4">
-                  <img
+                  <Image
                     src={collab.logo}
                     alt={collab.name}
+                    width={120}
+                    height={80}
                     className="max-h-full max-w-[120px] object-contain rounded-lg transition-transform duration-300 group-hover:scale-110 brightness-110"
                   />
                 </div>
