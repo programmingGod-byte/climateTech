@@ -71,7 +71,7 @@ export default function TeamSection() {
       icon: <Activity className="w-5 h-5 text-blue-500" />,
       description: "PhD in Hydrology leading river modeling and computational hydraulics.",
       email: "admin@climmatech.life",
-      linkedin: "#"
+      linkedin: "https://www.linkedin.com/in/siddik-barbhuiya-65888871/"
     },
     {
       name: "Shivam kumar",

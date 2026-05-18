@@ -42,6 +42,9 @@ export default function Navigation() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
+      style={{
+        opacity:0.73
+      }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-md shadow-lg border-b`}
     >
       {/* Set a max-width for the content and center it */}

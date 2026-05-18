@@ -216,7 +216,7 @@ export default function Footer() {
             </div>
             
             {/* Made with love - Inline */}
-            <div className="flex items-center space-x-2 text-sm text-gray-400">
+            {/* <div className="flex items-center space-x-2 text-sm text-gray-400">
               <span>Made with</span>
               <motion.div
                 animate={{ scale: [1, 1.2, 1] }}
@@ -226,7 +226,7 @@ export default function Footer() {
               </motion.div>
               <span>in India</span>
               <Globe className="h-4 w-4 text-blue-400" />
-            </div>
+            </div> */}
           </div>
         </motion.div>
       </div>

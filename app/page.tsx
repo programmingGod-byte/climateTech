@@ -1,23 +1,22 @@
-// import Head from 'next/head';
 import Navigation from '@/components/navigation';
 import HeroSection from '@/components/hero-section';
-import ServicesSection from '@/components/services-section';
 import RobotIntroSection from '@/components/robot-intro-section';
-import ProductsSection from '@/components/products-section';
-import AboutSection from '@/components/about-section';
-import SensorsSection from '@/components/sensors-section';
-import DashboardShowcaseSection from '@/components/dashboard-showcase-section';
-import FeaturesSection from '@/components/features-section';
-import ComparisonSection from '@/components/comparison-section';
-
 import ImpactSection from '@/components/impact-section';
-import TestimonialsSection from '@/components/testimonials-section';
-import TeamSection from '@/components/team-section';
-import CollaboratorsSection from '@/components/collaborators-section';
-import ContactSection from '@/components/contact-section';
+import FeaturesSection from '@/components/features-section';
 import Footer from '@/components/footer';
-
 import ScrollToTopButton from '@/components/scroll-to-top-button';
+import dynamic from 'next/dynamic';
+
+// Dynamically import heavy and below-the-fold components to reduce initial JS load blockages
+const ProductsSection = dynamic(() => import('@/components/products-section'), {
+  ssr: false,
+  loading: () => <div className="py-20 text-center text-white/50">Loading products...</div>
+});
+const DashboardShowcaseSection = dynamic(() => import('@/components/dashboard-showcase-section'), { ssr: false });
+const ComparisonSection = dynamic(() => import('@/components/comparison-section'), { ssr: false });
+const TeamSection = dynamic(() => import('@/components/team-section'), { ssr: false });
+const CollaboratorsSection = dynamic(() => import('@/components/collaborators-section'), { ssr: false });
+const ContactSection = dynamic(() => import('@/components/contact-section'), { ssr: false });
 
 export default function Home() {
 //  <Head>
