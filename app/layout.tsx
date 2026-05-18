@@ -159,7 +159,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <CustomCursor />
+            {/* <CustomCursor /> */}
             {children}
           </ThemeProvider>
         </div>
